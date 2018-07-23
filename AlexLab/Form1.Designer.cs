@@ -128,6 +128,11 @@
             this.schedulerStorage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
+            this.alexLabDataSet = new AlexLab.AlexLabDataSet();
+            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentsTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.AppointmentsTableAdapter();
+            this.resourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resourcesTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.ResourcesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -150,6 +155,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alexLabDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl
@@ -920,6 +928,31 @@
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1100, 31);
             // 
+            // schedulerStorage
+            // 
+            this.schedulerStorage.Appointments.DataSource = this.appointmentsBindingSource;
+            this.schedulerStorage.Appointments.Mappings.AllDay = "AllDay";
+            this.schedulerStorage.Appointments.Mappings.Description = "Description";
+            this.schedulerStorage.Appointments.Mappings.End = "EndDate";
+            this.schedulerStorage.Appointments.Mappings.Label = "Label";
+            this.schedulerStorage.Appointments.Mappings.Location = "Location";
+            this.schedulerStorage.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
+            this.schedulerStorage.Appointments.Mappings.ReminderInfo = "ReminderInfo";
+            this.schedulerStorage.Appointments.Mappings.ResourceId = "ResourceID";
+            this.schedulerStorage.Appointments.Mappings.Start = "StartDate";
+            this.schedulerStorage.Appointments.Mappings.Status = "Status";
+            this.schedulerStorage.Appointments.Mappings.Subject = "Subject";
+            this.schedulerStorage.Appointments.Mappings.TimeZoneId = "ResourceIDs";
+            this.schedulerStorage.Appointments.Mappings.Type = "Type";
+            this.schedulerStorage.Resources.DataSource = this.resourcesBindingSource;
+            this.schedulerStorage.Resources.Mappings.Caption = "ResourceName";
+            this.schedulerStorage.Resources.Mappings.Color = "Color";
+            this.schedulerStorage.Resources.Mappings.Id = "ResourceID";
+            this.schedulerStorage.Resources.Mappings.Image = "Image";
+            this.schedulerStorage.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            this.schedulerStorage.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            this.schedulerStorage.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            // 
             // dateNavigator
             // 
             this.dateNavigator.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -975,6 +1008,29 @@
             this.schedulerBarController1.BarItems.Add(this.printPageSetupItem1);
             this.schedulerBarController1.Control = this.schedulerControl;
             // 
+            // alexLabDataSet
+            // 
+            this.alexLabDataSet.DataSetName = "AlexLabDataSet";
+            this.alexLabDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // appointmentsBindingSource
+            // 
+            this.appointmentsBindingSource.DataMember = "Appointments";
+            this.appointmentsBindingSource.DataSource = this.alexLabDataSet;
+            // 
+            // appointmentsTableAdapter
+            // 
+            this.appointmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // resourcesBindingSource
+            // 
+            this.resourcesBindingSource.DataMember = "Resources";
+            this.resourcesBindingSource.DataSource = this.alexLabDataSet;
+            // 
+            // resourcesTableAdapter
+            // 
+            this.resourcesTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -990,6 +1046,7 @@
             this.Ribbon = this.ribbonControl;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
             this.splitContainerControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).EndInit();
@@ -1013,6 +1070,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alexLabDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1115,5 +1175,10 @@
         private DevExpress.XtraScheduler.UI.TimeScaleRibbonPageGroup timeScaleRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.LayoutRibbonPageGroup layoutRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.SchedulerBarController schedulerBarController1;
+        private AlexLabDataSet alexLabDataSet;
+        private System.Windows.Forms.BindingSource appointmentsBindingSource;
+        private AlexLabDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
+        private System.Windows.Forms.BindingSource resourcesBindingSource;
+        private AlexLabDataSetTableAdapters.ResourcesTableAdapter resourcesTableAdapter;
     }
 }

@@ -29,5 +29,19 @@ namespace AlexLab
             SkinHelper.InitSkinGallery(rgbiSkins, true);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'alexLabDataSet.Resources' table. You can move, or remove it, as needed.
+            this.resourcesTableAdapter.Fill(this.alexLabDataSet.Resources);
+            // TODO: This line of code loads data into the 'alexLabDataSet.Appointments' table. You can move, or remove it, as needed.
+            this.appointmentsTableAdapter.Fill(this.alexLabDataSet.Appointments);
+
+        }
+
+        private void schedulerStorage_AppointmentsChanged(object sender, DevExpress.XtraScheduler.PersistentObjectsEventArgs e)
+        {
+            appointmentsTableAdapter.Update(alexLabDataSet);
+            alexLabDataSet.AcceptChanges();
+        }
     }
 }
