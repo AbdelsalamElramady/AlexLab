@@ -135,6 +135,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlexLabBL\AlexLabBL.csproj">
+      <Project>{1d8d3fdf-7a86-4570-93fd-66937531ccf7}</Project>
+      <Name>AlexLabBL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
