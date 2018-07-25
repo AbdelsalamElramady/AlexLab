@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlexLabBL
 {
-    class RoomClass
+    public class RoomClass
     {
         public int RoomId { get; set; }
         public string RoomDesc { get; set; }

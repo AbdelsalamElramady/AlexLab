@@ -16,13 +16,16 @@ using DevExpress.UserSkins;
 
 namespace AlexLab
 {
-    public partial class Form1 : RibbonForm
+    public partial class MainForm : RibbonForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             InitSkinGallery();
             schedulerControl.Start = System.DateTime.Now;
+
+            AlexLabBL.MainClass.ConectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AlexLab.Properties.Settings.AlexLabConnectionString"].ConnectionString;
+
         }
         void InitSkinGallery()
         {
@@ -38,10 +41,24 @@ namespace AlexLab
 
         }
 
+        public static void MessageSecuseed()
+        {
+            MessageBox.Show("تم الحفظ بنجاح", "تم", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public static void MessageError()
+        {
+            MessageBox.Show("لم يتم الحفظ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void schedulerStorage_AppointmentsChanged(object sender, DevExpress.XtraScheduler.PersistentObjectsEventArgs e)
         {
             appointmentsTableAdapter.Update(alexLabDataSet);
             alexLabDataSet.AcceptChanges();
+        }
+
+        private void inboxItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new RoomsForm().ShowDialog();
         }
     }
 }

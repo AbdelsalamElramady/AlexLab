@@ -11,7 +11,7 @@ namespace AlexLabBL
         public static String ConectionString { get; set; }
         public static DataClassesAlexLabDataContext DbObj { get; set; }
 
-        public static Object getRooms()
+        public static object getRooms()
         {
             DbObj = new DataClassesAlexLabDataContext(ConectionString);
 
