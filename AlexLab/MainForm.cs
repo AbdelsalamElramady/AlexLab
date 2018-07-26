@@ -12,7 +12,7 @@ using DevExpress.XtraBars.Helpers;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
-
+using DevExpress.XtraScheduler;
 
 namespace AlexLab
 {
@@ -59,6 +59,20 @@ namespace AlexLab
         private void inboxItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             new RoomsForm().ShowDialog();
+        }
+
+        private void schedulerControl_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
+        {
+            CustomAppointmentForm form = new CustomAppointmentForm(sender as SchedulerControl, e.Appointment, e.OpenRecurrenceForm);
+            try
+            {
+                e.DialogResult = form.ShowDialog();
+                e.Handled = true;
+            }
+            finally
+            {
+                form.Dispose();
+            }
         }
     }
 }

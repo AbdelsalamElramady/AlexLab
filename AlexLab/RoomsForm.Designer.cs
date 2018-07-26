@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomsForm));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -45,16 +44,16 @@
             this.TxtRoomName = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.RoomDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Notes = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HourPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RoomId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.RoomDesc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Notes = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HourPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.RoomId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -171,9 +170,6 @@
             this.TxtNotes.Size = new System.Drawing.Size(614, 90);
             this.TxtNotes.StyleController = this.layoutControl1;
             this.TxtNotes.TabIndex = 7;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.TxtNotes, conditionValidationRule2);
             // 
             // TxtRoomName
             // 
@@ -185,9 +181,9 @@
             this.TxtRoomName.Size = new System.Drawing.Size(261, 26);
             this.TxtRoomName.StyleController = this.layoutControl1;
             this.TxtRoomName.TabIndex = 5;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.TxtRoomName, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.TxtRoomName, conditionValidationRule2);
             // 
             // gridControl1
             // 
@@ -221,6 +217,62 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // RoomDesc
+            // 
+            this.RoomDesc.AppearanceCell.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RoomDesc.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.RoomDesc.AppearanceCell.Options.UseBackColor = true;
+            this.RoomDesc.AppearanceCell.Options.UseFont = true;
+            this.RoomDesc.AppearanceCell.Options.UseTextOptions = true;
+            this.RoomDesc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.RoomDesc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.RoomDesc.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.RoomDesc.AppearanceHeader.Options.UseBackColor = true;
+            this.RoomDesc.AppearanceHeader.Options.UseFont = true;
+            this.RoomDesc.AppearanceHeader.Options.UseTextOptions = true;
+            this.RoomDesc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.RoomDesc.Caption = "Room name";
+            this.RoomDesc.FieldName = "RoomDesc";
+            this.RoomDesc.Name = "RoomDesc";
+            this.RoomDesc.Visible = true;
+            this.RoomDesc.VisibleIndex = 0;
+            // 
+            // Notes
+            // 
+            this.Notes.AppearanceCell.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Notes.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.Notes.AppearanceCell.Options.UseBackColor = true;
+            this.Notes.AppearanceCell.Options.UseFont = true;
+            this.Notes.AppearanceCell.Options.UseTextOptions = true;
+            this.Notes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Notes.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Notes.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.Notes.AppearanceHeader.Options.UseBackColor = true;
+            this.Notes.AppearanceHeader.Options.UseFont = true;
+            this.Notes.AppearanceHeader.Options.UseTextOptions = true;
+            this.Notes.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Notes.Caption = "Notes";
+            this.Notes.FieldName = "Notes";
+            this.Notes.Name = "Notes";
+            this.Notes.Visible = true;
+            this.Notes.VisibleIndex = 2;
+            // 
+            // HourPrice
+            // 
+            this.HourPrice.AppearanceHeader.Options.UseTextOptions = true;
+            this.HourPrice.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HourPrice.Caption = "Hour price";
+            this.HourPrice.FieldName = "HourPrice";
+            this.HourPrice.Name = "HourPrice";
+            this.HourPrice.Visible = true;
+            this.HourPrice.VisibleIndex = 1;
+            // 
+            // RoomId
+            // 
+            this.RoomId.Caption = "RoomId";
+            this.RoomId.FieldName = "RoomId";
+            this.RoomId.Name = "RoomId";
             // 
             // layoutControlGroup1
             // 
@@ -283,62 +335,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(705, 94);
             this.layoutControlItem4.Text = "Notes";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(84, 19);
-            // 
-            // RoomDesc
-            // 
-            this.RoomDesc.AppearanceCell.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.RoomDesc.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.RoomDesc.AppearanceCell.Options.UseBackColor = true;
-            this.RoomDesc.AppearanceCell.Options.UseFont = true;
-            this.RoomDesc.AppearanceCell.Options.UseTextOptions = true;
-            this.RoomDesc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.RoomDesc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.RoomDesc.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.RoomDesc.AppearanceHeader.Options.UseBackColor = true;
-            this.RoomDesc.AppearanceHeader.Options.UseFont = true;
-            this.RoomDesc.AppearanceHeader.Options.UseTextOptions = true;
-            this.RoomDesc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.RoomDesc.Caption = "Room name";
-            this.RoomDesc.FieldName = "RoomDesc";
-            this.RoomDesc.Name = "RoomDesc";
-            this.RoomDesc.Visible = true;
-            this.RoomDesc.VisibleIndex = 0;
-            // 
-            // Notes
-            // 
-            this.Notes.AppearanceCell.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Notes.AppearanceCell.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.Notes.AppearanceCell.Options.UseBackColor = true;
-            this.Notes.AppearanceCell.Options.UseFont = true;
-            this.Notes.AppearanceCell.Options.UseTextOptions = true;
-            this.Notes.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Notes.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Notes.AppearanceHeader.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.Notes.AppearanceHeader.Options.UseBackColor = true;
-            this.Notes.AppearanceHeader.Options.UseFont = true;
-            this.Notes.AppearanceHeader.Options.UseTextOptions = true;
-            this.Notes.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Notes.Caption = "Notes";
-            this.Notes.FieldName = "Notes";
-            this.Notes.Name = "Notes";
-            this.Notes.Visible = true;
-            this.Notes.VisibleIndex = 2;
-            // 
-            // HourPrice
-            // 
-            this.HourPrice.AppearanceHeader.Options.UseTextOptions = true;
-            this.HourPrice.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.HourPrice.Caption = "Hour price";
-            this.HourPrice.FieldName = "HourPrice";
-            this.HourPrice.Name = "HourPrice";
-            this.HourPrice.Visible = true;
-            this.HourPrice.VisibleIndex = 1;
-            // 
-            // RoomId
-            // 
-            this.RoomId.Caption = "RoomId";
-            this.RoomId.FieldName = "RoomId";
-            this.RoomId.Name = "RoomId";
             // 
             // RoomsForm
             // 
