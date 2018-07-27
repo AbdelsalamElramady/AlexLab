@@ -74,5 +74,10 @@ namespace AlexLab
                 form.Dispose();
             }
         }
+
+        private void outboxItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new ClientForm().ShowDialog();
+        }
     }
 }

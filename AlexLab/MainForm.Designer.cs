@@ -209,7 +209,6 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.outboxItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.draftsItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.trashItem)});
-            this.mailGroup.LargeImageIndex = 0;
             this.mailGroup.Name = "mailGroup";
             // 
             // inboxItem
@@ -220,9 +219,9 @@
             // 
             // outboxItem
             // 
-            this.outboxItem.Caption = "Outbox";
+            this.outboxItem.Caption = "Clients";
             this.outboxItem.Name = "outboxItem";
-            this.outboxItem.SmallImageIndex = 1;
+            this.outboxItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.outboxItem_LinkClicked);
             // 
             // draftsItem
             // 

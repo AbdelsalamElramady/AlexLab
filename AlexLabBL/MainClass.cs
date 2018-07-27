@@ -18,5 +18,13 @@ namespace AlexLabBL
             var obj = from ob in DbObj.Rooms select ob;
             return obj;
         }
+
+        public static object getClients()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Clients select ob;
+            return obj;
+        }
     }
 }
