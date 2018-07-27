@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientClass.cs" />
     <Compile Include="DataClassesAlexLab.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

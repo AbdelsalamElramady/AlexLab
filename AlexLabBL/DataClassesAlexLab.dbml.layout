@@ -14,10 +14,16 @@
         <elementListCompartment Id="04c7f903-7540-4a68-a5de-821bb3c36545" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ca539434-8971-44ca-89e7-48a4b20240fb" absoluteBounds="3.75, 3.75, 2, 1.9631982421875005">
+    <classShape Id="ca539434-8971-44ca-89e7-48a4b20240fb" absoluteBounds="3.75, 2.5, 2, 1.9631982421875005">
       <DataClassMoniker Name="/DataClassesAlexLabDataContext/Resource" />
       <nestedChildShapes>
-        <elementListCompartment Id="e83022a8-6f60-48f4-9617-796e8d0715b5" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e83022a8-6f60-48f4-9617-796e8d0715b5" absoluteBounds="3.765, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6eca97aa-aabb-45a7-8d77-23f5ab36f7a9" absoluteBounds="0.75, 4.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesAlexLabDataContext/Client" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f333edf-5f09-4799-9b06-e6544428cb3f" absoluteBounds="0.76500000000000012, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
