@@ -6,44 +6,38 @@ using System.Threading.Tasks;
 
 namespace AlexLabBL
 {
-    public class RoomClass
+    public class CourseTypeClass
     {
-        public int RoomId { get; set; }
-        public string RoomDesc { get; set; }
-        public decimal HourPrice { get; set; }
-        public string Notes { get; set; }
+        public int CourseTypeId { get; set; }
+        public string CourseTypeDesc { get; set; }
 
-        public RoomClass()
+        public CourseTypeClass()
         {
             MainClass.DbObj = new DataClassesAlexLabDataContext(MainClass.ConectionString);
         }
 
-        public RoomClass(int roomId)
+        public CourseTypeClass(int courseTypeId)
         {
             MainClass.DbObj = new DataClassesAlexLabDataContext(MainClass.ConectionString);
 
-            var Room = (from r in MainClass.DbObj.Rooms where r.RoomId == roomId select r).First();
+            var type = (from r in MainClass.DbObj.CourseTypes where r.CourseTypeId == courseTypeId select r).First();
 
-            RoomId = Room.RoomId;
-            RoomDesc = Room.RoomDesc;
-            HourPrice = Room.HourPrice.Value;
-            Notes = Room.Notes;
+            CourseTypeId = type.CourseTypeId;
+            CourseTypeDesc = type.CourseTypeDesc;
         }
 
         private bool Insert()
         {
             try
             {
-                Room roo = new Room();
+                CourseType roo = new CourseType();
 
-                roo.RoomDesc = RoomDesc;
-                roo.HourPrice = HourPrice;
-                roo.Notes = Notes;
+                roo.CourseTypeDesc = CourseTypeDesc;
 
-                MainClass.DbObj.Rooms.InsertOnSubmit(roo);
+                MainClass.DbObj.CourseTypes.InsertOnSubmit(roo);
                 MainClass.DbObj.SubmitChanges();
 
-                RoomId = roo.RoomId;
+                CourseTypeId = roo.CourseTypeId;
 
                 return true;
             }
@@ -57,11 +51,9 @@ namespace AlexLabBL
         {
             try
             {
-                var roo = (from c in MainClass.DbObj.Rooms where c.RoomId == RoomId select c).First();
+                var roo = (from c in MainClass.DbObj.CourseTypes where c.CourseTypeId == CourseTypeId select c).First();
 
-                roo.RoomDesc = RoomDesc;
-                roo.HourPrice = HourPrice;
-                roo.Notes = Notes;
+                roo.CourseTypeDesc = CourseTypeDesc;
 
                 MainClass.DbObj.SubmitChanges();
 

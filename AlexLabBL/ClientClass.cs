@@ -19,11 +19,11 @@ namespace AlexLabBL
             MainClass.DbObj = new DataClassesAlexLabDataContext(MainClass.ConectionString);
         }
 
-        public ClientClass(int RoomId)
+        public ClientClass(int clientId)
         {
             MainClass.DbObj = new DataClassesAlexLabDataContext(MainClass.ConectionString);
 
-            var client = (from r in MainClass.DbObj.Clients where r.ClientId == ClientId select r).First();
+            var client = (from r in MainClass.DbObj.Clients where r.ClientId == clientId select r).First();
 
             ClientId = client.ClientId;
             ClientName = client.ClientName;

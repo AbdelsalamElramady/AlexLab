@@ -42,6 +42,9 @@ namespace AlexLabBL
     partial void InsertClient(Client instance);
     partial void UpdateClient(Client instance);
     partial void DeleteClient(Client instance);
+    partial void InsertCourseType(CourseType instance);
+    partial void UpdateCourseType(CourseType instance);
+    partial void DeleteCourseType(CourseType instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -103,6 +106,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<Client>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CourseType> CourseTypes
+		{
+			get
+			{
+				return this.GetTable<CourseType>();
 			}
 		}
 	}
@@ -760,7 +771,7 @@ namespace AlexLabBL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -954,6 +965,92 @@ namespace AlexLabBL
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CourseType")]
+	public partial class CourseType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CourseTypeId;
+		
+		private string _CourseTypeDesc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCourseTypeIdChanging(int value);
+    partial void OnCourseTypeIdChanged();
+    partial void OnCourseTypeDescChanging(string value);
+    partial void OnCourseTypeDescChanged();
+    #endregion
+		
+		public CourseType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CourseTypeId
+		{
+			get
+			{
+				return this._CourseTypeId;
+			}
+			set
+			{
+				if ((this._CourseTypeId != value))
+				{
+					this.OnCourseTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseTypeId = value;
+					this.SendPropertyChanged("CourseTypeId");
+					this.OnCourseTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseTypeDesc", DbType="NVarChar(50)")]
+		public string CourseTypeDesc
+		{
+			get
+			{
+				return this._CourseTypeDesc;
+			}
+			set
+			{
+				if ((this._CourseTypeDesc != value))
+				{
+					this.OnCourseTypeDescChanging(value);
+					this.SendPropertyChanging();
+					this._CourseTypeDesc = value;
+					this.SendPropertyChanged("CourseTypeDesc");
+					this.OnCourseTypeDescChanged();
 				}
 			}
 		}

@@ -26,5 +26,13 @@ namespace AlexLabBL
             var obj = from ob in DbObj.Clients select ob;
             return obj;
         }
+
+        public static object getCourseType()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.CourseTypes select ob;
+            return obj;
+        }
     }
 }

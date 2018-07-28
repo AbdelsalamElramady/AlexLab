@@ -26,5 +26,11 @@
         <elementListCompartment Id="6f333edf-5f09-4799-9b06-e6544428cb3f" absoluteBounds="0.76500000000000012, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="bbac5eaa-0e0c-4818-85ad-360e7eab243d" absoluteBounds="3.75, 4.625, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DataClassesAlexLabDataContext/CourseType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="428ddd79-2c6b-4a39-a3f3-f4345d6c5f8d" absoluteBounds="3.765, 5.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
