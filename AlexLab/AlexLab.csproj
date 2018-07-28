@@ -98,6 +98,12 @@
     <Compile Include="ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CourseTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseTypeForm.Designer.cs">
+      <DependentUpon>CourseTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomAppointmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseTypeForm.resx">
+      <DependentUpon>CourseTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomAppointmentForm.resx">
       <DependentUpon>CustomAppointmentForm.cs</DependentUpon>

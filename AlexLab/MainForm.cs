@@ -79,5 +79,10 @@ namespace AlexLab
         {
             new ClientForm().ShowDialog();
         }
+
+        private void draftsItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new CourseTypeForm().ShowDialog();
+        }
     }
 }

@@ -225,9 +225,9 @@
             // 
             // draftsItem
             // 
-            this.draftsItem.Caption = "Drafts";
+            this.draftsItem.Caption = "Course type";
             this.draftsItem.Name = "draftsItem";
-            this.draftsItem.SmallImageIndex = 2;
+            this.draftsItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.draftsItem_LinkClicked);
             // 
             // trashItem
             // 

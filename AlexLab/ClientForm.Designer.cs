@@ -29,57 +29,57 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.TxtClientNationalId = new DevExpress.XtraEditors.TextEdit();
+            this.TxtClientPhone = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.TxtNotes = new DevExpress.XtraEditors.MemoEdit();
             this.TxtClientName = new DevExpress.XtraEditors.TextEdit();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.TxtNotes = new DevExpress.XtraEditors.MemoEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.TxtClientPhone = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.TxtClientNationalId = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClientNationalId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClientPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtNotes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtClientName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNotes.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtClientPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtClientNationalId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -96,6 +96,28 @@
             this.ribbonPage1});
             this.ribbon.Size = new System.Drawing.Size(773, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "New";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 1;
+            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Save";
+            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
+            this.barButtonItem4.Id = 2;
+            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -133,24 +155,30 @@
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // layoutControlGroup1
+            // TxtClientNationalId
             // 
-            this.layoutControlGroup1.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlGroup1.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlGroup1.AppearanceItemCaption.Options.UseTextOptions = true;
-            this.layoutControlGroup1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem4,
-            this.layoutControlItem3,
-            this.layoutControlItem5});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(773, 358);
-            this.layoutControlGroup1.TextVisible = false;
+            this.TxtClientNationalId.Location = new System.Drawing.Point(510, 42);
+            this.TxtClientNationalId.MenuManager = this.ribbon;
+            this.TxtClientNationalId.Name = "TxtClientNationalId";
+            this.TxtClientNationalId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtClientNationalId.Properties.Appearance.Options.UseFont = true;
+            this.TxtClientNationalId.Size = new System.Drawing.Size(251, 26);
+            this.TxtClientNationalId.StyleController = this.layoutControl1;
+            this.TxtClientNationalId.TabIndex = 11;
+            // 
+            // TxtClientPhone
+            // 
+            this.TxtClientPhone.Location = new System.Drawing.Point(134, 42);
+            this.TxtClientPhone.MenuManager = this.ribbon;
+            this.TxtClientPhone.Name = "TxtClientPhone";
+            this.TxtClientPhone.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtClientPhone.Properties.Appearance.Options.UseFont = true;
+            this.TxtClientPhone.Size = new System.Drawing.Size(250, 26);
+            this.TxtClientPhone.StyleController = this.layoutControl1;
+            this.TxtClientPhone.TabIndex = 10;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.TxtClientPhone, conditionValidationRule1);
             // 
             // gridControl1
             // 
@@ -242,6 +270,14 @@
             this.gridColumn4.FieldName = "ClientId";
             this.gridColumn4.Name = "gridColumn4";
             // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Client National Id";
+            this.gridColumn5.FieldName = "ClientNationalId";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 2;
+            // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
@@ -300,30 +336,49 @@
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(725, 27);
             // 
-            // TxtNotes
-            // 
-            this.TxtNotes.Location = new System.Drawing.Point(135, 72);
-            this.TxtNotes.MenuManager = this.ribbonControl1;
-            this.TxtNotes.Name = "TxtNotes";
-            this.TxtNotes.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNotes.Properties.Appearance.Options.UseFont = true;
-            this.TxtNotes.Size = new System.Drawing.Size(626, 55);
-            this.TxtNotes.StyleController = this.layoutControl1;
-            this.TxtNotes.TabIndex = 7;
-            // 
             // TxtClientName
             // 
-            this.TxtClientName.Location = new System.Drawing.Point(135, 12);
+            this.TxtClientName.Location = new System.Drawing.Point(134, 12);
             this.TxtClientName.MenuManager = this.ribbonControl1;
             this.TxtClientName.Name = "TxtClientName";
             this.TxtClientName.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtClientName.Properties.Appearance.Options.UseFont = true;
-            this.TxtClientName.Size = new System.Drawing.Size(626, 26);
+            this.TxtClientName.Size = new System.Drawing.Size(627, 26);
             this.TxtClientName.StyleController = this.layoutControl1;
             this.TxtClientName.TabIndex = 5;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.TxtClientName, conditionValidationRule2);
+            // 
+            // TxtNotes
+            // 
+            this.TxtNotes.Location = new System.Drawing.Point(134, 72);
+            this.TxtNotes.MenuManager = this.ribbonControl1;
+            this.TxtNotes.Name = "TxtNotes";
+            this.TxtNotes.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNotes.Properties.Appearance.Options.UseFont = true;
+            this.TxtNotes.Size = new System.Drawing.Size(627, 55);
+            this.TxtNotes.StyleController = this.layoutControl1;
+            this.TxtNotes.TabIndex = 7;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlGroup1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlGroup1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlGroup1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem3,
+            this.layoutControlItem5});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(773, 358);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
@@ -332,7 +387,6 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 119);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(753, 219);
-            this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -364,20 +418,6 @@
             this.layoutControlItem4.Text = "Notes";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(119, 19);
             // 
-            // TxtClientPhone
-            // 
-            this.TxtClientPhone.Location = new System.Drawing.Point(135, 42);
-            this.TxtClientPhone.MenuManager = this.ribbon;
-            this.TxtClientPhone.Name = "TxtClientPhone";
-            this.TxtClientPhone.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtClientPhone.Properties.Appearance.Options.UseFont = true;
-            this.TxtClientPhone.Size = new System.Drawing.Size(249, 26);
-            this.TxtClientPhone.StyleController = this.layoutControl1;
-            this.TxtClientPhone.TabIndex = 10;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.TxtClientPhone, conditionValidationRule1);
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,47 +431,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(376, 30);
             this.layoutControlItem3.Text = "Client phone";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(119, 19);
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Client National Id";
-            this.gridColumn5.FieldName = "ClientNationalId";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "New";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 1;
-            this.barButtonItem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "Save";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
-            this.barButtonItem4.Id = 2;
-            this.barButtonItem4.ItemAppearance.Normal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // TxtClientNationalId
-            // 
-            this.TxtClientNationalId.Location = new System.Drawing.Point(511, 42);
-            this.TxtClientNationalId.MenuManager = this.ribbon;
-            this.TxtClientNationalId.Name = "TxtClientNationalId";
-            this.TxtClientNationalId.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtClientNationalId.Properties.Appearance.Options.UseFont = true;
-            this.TxtClientNationalId.Size = new System.Drawing.Size(250, 26);
-            this.TxtClientNationalId.StyleController = this.layoutControl1;
-            this.TxtClientNationalId.TabIndex = 11;
             // 
             // layoutControlItem5
             // 
@@ -459,20 +458,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClientNationalId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtClientPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtNotes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtClientName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtNotes.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtClientPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtClientNationalId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
