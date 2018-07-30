@@ -26,7 +26,7 @@ namespace AlexLab
         {
             typeObj = new AlexLabBL.CourseTypeClass();
 
-            gridControl1.DataSource = AlexLabBL.MainClass.getCourseType();
+            gridControl1.DataSource = AlexLabBL.MainClass.getCourseTypes();
         }
 
         private void gridControl1_DoubleClick(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace AlexLab
                     MainForm.MessageError();
                 }
 
-                gridControl1.DataSource = AlexLabBL.MainClass.getCourseType();
+                gridControl1.DataSource = AlexLabBL.MainClass.getCourseTypes();
             }
         }
     }

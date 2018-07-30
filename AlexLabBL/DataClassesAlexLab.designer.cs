@@ -45,6 +45,9 @@ namespace AlexLabBL
     partial void InsertCourseType(CourseType instance);
     partial void UpdateCourseType(CourseType instance);
     partial void DeleteCourseType(CourseType instance);
+    partial void InsertCourse(Course instance);
+    partial void UpdateCourse(Course instance);
+    partial void DeleteCourse(Course instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -114,6 +117,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<CourseType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Course> Courses
+		{
+			get
+			{
+				return this.GetTable<Course>();
 			}
 		}
 	}
@@ -1051,6 +1062,188 @@ namespace AlexLabBL
 					this._CourseTypeDesc = value;
 					this.SendPropertyChanged("CourseTypeDesc");
 					this.OnCourseTypeDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Course")]
+	public partial class Course : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CourseId;
+		
+		private System.Nullable<int> _CourseTypeId;
+		
+		private System.Nullable<int> _ClientId;
+		
+		private string _CourseName;
+		
+		private System.Nullable<decimal> _StudentBookMoney;
+		
+		private string _Notes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCourseIdChanging(int value);
+    partial void OnCourseIdChanged();
+    partial void OnCourseTypeIdChanging(System.Nullable<int> value);
+    partial void OnCourseTypeIdChanged();
+    partial void OnClientIdChanging(System.Nullable<int> value);
+    partial void OnClientIdChanged();
+    partial void OnCourseNameChanging(string value);
+    partial void OnCourseNameChanged();
+    partial void OnStudentBookMoneyChanging(System.Nullable<decimal> value);
+    partial void OnStudentBookMoneyChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    #endregion
+		
+		public Course()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CourseId
+		{
+			get
+			{
+				return this._CourseId;
+			}
+			set
+			{
+				if ((this._CourseId != value))
+				{
+					this.OnCourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseId = value;
+					this.SendPropertyChanged("CourseId");
+					this.OnCourseIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseTypeId", DbType="Int")]
+		public System.Nullable<int> CourseTypeId
+		{
+			get
+			{
+				return this._CourseTypeId;
+			}
+			set
+			{
+				if ((this._CourseTypeId != value))
+				{
+					this.OnCourseTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseTypeId = value;
+					this.SendPropertyChanged("CourseTypeId");
+					this.OnCourseTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientId", DbType="Int")]
+		public System.Nullable<int> ClientId
+		{
+			get
+			{
+				return this._ClientId;
+			}
+			set
+			{
+				if ((this._ClientId != value))
+				{
+					this.OnClientIdChanging(value);
+					this.SendPropertyChanging();
+					this._ClientId = value;
+					this.SendPropertyChanged("ClientId");
+					this.OnClientIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseName", DbType="NVarChar(50)")]
+		public string CourseName
+		{
+			get
+			{
+				return this._CourseName;
+			}
+			set
+			{
+				if ((this._CourseName != value))
+				{
+					this.OnCourseNameChanging(value);
+					this.SendPropertyChanging();
+					this._CourseName = value;
+					this.SendPropertyChanged("CourseName");
+					this.OnCourseNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentBookMoney", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> StudentBookMoney
+		{
+			get
+			{
+				return this._StudentBookMoney;
+			}
+			set
+			{
+				if ((this._StudentBookMoney != value))
+				{
+					this.OnStudentBookMoneyChanging(value);
+					this.SendPropertyChanging();
+					this._StudentBookMoney = value;
+					this.SendPropertyChanged("StudentBookMoney");
+					this.OnStudentBookMoneyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(MAX)")]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
 				}
 			}
 		}
