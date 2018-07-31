@@ -39,7 +39,12 @@ namespace AlexLabBL
         {
             DbObj = new DataClassesAlexLabDataContext(ConectionString);
 
-            var obj = from ob in DbObj.Courses select ob;
+            var obj = from ob in DbObj.Courses
+                      join cli in DbObj.Clients
+                      on ob.ClientId equals cli.ClientId
+                      join courseType in DbObj.CourseTypes
+                      on ob.CourseTypeId equals courseType.CourseTypeId
+                      select new { ob.CourseId, cli.ClientName, courseType.CourseTypeDesc, ob.CourseName, ob.StudentBookMoney, ob.Notes };
             return obj;
         }
     }

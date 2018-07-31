@@ -231,9 +231,9 @@
             // 
             // trashItem
             // 
-            this.trashItem.Caption = "Trash";
+            this.trashItem.Caption = "Course";
             this.trashItem.Name = "trashItem";
-            this.trashItem.SmallImageIndex = 3;
+            this.trashItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.trashItem_LinkClicked);
             // 
             // organizerGroup
             // 
