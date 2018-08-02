@@ -28,6 +28,10 @@ namespace AlexLab
     public partial class CustomAppointmentForm : DevExpress.XtraScheduler.UI.AppointmentForm
     {
         int RoomId;
+        int CourseId;
+        decimal PaidMoney;
+        decimal TotalPrice;
+        bool IsClose;
 
         public CustomAppointmentForm()
         {
@@ -54,6 +58,24 @@ namespace AlexLab
                 lookUpRoom.EditValue = RoomId;
             }
 
+            if (appointment.CustomFields["CourseId"] != null)
+            {
+                CourseId = Convert.ToInt32(appointment.CustomFields["CourseId"]);
+                lookUpCourse.EditValue = CourseId;
+            }
+
+            if (appointment.CustomFields["PaidMoney"] != null)
+            {
+                PaidMoney = Convert.ToDecimal(appointment.CustomFields["PaidMoney"]);
+                TxtPaidMoney.Value = PaidMoney;
+            }
+
+            if (appointment.CustomFields["TotalPrice"] != null)
+            {
+                TotalPrice = Convert.ToDecimal(appointment.CustomFields["TotalPrice"]);
+                TxtTotalPrice.Value = TotalPrice;
+            }
+
             base.LoadFormData(appointment);
         }
         /// <summary>
@@ -62,6 +84,9 @@ namespace AlexLab
         public override bool SaveFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
             appointment.CustomFields["RoomId"] = lookUpRoom.EditValue;
+            appointment.CustomFields["CourseId"] = lookUpCourse.EditValue;
+            appointment.CustomFields["PaidMoney"] = TxtPaidMoney.Value;
+            appointment.CustomFields["TotalPrice"] = TxtTotalPrice.Value;
 
             return base.SaveFormData(appointment);
         }
@@ -70,7 +95,10 @@ namespace AlexLab
         /// </summary>
         public override bool IsAppointmentChanged(DevExpress.XtraScheduler.Appointment appointment)
         {
-            if (RoomId == Convert.ToInt32(appointment.CustomFields["RoomId"]))
+            if (RoomId == Convert.ToInt32(appointment.CustomFields["RoomId"]) &&
+                CourseId == Convert.ToInt32(appointment.CustomFields["CourseId"]) &&
+                PaidMoney == Convert.ToDecimal(appointment.CustomFields["PaidMoey"]) &&
+                TotalPrice == Convert.ToInt32(appointment.CustomFields["TotalMoney"]))
             {
                 return false;
             }
@@ -83,6 +111,19 @@ namespace AlexLab
         private void CustomAppointmentForm_Load(object sender, EventArgs e)
         {
             lookUpRoom.Properties.DataSource = AlexLabBL.MainClass.getRooms();
+            lookUpCourse.Properties.DataSource = AlexLabBL.MainClass.getCourses();
+        }
+
+        private void edtStartDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lookUpRoom.EditValue != null)
+            {
+                AlexLabBL.RoomClass RoomObj = new AlexLabBL.RoomClass(Convert.ToInt32(lookUpRoom.EditValue));
+
+                int days = (edtEndDate.DateTime - edtStartDate.DateTime).Days;
+
+                TxtTotalPrice.Value = ((edtEndTime.Time - edtStartTime.Time).Hours + (days * 24)) * RoomObj.HourPrice;
+            }
         }
     }
 }

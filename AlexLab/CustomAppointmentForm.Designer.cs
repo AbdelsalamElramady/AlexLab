@@ -30,6 +30,12 @@ namespace AlexLab
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lookUpRoom = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpCourse = new DevExpress.XtraEditors.LookUpEdit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtTotalPrice = new DevExpress.XtraEditors.CalcEdit();
+            this.TxtPaidMoney = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).BeginInit();
@@ -53,15 +59,18 @@ namespace AlexLab
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRoom.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPaidMoney.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSubject
             // 
-            this.lblSubject.Location = new System.Drawing.Point(16, 48);
+            this.lblSubject.Location = new System.Drawing.Point(16, 107);
             // 
             // lblLocation
             // 
-            this.lblLocation.Location = new System.Drawing.Point(16, 74);
+            this.lblLocation.Location = new System.Drawing.Point(16, 133);
             // 
             // lblLabel
             // 
@@ -69,67 +78,71 @@ namespace AlexLab
             // 
             // lblStartTime
             // 
-            this.lblStartTime.Location = new System.Drawing.Point(16, 111);
+            this.lblStartTime.Location = new System.Drawing.Point(16, 170);
             // 
             // lblEndTime
             // 
-            this.lblEndTime.Location = new System.Drawing.Point(16, 136);
+            this.lblEndTime.Location = new System.Drawing.Point(16, 195);
             // 
             // lblShowTimeAs
             // 
-            this.lblShowTimeAs.Location = new System.Drawing.Point(16, 173);
+            this.lblShowTimeAs.Location = new System.Drawing.Point(16, 232);
             // 
             // chkAllDay
             // 
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(16, 392);
+            this.btnOk.Location = new System.Drawing.Point(16, 483);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(104, 392);
+            this.btnCancel.Location = new System.Drawing.Point(104, 483);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(192, 392);
+            this.btnDelete.Location = new System.Drawing.Point(192, 483);
             // 
             // btnRecurrence
             // 
-            this.btnRecurrence.Location = new System.Drawing.Point(280, 392);
+            this.btnRecurrence.Location = new System.Drawing.Point(280, 483);
             // 
             // edtStartDate
             // 
             this.edtStartDate.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtStartDate.Location = new System.Drawing.Point(96, 108);
+            this.edtStartDate.Location = new System.Drawing.Point(96, 167);
+            this.edtStartDate.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
             // edtEndDate
             // 
             this.edtEndDate.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtEndDate.Location = new System.Drawing.Point(96, 133);
+            this.edtEndDate.Location = new System.Drawing.Point(96, 192);
+            this.edtEndDate.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
             // edtStartTime
             // 
             this.edtStartTime.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtStartTime.Location = new System.Drawing.Point(224, 109);
+            this.edtStartTime.Location = new System.Drawing.Point(224, 168);
             this.edtStartTime.Properties.Mask.EditMask = "t";
+            this.edtStartTime.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
             // edtEndTime
             // 
             this.edtEndTime.EditValue = new System.DateTime(2005, 3, 31, 0, 0, 0, 0);
-            this.edtEndTime.Location = new System.Drawing.Point(224, 133);
+            this.edtEndTime.Location = new System.Drawing.Point(224, 192);
             this.edtEndTime.Properties.Mask.EditMask = "t";
+            this.edtEndTime.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
             // edtLabel
             // 
             // 
             // edtShowTimeAs
             // 
-            this.edtShowTimeAs.Location = new System.Drawing.Point(96, 170);
+            this.edtShowTimeAs.Location = new System.Drawing.Point(96, 229);
             // 
             // tbSubject
             // 
-            this.tbSubject.Location = new System.Drawing.Point(96, 46);
+            this.tbSubject.Location = new System.Drawing.Point(96, 105);
             // 
             // edtResource
             // 
@@ -151,23 +164,23 @@ namespace AlexLab
             // 
             // tbDescription
             // 
-            this.tbDescription.Location = new System.Drawing.Point(16, 244);
-            this.tbDescription.Size = new System.Drawing.Size(496, 139);
+            this.tbDescription.Location = new System.Drawing.Point(16, 364);
+            this.tbDescription.Size = new System.Drawing.Size(496, 110);
             // 
             // cbReminder
             // 
             // 
             // tbLocation
             // 
-            this.tbLocation.Location = new System.Drawing.Point(96, 71);
+            this.tbLocation.Location = new System.Drawing.Point(96, 130);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(325, 71);
+            this.panel1.Location = new System.Drawing.Point(325, 130);
             // 
             // progressPanel
             // 
-            this.progressPanel.Location = new System.Drawing.Point(16, 196);
+            this.progressPanel.Location = new System.Drawing.Point(16, 255);
             // 
             // tbProgress
             // 
@@ -187,9 +200,9 @@ namespace AlexLab
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Room";
+            this.label1.Text = "Room:";
             // 
             // lookUpRoom
             // 
@@ -207,11 +220,82 @@ namespace AlexLab
             this.lookUpRoom.Properties.ValueMember = "RoomId";
             this.lookUpRoom.Size = new System.Drawing.Size(416, 20);
             this.lookUpRoom.TabIndex = 30;
+            this.lookUpRoom.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
+            // 
+            // lookUpCourse
+            // 
+            this.lookUpCourse.Location = new System.Drawing.Point(96, 54);
+            this.lookUpCourse.Name = "lookUpCourse";
+            this.lookUpCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpCourse.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseName", "Course name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseTypeDesc", "Course type "),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClientName", "Client name"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseId", "CourseId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StudentBookMoney", "Student book money"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Notes", "Notes")});
+            this.lookUpCourse.Properties.DisplayMember = "CourseName";
+            this.lookUpCourse.Properties.NullText = "";
+            this.lookUpCourse.Properties.ValueMember = "CourseId";
+            this.lookUpCourse.Size = new System.Drawing.Size(416, 20);
+            this.lookUpCourse.TabIndex = 32;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Course name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(273, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Paid money:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 310);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Total price:";
+            // 
+            // TxtTotalPrice
+            // 
+            this.TxtTotalPrice.Location = new System.Drawing.Point(96, 304);
+            this.TxtTotalPrice.Name = "TxtTotalPrice";
+            this.TxtTotalPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TxtTotalPrice.Size = new System.Drawing.Size(162, 20);
+            this.TxtTotalPrice.TabIndex = 35;
+            // 
+            // TxtPaidMoney
+            // 
+            this.TxtPaidMoney.Location = new System.Drawing.Point(345, 307);
+            this.TxtPaidMoney.Name = "TxtPaidMoney";
+            this.TxtPaidMoney.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TxtPaidMoney.Size = new System.Drawing.Size(167, 20);
+            this.TxtPaidMoney.TabIndex = 36;
             // 
             // CustomAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(528, 426);
+            this.ClientSize = new System.Drawing.Size(528, 517);
+            this.Controls.Add(this.TxtPaidMoney);
+            this.Controls.Add(this.TxtTotalPrice);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lookUpCourse);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lookUpRoom);
             this.Controls.Add(this.label1);
             this.Name = "CustomAppointmentForm";
@@ -237,6 +321,12 @@ namespace AlexLab
             this.Controls.SetChildIndex(this.tbDescription, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.lookUpRoom, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.lookUpCourse, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.TxtTotalPrice, 0);
+            this.Controls.SetChildIndex(this.TxtPaidMoney, 0);
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).EndInit();
@@ -262,6 +352,9 @@ namespace AlexLab
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRoom.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPaidMoney.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +364,11 @@ namespace AlexLab
 
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LookUpEdit lookUpRoom;
+        private DevExpress.XtraEditors.LookUpEdit lookUpCourse;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.CalcEdit TxtTotalPrice;
+        private DevExpress.XtraEditors.CalcEdit TxtPaidMoney;
     }
 }

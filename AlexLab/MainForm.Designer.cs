@@ -932,6 +932,10 @@
             // schedulerStorage
             // 
             this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("RoomId", "RoomId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CourseId", "CourseId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("IsClose", "IsClose"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("PaidMoney", "PaidMoney"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("TotalPrice", "TotalPrice"));
             this.schedulerStorage.Appointments.DataSource = this.appointmentsBindingSource;
             this.schedulerStorage.Appointments.Mappings.AllDay = "AllDay";
             this.schedulerStorage.Appointments.Mappings.Description = "Description";

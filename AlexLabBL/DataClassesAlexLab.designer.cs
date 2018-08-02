@@ -30,9 +30,6 @@ namespace AlexLabBL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertAppointment(Appointment instance);
-    partial void UpdateAppointment(Appointment instance);
-    partial void DeleteAppointment(Appointment instance);
     partial void InsertRoom(Room instance);
     partial void UpdateRoom(Room instance);
     partial void DeleteRoom(Room instance);
@@ -48,6 +45,9 @@ namespace AlexLabBL
     partial void InsertCourse(Course instance);
     partial void UpdateCourse(Course instance);
     partial void DeleteCourse(Course instance);
+    partial void InsertAppointment(Appointment instance);
+    partial void UpdateAppointment(Appointment instance);
+    partial void DeleteAppointment(Appointment instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -78,14 +78,6 @@ namespace AlexLabBL
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Appointment> Appointments
-		{
-			get
-			{
-				return this.GetTable<Appointment>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Room> Rooms
@@ -127,402 +119,12 @@ namespace AlexLabBL
 				return this.GetTable<Course>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Appointments")]
-	public partial class Appointment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UniqueID;
-		
-		private System.Nullable<int> _Type;
-		
-		private System.Nullable<System.DateTime> _StartDate;
-		
-		private System.Nullable<System.DateTime> _EndDate;
-		
-		private System.Nullable<bool> _AllDay;
-		
-		private string _Subject;
-		
-		private string _Location;
-		
-		private string _Description;
-		
-		private System.Nullable<int> _Status;
-		
-		private System.Nullable<int> _Label;
-		
-		private System.Nullable<int> _ResourceID;
-		
-		private string _ResourceIDs;
-		
-		private string _ReminderInfo;
-		
-		private string _RecurrenceInfo;
-		
-		private string _CustomField1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUniqueIDChanging(int value);
-    partial void OnUniqueIDChanged();
-    partial void OnTypeChanging(System.Nullable<int> value);
-    partial void OnTypeChanged();
-    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnStartDateChanged();
-    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnEndDateChanged();
-    partial void OnAllDayChanging(System.Nullable<bool> value);
-    partial void OnAllDayChanged();
-    partial void OnSubjectChanging(string value);
-    partial void OnSubjectChanged();
-    partial void OnLocationChanging(string value);
-    partial void OnLocationChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnStatusChanging(System.Nullable<int> value);
-    partial void OnStatusChanged();
-    partial void OnLabelChanging(System.Nullable<int> value);
-    partial void OnLabelChanged();
-    partial void OnResourceIDChanging(System.Nullable<int> value);
-    partial void OnResourceIDChanged();
-    partial void OnResourceIDsChanging(string value);
-    partial void OnResourceIDsChanged();
-    partial void OnReminderInfoChanging(string value);
-    partial void OnReminderInfoChanged();
-    partial void OnRecurrenceInfoChanging(string value);
-    partial void OnRecurrenceInfoChanged();
-    partial void OnCustomField1Changing(string value);
-    partial void OnCustomField1Changed();
-    #endregion
-		
-		public Appointment()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniqueID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UniqueID
+		public System.Data.Linq.Table<Appointment> Appointments
 		{
 			get
 			{
-				return this._UniqueID;
-			}
-			set
-			{
-				if ((this._UniqueID != value))
-				{
-					this.OnUniqueIDChanging(value);
-					this.SendPropertyChanging();
-					this._UniqueID = value;
-					this.SendPropertyChanged("UniqueID");
-					this.OnUniqueIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int")]
-		public System.Nullable<int> Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> StartDate
-		{
-			get
-			{
-				return this._StartDate;
-			}
-			set
-			{
-				if ((this._StartDate != value))
-				{
-					this.OnStartDateChanging(value);
-					this.SendPropertyChanging();
-					this._StartDate = value;
-					this.SendPropertyChanged("StartDate");
-					this.OnStartDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="SmallDateTime")]
-		public System.Nullable<System.DateTime> EndDate
-		{
-			get
-			{
-				return this._EndDate;
-			}
-			set
-			{
-				if ((this._EndDate != value))
-				{
-					this.OnEndDateChanging(value);
-					this.SendPropertyChanging();
-					this._EndDate = value;
-					this.SendPropertyChanged("EndDate");
-					this.OnEndDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllDay", DbType="Bit")]
-		public System.Nullable<bool> AllDay
-		{
-			get
-			{
-				return this._AllDay;
-			}
-			set
-			{
-				if ((this._AllDay != value))
-				{
-					this.OnAllDayChanging(value);
-					this.SendPropertyChanging();
-					this._AllDay = value;
-					this.SendPropertyChanged("AllDay");
-					this.OnAllDayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(50)")]
-		public string Subject
-		{
-			get
-			{
-				return this._Subject;
-			}
-			set
-			{
-				if ((this._Subject != value))
-				{
-					this.OnSubjectChanging(value);
-					this.SendPropertyChanging();
-					this._Subject = value;
-					this.SendPropertyChanged("Subject");
-					this.OnSubjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(50)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this.OnLocationChanging(value);
-					this.SendPropertyChanging();
-					this._Location = value;
-					this.SendPropertyChanged("Location");
-					this.OnLocationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Label", DbType="Int")]
-		public System.Nullable<int> Label
-		{
-			get
-			{
-				return this._Label;
-			}
-			set
-			{
-				if ((this._Label != value))
-				{
-					this.OnLabelChanging(value);
-					this.SendPropertyChanging();
-					this._Label = value;
-					this.SendPropertyChanged("Label");
-					this.OnLabelChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceID", DbType="Int")]
-		public System.Nullable<int> ResourceID
-		{
-			get
-			{
-				return this._ResourceID;
-			}
-			set
-			{
-				if ((this._ResourceID != value))
-				{
-					this.OnResourceIDChanging(value);
-					this.SendPropertyChanging();
-					this._ResourceID = value;
-					this.SendPropertyChanged("ResourceID");
-					this.OnResourceIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceIDs", DbType="NVarChar(MAX)")]
-		public string ResourceIDs
-		{
-			get
-			{
-				return this._ResourceIDs;
-			}
-			set
-			{
-				if ((this._ResourceIDs != value))
-				{
-					this.OnResourceIDsChanging(value);
-					this.SendPropertyChanging();
-					this._ResourceIDs = value;
-					this.SendPropertyChanged("ResourceIDs");
-					this.OnResourceIDsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReminderInfo", DbType="NVarChar(MAX)")]
-		public string ReminderInfo
-		{
-			get
-			{
-				return this._ReminderInfo;
-			}
-			set
-			{
-				if ((this._ReminderInfo != value))
-				{
-					this.OnReminderInfoChanging(value);
-					this.SendPropertyChanging();
-					this._ReminderInfo = value;
-					this.SendPropertyChanged("ReminderInfo");
-					this.OnReminderInfoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecurrenceInfo", DbType="NVarChar(MAX)")]
-		public string RecurrenceInfo
-		{
-			get
-			{
-				return this._RecurrenceInfo;
-			}
-			set
-			{
-				if ((this._RecurrenceInfo != value))
-				{
-					this.OnRecurrenceInfoChanging(value);
-					this.SendPropertyChanging();
-					this._RecurrenceInfo = value;
-					this.SendPropertyChanged("RecurrenceInfo");
-					this.OnRecurrenceInfoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomField1", DbType="NVarChar(MAX)")]
-		public string CustomField1
-		{
-			get
-			{
-				return this._CustomField1;
-			}
-			set
-			{
-				if ((this._CustomField1 != value))
-				{
-					this.OnCustomField1Changing(value);
-					this.SendPropertyChanging();
-					this._CustomField1 = value;
-					this.SendPropertyChanged("CustomField1");
-					this.OnCustomField1Changed();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Appointment>();
 			}
 		}
 	}
@@ -1244,6 +846,524 @@ namespace AlexLabBL
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Appointments")]
+	public partial class Appointment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UniqueID;
+		
+		private System.Nullable<int> _Type;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private System.Nullable<bool> _AllDay;
+		
+		private string _Subject;
+		
+		private string _Location;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _Status;
+		
+		private System.Nullable<int> _Label;
+		
+		private System.Nullable<int> _ResourceID;
+		
+		private string _ResourceIDs;
+		
+		private string _ReminderInfo;
+		
+		private string _RecurrenceInfo;
+		
+		private string _CustomField1;
+		
+		private System.Nullable<int> _RoomId;
+		
+		private System.Nullable<int> _CourseId;
+		
+		private System.Nullable<decimal> _PaidMoney;
+		
+		private System.Nullable<decimal> _TotalPrice;
+		
+		private System.Nullable<bool> _IsClose;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUniqueIDChanging(int value);
+    partial void OnUniqueIDChanged();
+    partial void OnTypeChanging(System.Nullable<int> value);
+    partial void OnTypeChanged();
+    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnAllDayChanging(System.Nullable<bool> value);
+    partial void OnAllDayChanged();
+    partial void OnSubjectChanging(string value);
+    partial void OnSubjectChanged();
+    partial void OnLocationChanging(string value);
+    partial void OnLocationChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnStatusChanging(System.Nullable<int> value);
+    partial void OnStatusChanged();
+    partial void OnLabelChanging(System.Nullable<int> value);
+    partial void OnLabelChanged();
+    partial void OnResourceIDChanging(System.Nullable<int> value);
+    partial void OnResourceIDChanged();
+    partial void OnResourceIDsChanging(string value);
+    partial void OnResourceIDsChanged();
+    partial void OnReminderInfoChanging(string value);
+    partial void OnReminderInfoChanged();
+    partial void OnRecurrenceInfoChanging(string value);
+    partial void OnRecurrenceInfoChanged();
+    partial void OnCustomField1Changing(string value);
+    partial void OnCustomField1Changed();
+    partial void OnRoomIdChanging(System.Nullable<int> value);
+    partial void OnRoomIdChanged();
+    partial void OnCourseIdChanging(System.Nullable<int> value);
+    partial void OnCourseIdChanged();
+    partial void OnPaidMoneyChanging(System.Nullable<decimal> value);
+    partial void OnPaidMoneyChanged();
+    partial void OnTotalPriceChanging(System.Nullable<decimal> value);
+    partial void OnTotalPriceChanged();
+    partial void OnIsCloseChanging(System.Nullable<bool> value);
+    partial void OnIsCloseChanged();
+    #endregion
+		
+		public Appointment()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UniqueID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UniqueID
+		{
+			get
+			{
+				return this._UniqueID;
+			}
+			set
+			{
+				if ((this._UniqueID != value))
+				{
+					this.OnUniqueIDChanging(value);
+					this.SendPropertyChanging();
+					this._UniqueID = value;
+					this.SendPropertyChanged("UniqueID");
+					this.OnUniqueIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Int")]
+		public System.Nullable<int> Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AllDay", DbType="Bit")]
+		public System.Nullable<bool> AllDay
+		{
+			get
+			{
+				return this._AllDay;
+			}
+			set
+			{
+				if ((this._AllDay != value))
+				{
+					this.OnAllDayChanging(value);
+					this.SendPropertyChanging();
+					this._AllDay = value;
+					this.SendPropertyChanged("AllDay");
+					this.OnAllDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject", DbType="NVarChar(50)")]
+		public string Subject
+		{
+			get
+			{
+				return this._Subject;
+			}
+			set
+			{
+				if ((this._Subject != value))
+				{
+					this.OnSubjectChanging(value);
+					this.SendPropertyChanging();
+					this._Subject = value;
+					this.SendPropertyChanged("Subject");
+					this.OnSubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(50)")]
+		public string Location
+		{
+			get
+			{
+				return this._Location;
+			}
+			set
+			{
+				if ((this._Location != value))
+				{
+					this.OnLocationChanging(value);
+					this.SendPropertyChanging();
+					this._Location = value;
+					this.SendPropertyChanged("Location");
+					this.OnLocationChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
+		public System.Nullable<int> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Label", DbType="Int")]
+		public System.Nullable<int> Label
+		{
+			get
+			{
+				return this._Label;
+			}
+			set
+			{
+				if ((this._Label != value))
+				{
+					this.OnLabelChanging(value);
+					this.SendPropertyChanging();
+					this._Label = value;
+					this.SendPropertyChanged("Label");
+					this.OnLabelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceID", DbType="Int")]
+		public System.Nullable<int> ResourceID
+		{
+			get
+			{
+				return this._ResourceID;
+			}
+			set
+			{
+				if ((this._ResourceID != value))
+				{
+					this.OnResourceIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResourceID = value;
+					this.SendPropertyChanged("ResourceID");
+					this.OnResourceIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResourceIDs", DbType="NVarChar(MAX)")]
+		public string ResourceIDs
+		{
+			get
+			{
+				return this._ResourceIDs;
+			}
+			set
+			{
+				if ((this._ResourceIDs != value))
+				{
+					this.OnResourceIDsChanging(value);
+					this.SendPropertyChanging();
+					this._ResourceIDs = value;
+					this.SendPropertyChanged("ResourceIDs");
+					this.OnResourceIDsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReminderInfo", DbType="NVarChar(MAX)")]
+		public string ReminderInfo
+		{
+			get
+			{
+				return this._ReminderInfo;
+			}
+			set
+			{
+				if ((this._ReminderInfo != value))
+				{
+					this.OnReminderInfoChanging(value);
+					this.SendPropertyChanging();
+					this._ReminderInfo = value;
+					this.SendPropertyChanged("ReminderInfo");
+					this.OnReminderInfoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecurrenceInfo", DbType="NVarChar(MAX)")]
+		public string RecurrenceInfo
+		{
+			get
+			{
+				return this._RecurrenceInfo;
+			}
+			set
+			{
+				if ((this._RecurrenceInfo != value))
+				{
+					this.OnRecurrenceInfoChanging(value);
+					this.SendPropertyChanging();
+					this._RecurrenceInfo = value;
+					this.SendPropertyChanged("RecurrenceInfo");
+					this.OnRecurrenceInfoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomField1", DbType="NVarChar(MAX)")]
+		public string CustomField1
+		{
+			get
+			{
+				return this._CustomField1;
+			}
+			set
+			{
+				if ((this._CustomField1 != value))
+				{
+					this.OnCustomField1Changing(value);
+					this.SendPropertyChanging();
+					this._CustomField1 = value;
+					this.SendPropertyChanged("CustomField1");
+					this.OnCustomField1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomId", DbType="Int")]
+		public System.Nullable<int> RoomId
+		{
+			get
+			{
+				return this._RoomId;
+			}
+			set
+			{
+				if ((this._RoomId != value))
+				{
+					this.OnRoomIdChanging(value);
+					this.SendPropertyChanging();
+					this._RoomId = value;
+					this.SendPropertyChanged("RoomId");
+					this.OnRoomIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseId", DbType="Int")]
+		public System.Nullable<int> CourseId
+		{
+			get
+			{
+				return this._CourseId;
+			}
+			set
+			{
+				if ((this._CourseId != value))
+				{
+					this.OnCourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseId = value;
+					this.SendPropertyChanged("CourseId");
+					this.OnCourseIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidMoney", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> PaidMoney
+		{
+			get
+			{
+				return this._PaidMoney;
+			}
+			set
+			{
+				if ((this._PaidMoney != value))
+				{
+					this.OnPaidMoneyChanging(value);
+					this.SendPropertyChanging();
+					this._PaidMoney = value;
+					this.SendPropertyChanged("PaidMoney");
+					this.OnPaidMoneyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> TotalPrice
+		{
+			get
+			{
+				return this._TotalPrice;
+			}
+			set
+			{
+				if ((this._TotalPrice != value))
+				{
+					this.OnTotalPriceChanging(value);
+					this.SendPropertyChanging();
+					this._TotalPrice = value;
+					this.SendPropertyChanged("TotalPrice");
+					this.OnTotalPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsClose", DbType="Bit")]
+		public System.Nullable<bool> IsClose
+		{
+			get
+			{
+				return this._IsClose;
+			}
+			set
+			{
+				if ((this._IsClose != value))
+				{
+					this.OnIsCloseChanging(value);
+					this.SendPropertyChanging();
+					this._IsClose = value;
+					this.SendPropertyChanged("IsClose");
+					this.OnIsCloseChanged();
 				}
 			}
 		}
