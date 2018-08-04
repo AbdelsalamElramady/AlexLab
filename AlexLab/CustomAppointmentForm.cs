@@ -116,14 +116,14 @@ namespace AlexLab
 
         private void edtStartDate_EditValueChanged(object sender, EventArgs e)
         {
-            if (lookUpRoom.EditValue != null)
-            {
-                AlexLabBL.RoomClass RoomObj = new AlexLabBL.RoomClass(Convert.ToInt32(lookUpRoom.EditValue));
+            //if (lookUpRoom.EditValue != null)
+            //{
+            //    AlexLabBL.RoomClass RoomObj = new AlexLabBL.RoomClass(Convert.ToInt32(lookUpRoom.EditValue));
 
-                int days = (edtEndDate.DateTime - edtStartDate.DateTime).Days;
+            //    int days = (edtEndDate.DateTime - edtStartDate.DateTime).Days;
 
-                TxtTotalPrice.Value = ((edtEndTime.Time - edtStartTime.Time).Hours + (days * 24)) * RoomObj.HourPrice;
-            }
+            //    TxtTotalPrice.Value = ((edtEndTime.Time - edtStartTime.Time).Hours + (days * 24)) * RoomObj.HourPrice;
+            //}
         }
     }
 }

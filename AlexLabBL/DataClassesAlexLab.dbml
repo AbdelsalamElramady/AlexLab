@@ -67,4 +67,15 @@
       <Column Name="IsClose" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CourseStudent" Member="CourseStudents">
+    <Type Name="CourseStudent">
+      <Column Name="CourseStudentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseStudentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CourseStudentNationalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PaidMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

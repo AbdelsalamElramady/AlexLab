@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ClientClass.cs" />
     <Compile Include="CourseClass.cs" />
+    <Compile Include="CourseStudentClass.cs" />
     <Compile Include="CourseTypeClass.cs" />
     <Compile Include="DataClassesAlexLab.designer.cs">
       <AutoGen>True</AutoGen>

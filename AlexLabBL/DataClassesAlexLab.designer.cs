@@ -48,6 +48,9 @@ namespace AlexLabBL
     partial void InsertAppointment(Appointment instance);
     partial void UpdateAppointment(Appointment instance);
     partial void DeleteAppointment(Appointment instance);
+    partial void InsertCourseStudent(CourseStudent instance);
+    partial void UpdateCourseStudent(CourseStudent instance);
+    partial void DeleteCourseStudent(CourseStudent instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -125,6 +128,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<Appointment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CourseStudent> CourseStudents
+		{
+			get
+			{
+				return this.GetTable<CourseStudent>();
 			}
 		}
 	}
@@ -1364,6 +1375,212 @@ namespace AlexLabBL
 					this._IsClose = value;
 					this.SendPropertyChanged("IsClose");
 					this.OnIsCloseChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CourseStudent")]
+	public partial class CourseStudent : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CourseStudentId;
+		
+		private string _CourseStudentName;
+		
+		private string _CourseStudentNationalId;
+		
+		private System.Nullable<int> _CourseId;
+		
+		private System.Nullable<decimal> _TotalPrice;
+		
+		private System.Nullable<decimal> _PaidMoney;
+		
+		private string _Notes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCourseStudentIdChanging(int value);
+    partial void OnCourseStudentIdChanged();
+    partial void OnCourseStudentNameChanging(string value);
+    partial void OnCourseStudentNameChanged();
+    partial void OnCourseStudentNationalIdChanging(string value);
+    partial void OnCourseStudentNationalIdChanged();
+    partial void OnCourseIdChanging(System.Nullable<int> value);
+    partial void OnCourseIdChanged();
+    partial void OnTotalPriceChanging(System.Nullable<decimal> value);
+    partial void OnTotalPriceChanged();
+    partial void OnPaidMoneyChanging(System.Nullable<decimal> value);
+    partial void OnPaidMoneyChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    #endregion
+		
+		public CourseStudent()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseStudentId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CourseStudentId
+		{
+			get
+			{
+				return this._CourseStudentId;
+			}
+			set
+			{
+				if ((this._CourseStudentId != value))
+				{
+					this.OnCourseStudentIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseStudentId = value;
+					this.SendPropertyChanged("CourseStudentId");
+					this.OnCourseStudentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseStudentName", DbType="NVarChar(50)")]
+		public string CourseStudentName
+		{
+			get
+			{
+				return this._CourseStudentName;
+			}
+			set
+			{
+				if ((this._CourseStudentName != value))
+				{
+					this.OnCourseStudentNameChanging(value);
+					this.SendPropertyChanging();
+					this._CourseStudentName = value;
+					this.SendPropertyChanged("CourseStudentName");
+					this.OnCourseStudentNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseStudentNationalId", DbType="NVarChar(50)")]
+		public string CourseStudentNationalId
+		{
+			get
+			{
+				return this._CourseStudentNationalId;
+			}
+			set
+			{
+				if ((this._CourseStudentNationalId != value))
+				{
+					this.OnCourseStudentNationalIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseStudentNationalId = value;
+					this.SendPropertyChanged("CourseStudentNationalId");
+					this.OnCourseStudentNationalIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CourseId", DbType="Int")]
+		public System.Nullable<int> CourseId
+		{
+			get
+			{
+				return this._CourseId;
+			}
+			set
+			{
+				if ((this._CourseId != value))
+				{
+					this.OnCourseIdChanging(value);
+					this.SendPropertyChanging();
+					this._CourseId = value;
+					this.SendPropertyChanged("CourseId");
+					this.OnCourseIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> TotalPrice
+		{
+			get
+			{
+				return this._TotalPrice;
+			}
+			set
+			{
+				if ((this._TotalPrice != value))
+				{
+					this.OnTotalPriceChanging(value);
+					this.SendPropertyChanging();
+					this._TotalPrice = value;
+					this.SendPropertyChanged("TotalPrice");
+					this.OnTotalPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidMoney", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> PaidMoney
+		{
+			get
+			{
+				return this._PaidMoney;
+			}
+			set
+			{
+				if ((this._PaidMoney != value))
+				{
+					this.OnPaidMoneyChanging(value);
+					this.SendPropertyChanging();
+					this._PaidMoney = value;
+					this.SendPropertyChanged("PaidMoney");
+					this.OnPaidMoneyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(MAX)")]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
 				}
 			}
 		}
