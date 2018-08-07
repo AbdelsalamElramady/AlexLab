@@ -40,6 +40,7 @@
             this.outboxItem = new DevExpress.XtraNavBar.NavBarItem();
             this.draftsItem = new DevExpress.XtraNavBar.NavBarItem();
             this.trashItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.organizerGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.calendarItem = new DevExpress.XtraNavBar.NavBarItem();
             this.tasksItem = new DevExpress.XtraNavBar.NavBarItem();
@@ -188,7 +189,8 @@
             this.draftsItem,
             this.trashItem,
             this.calendarItem,
-            this.tasksItem});
+            this.tasksItem,
+            this.navBarItem1});
             this.navBarControl.LargeImages = this.navbarImageCollectionLarge;
             this.navBarControl.Location = new System.Drawing.Point(0, 0);
             this.navBarControl.Name = "navBarControl";
@@ -208,7 +210,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.inboxItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.outboxItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.draftsItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.trashItem)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.trashItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.mailGroup.Name = "mailGroup";
             // 
             // inboxItem
@@ -234,6 +237,12 @@
             this.trashItem.Caption = "Course";
             this.trashItem.Name = "trashItem";
             this.trashItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.trashItem_LinkClicked);
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Course students";
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // organizerGroup
             // 
@@ -1188,5 +1197,6 @@
         private AlexLabDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
         private System.Windows.Forms.BindingSource resourcesBindingSource;
         private AlexLabDataSetTableAdapters.ResourcesTableAdapter resourcesTableAdapter;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
     }
 }

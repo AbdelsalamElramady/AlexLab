@@ -47,5 +47,16 @@ namespace AlexLabBL
                       select new { ob.CourseId, cli.ClientName, courseType.CourseTypeDesc, ob.CourseName, ob.StudentBookMoney, ob.Notes };
             return obj;
         }
+
+        public static object getCourseStudents()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.CourseStudents
+                      join course in DbObj.Courses
+                      on ob.CourseId equals course.CourseId
+                      select new { ob.CourseStudentId, ob.CourseId, course.CourseName, ob.CourseStudentName, ob.CourseStudentNationalId, ob.Notes, ob.PaidMoney, ob.TotalPrice };
+            return obj;
+        }
     }
 }
