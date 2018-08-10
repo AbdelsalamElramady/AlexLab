@@ -58,5 +58,13 @@ namespace AlexLabBL
                       select new { ob.CourseStudentId, ob.CourseId, course.CourseName, ob.CourseStudentName, ob.CourseStudentNationalId, ob.Notes, ob.PaidMoney, ob.TotalPrice };
             return obj;
         }
+
+        public static object getSafes()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Safes select ob;
+            return obj;
+        }
     }
 }

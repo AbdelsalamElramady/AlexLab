@@ -51,6 +51,9 @@ namespace AlexLabBL
     partial void InsertCourseStudent(CourseStudent instance);
     partial void UpdateCourseStudent(CourseStudent instance);
     partial void DeleteCourseStudent(CourseStudent instance);
+    partial void InsertSafe(Safe instance);
+    partial void UpdateSafe(Safe instance);
+    partial void DeleteSafe(Safe instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -136,6 +139,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<CourseStudent>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Safe> Safes
+		{
+			get
+			{
+				return this.GetTable<Safe>();
 			}
 		}
 	}
@@ -1581,6 +1592,212 @@ namespace AlexLabBL
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Safe")]
+	public partial class Safe : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _SafeId;
+		
+		private System.Nullable<System.DateTime> _OpenDate;
+		
+		private System.Nullable<decimal> _OpenValue;
+		
+		private System.Nullable<decimal> _CurrentValue;
+		
+		private System.Nullable<System.DateTime> _CloseDate;
+		
+		private System.Nullable<decimal> _CloseValue;
+		
+		private System.Nullable<bool> _IsClose;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnSafeIdChanging(int value);
+    partial void OnSafeIdChanged();
+    partial void OnOpenDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnOpenDateChanged();
+    partial void OnOpenValueChanging(System.Nullable<decimal> value);
+    partial void OnOpenValueChanged();
+    partial void OnCurrentValueChanging(System.Nullable<decimal> value);
+    partial void OnCurrentValueChanged();
+    partial void OnCloseDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCloseDateChanged();
+    partial void OnCloseValueChanging(System.Nullable<decimal> value);
+    partial void OnCloseValueChanged();
+    partial void OnIsCloseChanging(System.Nullable<bool> value);
+    partial void OnIsCloseChanged();
+    #endregion
+		
+		public Safe()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SafeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int SafeId
+		{
+			get
+			{
+				return this._SafeId;
+			}
+			set
+			{
+				if ((this._SafeId != value))
+				{
+					this.OnSafeIdChanging(value);
+					this.SendPropertyChanging();
+					this._SafeId = value;
+					this.SendPropertyChanged("SafeId");
+					this.OnSafeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpenDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> OpenDate
+		{
+			get
+			{
+				return this._OpenDate;
+			}
+			set
+			{
+				if ((this._OpenDate != value))
+				{
+					this.OnOpenDateChanging(value);
+					this.SendPropertyChanging();
+					this._OpenDate = value;
+					this.SendPropertyChanged("OpenDate");
+					this.OnOpenDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpenValue", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> OpenValue
+		{
+			get
+			{
+				return this._OpenValue;
+			}
+			set
+			{
+				if ((this._OpenValue != value))
+				{
+					this.OnOpenValueChanging(value);
+					this.SendPropertyChanging();
+					this._OpenValue = value;
+					this.SendPropertyChanged("OpenValue");
+					this.OnOpenValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CurrentValue", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> CurrentValue
+		{
+			get
+			{
+				return this._CurrentValue;
+			}
+			set
+			{
+				if ((this._CurrentValue != value))
+				{
+					this.OnCurrentValueChanging(value);
+					this.SendPropertyChanging();
+					this._CurrentValue = value;
+					this.SendPropertyChanged("CurrentValue");
+					this.OnCurrentValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CloseDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CloseDate
+		{
+			get
+			{
+				return this._CloseDate;
+			}
+			set
+			{
+				if ((this._CloseDate != value))
+				{
+					this.OnCloseDateChanging(value);
+					this.SendPropertyChanging();
+					this._CloseDate = value;
+					this.SendPropertyChanged("CloseDate");
+					this.OnCloseDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CloseValue", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> CloseValue
+		{
+			get
+			{
+				return this._CloseValue;
+			}
+			set
+			{
+				if ((this._CloseValue != value))
+				{
+					this.OnCloseValueChanging(value);
+					this.SendPropertyChanging();
+					this._CloseValue = value;
+					this.SendPropertyChanged("CloseValue");
+					this.OnCloseValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsClose", DbType="Bit")]
+		public System.Nullable<bool> IsClose
+		{
+			get
+			{
+				return this._IsClose;
+			}
+			set
+			{
+				if ((this._IsClose != value))
+				{
+					this.OnIsCloseChanging(value);
+					this.SendPropertyChanging();
+					this._IsClose = value;
+					this.SendPropertyChanged("IsClose");
+					this.OnIsCloseChanged();
 				}
 			}
 		}
