@@ -94,5 +94,10 @@ namespace AlexLab
         {
             new CourseStudentForm().ShowDialog();
         }
+
+        private void calendarItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new SafeForm().ShowDialog();
+        }
     }
 }

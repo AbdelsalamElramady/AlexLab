@@ -246,19 +246,18 @@
             // 
             // organizerGroup
             // 
-            this.organizerGroup.Caption = "Organizer";
+            this.organizerGroup.Caption = "Safe";
             this.organizerGroup.Expanded = true;
             this.organizerGroup.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.calendarItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.tasksItem)});
-            this.organizerGroup.LargeImageIndex = 1;
             this.organizerGroup.Name = "organizerGroup";
             // 
             // calendarItem
             // 
-            this.calendarItem.Caption = "Calendar";
+            this.calendarItem.Caption = "Safe";
             this.calendarItem.Name = "calendarItem";
-            this.calendarItem.SmallImageIndex = 4;
+            this.calendarItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.calendarItem_LinkClicked);
             // 
             // tasksItem
             // 

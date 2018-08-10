@@ -136,6 +136,12 @@
     <Compile Include="RoomsForm.Designer.cs">
       <DependentUpon>RoomsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SafeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SafeForm.Designer.cs">
+      <DependentUpon>SafeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SafeForm.resx">
+      <DependentUpon>SafeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AlexLabDataSet.xsc">
       <DependentUpon>AlexLabDataSet.xsd</DependentUpon>

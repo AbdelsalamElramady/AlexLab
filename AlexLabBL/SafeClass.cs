@@ -96,5 +96,75 @@ namespace AlexLabBL
                 return Insert();
             }
         }
+
+        public bool Open()
+        {
+            try
+            {
+                var safe = from sa in MainClass.DbObj.Safes orderby sa.SafeId descending select sa;
+
+                Safe s = new Safe();
+
+                if (!safe.Any())
+                {
+                    s.OpenDate = DateTime.Now;
+                    s.OpenValue = 0;
+                    s.CurrentValue = 0;
+                    s.IsClose = false;
+                }
+                else if (safe.First().IsClose == false)
+                {
+                    return false;
+                }
+                else
+                {
+                    s.OpenDate = DateTime.Now;
+                    s.OpenValue = safe.First().CloseValue;
+                    s.CurrentValue = safe.First().CloseValue;
+                    s.IsClose = false;
+                }
+
+
+                MainClass.DbObj.Safes.InsertOnSubmit(s);
+                MainClass.DbObj.SubmitChanges();
+
+                SafeId = s.SafeId;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool Close()
+        {
+            try
+            {
+                var safe = from s in MainClass.DbObj.Safes orderby s.SafeId descending select s;
+
+                if (!safe.Any() || safe.First().IsClose == true)
+                {
+                    return false;
+                }
+                else
+                {
+                    safe.First().CloseValue = safe.First().CurrentValue;
+                    safe.First().CloseDate = DateTime.Now;
+                    safe.First().IsClose = true;
+                }
+
+                MainClass.DbObj.SubmitChanges();
+
+                SafeId = safe.First().SafeId;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

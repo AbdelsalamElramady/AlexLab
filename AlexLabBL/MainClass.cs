@@ -66,5 +66,19 @@ namespace AlexLabBL
             var obj = from ob in DbObj.Safes select ob;
             return obj;
         }
+
+        public static decimal getSafeCurrentValue()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Safes orderby ob.SafeId descending select ob;
+
+            if (!obj.Any())
+            {
+                return 0;
+            }
+
+            return Convert.ToDecimal(obj.First().CurrentValue);
+        }
     }
 }
