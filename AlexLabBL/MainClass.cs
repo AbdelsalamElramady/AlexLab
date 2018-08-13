@@ -80,5 +80,13 @@ namespace AlexLabBL
 
             return Convert.ToDecimal(obj.First().CurrentValue);
         }
+
+        public static object getExpences()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Expences select ob;
+            return obj;
+        }
     }
 }

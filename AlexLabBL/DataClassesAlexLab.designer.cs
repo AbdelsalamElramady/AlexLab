@@ -54,6 +54,9 @@ namespace AlexLabBL
     partial void InsertSafe(Safe instance);
     partial void UpdateSafe(Safe instance);
     partial void DeleteSafe(Safe instance);
+    partial void InsertExpence(Expence instance);
+    partial void UpdateExpence(Expence instance);
+    partial void DeleteExpence(Expence instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -147,6 +150,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<Safe>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Expence> Expences
+		{
+			get
+			{
+				return this.GetTable<Expence>();
 			}
 		}
 	}
@@ -1798,6 +1809,92 @@ namespace AlexLabBL
 					this._IsClose = value;
 					this.SendPropertyChanged("IsClose");
 					this.OnIsCloseChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Expences")]
+	public partial class Expence : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ExpencesId;
+		
+		private string _ExpencesDesc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnExpencesIdChanging(int value);
+    partial void OnExpencesIdChanged();
+    partial void OnExpencesDescChanging(string value);
+    partial void OnExpencesDescChanged();
+    #endregion
+		
+		public Expence()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ExpencesId
+		{
+			get
+			{
+				return this._ExpencesId;
+			}
+			set
+			{
+				if ((this._ExpencesId != value))
+				{
+					this.OnExpencesIdChanging(value);
+					this.SendPropertyChanging();
+					this._ExpencesId = value;
+					this.SendPropertyChanged("ExpencesId");
+					this.OnExpencesIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesDesc", DbType="NVarChar(50)")]
+		public string ExpencesDesc
+		{
+			get
+			{
+				return this._ExpencesDesc;
+			}
+			set
+			{
+				if ((this._ExpencesDesc != value))
+				{
+					this.OnExpencesDescChanging(value);
+					this.SendPropertyChanging();
+					this._ExpencesDesc = value;
+					this.SendPropertyChanged("ExpencesDesc");
+					this.OnExpencesDescChanged();
 				}
 			}
 		}
