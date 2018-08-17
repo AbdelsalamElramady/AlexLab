@@ -89,9 +89,9 @@
       <Column Name="IsClose" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Expences" Member="Expences">
-    <Type Name="Expence">
-      <Column Name="ExpencesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+  <Table Name="dbo.ExpencesType" Member="ExpencesTypes">
+    <Type Name="ExpencesType">
+      <Column Name="ExpencesTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ExpencesDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>

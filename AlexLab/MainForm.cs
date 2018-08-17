@@ -99,5 +99,10 @@ namespace AlexLab
         {
             new SafeForm().ShowDialog();
         }
+
+        private void tasksItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new ExpencesTypeForm().ShowDialog();
+        }
     }
 }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace AlexLabBL
 {
-    public class ExpencesClass
+    public class ExpencesTypeClass
     {
-        public int ExpencesId { get; set; }
+        public int ExpencesTypeId { get; set; }
         public string ExpencesDesc { get; set; }
 
-        public ExpencesClass()
+        public ExpencesTypeClass()
         {
             MainClass.DbObj = new DataClassesAlexLabDataContext(MainClass.ConectionString);
         }
 
-        public ExpencesClass(int expencesId)
+        public ExpencesTypeClass(int expencesTypeId)
         {
             MainClass.DbObj = new DataClassesAlexLabDataContext(MainClass.ConectionString);
 
-            var type = (from r in MainClass.DbObj.Expences where r.ExpencesId == expencesId select r).First();
+            var type = (from r in MainClass.DbObj.ExpencesTypes where r.ExpencesTypeId == expencesTypeId select r).First();
 
-            ExpencesId = type.ExpencesId;
+            ExpencesTypeId = type.ExpencesTypeId;
             ExpencesDesc = type.ExpencesDesc;
         }
 
@@ -30,14 +30,14 @@ namespace AlexLabBL
         {
             try
             {
-                Expence roo = new Expence();
+                ExpencesType roo = new ExpencesType();
 
                 roo.ExpencesDesc = ExpencesDesc;
 
-                MainClass.DbObj.Expences.InsertOnSubmit(roo);
+                MainClass.DbObj.ExpencesTypes.InsertOnSubmit(roo);
                 MainClass.DbObj.SubmitChanges();
 
-                ExpencesId = roo.ExpencesId;
+                ExpencesTypeId = roo.ExpencesTypeId;
 
                 return true;
             }
@@ -51,7 +51,7 @@ namespace AlexLabBL
         {
             try
             {
-                var roo = (from c in MainClass.DbObj.Expences where c.ExpencesId == ExpencesId select c).First();
+                var roo = (from c in MainClass.DbObj.ExpencesTypes where c.ExpencesTypeId == ExpencesTypeId select c).First();
 
                 roo.ExpencesDesc = ExpencesDesc;
 

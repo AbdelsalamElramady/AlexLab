@@ -261,9 +261,9 @@
             // 
             // tasksItem
             // 
-            this.tasksItem.Caption = "Tasks";
+            this.tasksItem.Caption = "Expences type";
             this.tasksItem.Name = "tasksItem";
-            this.tasksItem.SmallImageIndex = 5;
+            this.tasksItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.tasksItem_LinkClicked);
             // 
             // navbarImageCollectionLarge
             // 

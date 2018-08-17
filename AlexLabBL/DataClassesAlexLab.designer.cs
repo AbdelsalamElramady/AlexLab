@@ -54,9 +54,9 @@ namespace AlexLabBL
     partial void InsertSafe(Safe instance);
     partial void UpdateSafe(Safe instance);
     partial void DeleteSafe(Safe instance);
-    partial void InsertExpence(Expence instance);
-    partial void UpdateExpence(Expence instance);
-    partial void DeleteExpence(Expence instance);
+    partial void InsertExpencesType(ExpencesType instance);
+    partial void UpdateExpencesType(ExpencesType instance);
+    partial void DeleteExpencesType(ExpencesType instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -153,11 +153,11 @@ namespace AlexLabBL
 			}
 		}
 		
-		public System.Data.Linq.Table<Expence> Expences
+		public System.Data.Linq.Table<ExpencesType> ExpencesTypes
 		{
 			get
 			{
-				return this.GetTable<Expence>();
+				return this.GetTable<ExpencesType>();
 			}
 		}
 	}
@@ -1834,13 +1834,13 @@ namespace AlexLabBL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Expences")]
-	public partial class Expence : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ExpencesType")]
+	public partial class ExpencesType : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ExpencesId;
+		private int _ExpencesTypeId;
 		
 		private string _ExpencesDesc;
 		
@@ -1848,33 +1848,33 @@ namespace AlexLabBL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnExpencesIdChanging(int value);
-    partial void OnExpencesIdChanged();
+    partial void OnExpencesTypeIdChanging(int value);
+    partial void OnExpencesTypeIdChanged();
     partial void OnExpencesDescChanging(string value);
     partial void OnExpencesDescChanged();
     #endregion
 		
-		public Expence()
+		public ExpencesType()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ExpencesId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ExpencesTypeId
 		{
 			get
 			{
-				return this._ExpencesId;
+				return this._ExpencesTypeId;
 			}
 			set
 			{
-				if ((this._ExpencesId != value))
+				if ((this._ExpencesTypeId != value))
 				{
-					this.OnExpencesIdChanging(value);
+					this.OnExpencesTypeIdChanging(value);
 					this.SendPropertyChanging();
-					this._ExpencesId = value;
-					this.SendPropertyChanged("ExpencesId");
-					this.OnExpencesIdChanged();
+					this._ExpencesTypeId = value;
+					this.SendPropertyChanged("ExpencesTypeId");
+					this.OnExpencesTypeIdChanged();
 				}
 			}
 		}
