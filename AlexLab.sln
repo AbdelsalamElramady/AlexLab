@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexLab", "AlexLab\AlexLab.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexLabBL", "AlexLabBL\AlexLabBL.csproj", "{1D8D3FDF-7A86-4570-93FD-66937531CCF7}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AlexLab Setup", "AlexLab Setup\AlexLab Setup.vdproj", "{EF44AC77-8B64-4E53-8D59-D3E09C48C44B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{1D8D3FDF-7A86-4570-93FD-66937531CCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D8D3FDF-7A86-4570-93FD-66937531CCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D8D3FDF-7A86-4570-93FD-66937531CCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF44AC77-8B64-4E53-8D59-D3E09C48C44B}.Debug|Any CPU.ActiveCfg = Debug
+		{EF44AC77-8B64-4E53-8D59-D3E09C48C44B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesAlexLab.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ExpencesClass.cs" />
     <Compile Include="ExpencesTypeClass.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

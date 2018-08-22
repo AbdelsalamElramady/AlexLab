@@ -57,6 +57,9 @@ namespace AlexLabBL
     partial void InsertExpencesType(ExpencesType instance);
     partial void UpdateExpencesType(ExpencesType instance);
     partial void DeleteExpencesType(ExpencesType instance);
+    partial void InsertExpence(Expence instance);
+    partial void UpdateExpence(Expence instance);
+    partial void DeleteExpence(Expence instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -158,6 +161,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<ExpencesType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Expence> Expences
+		{
+			get
+			{
+				return this.GetTable<Expence>();
 			}
 		}
 	}
@@ -1895,6 +1906,164 @@ namespace AlexLabBL
 					this._ExpencesDesc = value;
 					this.SendPropertyChanged("ExpencesDesc");
 					this.OnExpencesDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Expences")]
+	public partial class Expence : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ExpencesId;
+		
+		private System.Nullable<int> _ExpencesTypeId;
+		
+		private System.Nullable<System.DateTime> _ExpencesDate;
+		
+		private System.Nullable<decimal> _ExpencesValue;
+		
+		private string _Notes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnExpencesIdChanging(int value);
+    partial void OnExpencesIdChanged();
+    partial void OnExpencesTypeIdChanging(System.Nullable<int> value);
+    partial void OnExpencesTypeIdChanged();
+    partial void OnExpencesDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnExpencesDateChanged();
+    partial void OnExpencesValueChanging(System.Nullable<decimal> value);
+    partial void OnExpencesValueChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    #endregion
+		
+		public Expence()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ExpencesId
+		{
+			get
+			{
+				return this._ExpencesId;
+			}
+			set
+			{
+				if ((this._ExpencesId != value))
+				{
+					this.OnExpencesIdChanging(value);
+					this.SendPropertyChanging();
+					this._ExpencesId = value;
+					this.SendPropertyChanged("ExpencesId");
+					this.OnExpencesIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesTypeId", DbType="Int")]
+		public System.Nullable<int> ExpencesTypeId
+		{
+			get
+			{
+				return this._ExpencesTypeId;
+			}
+			set
+			{
+				if ((this._ExpencesTypeId != value))
+				{
+					this.OnExpencesTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._ExpencesTypeId = value;
+					this.SendPropertyChanged("ExpencesTypeId");
+					this.OnExpencesTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpencesDate
+		{
+			get
+			{
+				return this._ExpencesDate;
+			}
+			set
+			{
+				if ((this._ExpencesDate != value))
+				{
+					this.OnExpencesDateChanging(value);
+					this.SendPropertyChanging();
+					this._ExpencesDate = value;
+					this.SendPropertyChanged("ExpencesDate");
+					this.OnExpencesDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpencesValue", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> ExpencesValue
+		{
+			get
+			{
+				return this._ExpencesValue;
+			}
+			set
+			{
+				if ((this._ExpencesValue != value))
+				{
+					this.OnExpencesValueChanging(value);
+					this.SendPropertyChanging();
+					this._ExpencesValue = value;
+					this.SendPropertyChanged("ExpencesValue");
+					this.OnExpencesValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(MAX)")]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
 				}
 			}
 		}

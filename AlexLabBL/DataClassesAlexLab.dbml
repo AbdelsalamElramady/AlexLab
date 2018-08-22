@@ -95,4 +95,13 @@
       <Column Name="ExpencesDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Expences" Member="Expences">
+    <Type Name="Expence">
+      <Column Name="ExpencesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExpencesTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpencesDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExpencesValue" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
