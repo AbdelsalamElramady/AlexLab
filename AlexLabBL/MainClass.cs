@@ -81,11 +81,36 @@ namespace AlexLabBL
             return Convert.ToDecimal(obj.First().CurrentValue);
         }
 
+        public static bool CheckSafeIsClose()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Safes orderby ob.SafeId descending select ob;
+
+            if (!obj.Any())
+            {
+                return false;
+            }
+
+            return Convert.ToBoolean(obj.First().IsClose);
+        }
+
         public static object getExpencesType()
         {
             DbObj = new DataClassesAlexLabDataContext(ConectionString);
 
             var obj = from ob in DbObj.ExpencesTypes select ob;
+            return obj;
+        }
+
+        public static object getExpences()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Expences
+                      join eT in DbObj.ExpencesTypes
+                      on ob.ExpencesTypeId equals eT.ExpencesTypeId
+                      select new { eT.ExpencesDesc, ob.ExpencesDate, ob.ExpencesId, ob.ExpencesValue, ob.Notes };
             return obj;
         }
     }

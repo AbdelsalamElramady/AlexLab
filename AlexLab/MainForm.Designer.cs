@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
             this.mailGroup = new DevExpress.XtraNavBar.NavBarGroup();
@@ -134,6 +134,7 @@
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             this.appointmentsTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.AppointmentsTableAdapter();
             this.resourcesTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.ResourcesTableAdapter();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -190,7 +191,8 @@
             this.trashItem,
             this.calendarItem,
             this.tasksItem,
-            this.navBarItem1});
+            this.navBarItem1,
+            this.navBarItem2});
             this.navBarControl.LargeImages = this.navbarImageCollectionLarge;
             this.navBarControl.Location = new System.Drawing.Point(0, 0);
             this.navBarControl.Name = "navBarControl";
@@ -201,6 +203,7 @@
             this.navBarControl.StoreDefaultPaintStyleName = true;
             this.navBarControl.TabIndex = 0;
             this.navBarControl.Text = "navBarControl1";
+            this.navBarControl.Click += new System.EventHandler(this.navBarControl_Click);
             // 
             // mailGroup
             // 
@@ -250,7 +253,8 @@
             this.organizerGroup.Expanded = true;
             this.organizerGroup.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.calendarItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.tasksItem)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.tasksItem),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.organizerGroup.Name = "organizerGroup";
             // 
             // calendarItem
@@ -309,12 +313,12 @@
             this.schedulerControl.Storage = this.schedulerStorage;
             this.schedulerControl.TabIndex = 0;
             this.schedulerControl.Text = "schedulerControl1";
-            this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler1);
+            this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler4);
             this.schedulerControl.Views.FullWeekView.Enabled = true;
-            this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
+            this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler5);
             this.schedulerControl.Views.TimelineView.Enabled = false;
             this.schedulerControl.Views.WeekView.Enabled = false;
-            this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
             this.schedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl_EditAppointmentFormShowing);
             // 
             // ribbonControl
@@ -1045,6 +1049,12 @@
             // 
             this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Expences";
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -1197,5 +1207,6 @@
         private System.Windows.Forms.BindingSource resourcesBindingSource;
         private AlexLabDataSetTableAdapters.ResourcesTableAdapter resourcesTableAdapter;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
     }
 }

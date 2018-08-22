@@ -66,14 +66,14 @@ namespace AlexLabBL
         {
             try
             {
-                var roo = (from c in MainClass.DbObj.Safes where c.SafeId == SafeId select c).First();
+                var roo = from sa in MainClass.DbObj.Safes orderby sa.SafeId descending select sa;
+                
+                roo.First().CurrentValue -= CurrentValue;
 
-                roo.OpenValue = OpenValue;
-                roo.OpenDate = OpenDate;
-                roo.CurrentValue = CurrentValue;
-                roo.CloseValue = CloseValue;
-                roo.CloseDate = CloseDate;
-                roo.IsClose = IsClose;
+                if (roo.First().IsClose == true)
+                {
+                    return false;
+                }
 
                 MainClass.DbObj.SubmitChanges();
 

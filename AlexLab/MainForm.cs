@@ -49,6 +49,10 @@ namespace AlexLab
         {
             MessageBox.Show("لم يتم الحفظ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        public static void MessageErrorSafe()
+        {
+            MessageBox.Show("من فضلك افتح الخزنه اولا", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         private void schedulerStorage_AppointmentsChanged(object sender, DevExpress.XtraScheduler.PersistentObjectsEventArgs e)
         {
@@ -103,6 +107,16 @@ namespace AlexLab
         private void tasksItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             new ExpencesTypeForm().ShowDialog();
+        }
+
+        private void navBarControl_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new ExpencesForm().ShowDialog();
         }
     }
 }
