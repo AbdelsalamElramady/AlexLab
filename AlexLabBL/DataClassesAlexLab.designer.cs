@@ -60,6 +60,9 @@ namespace AlexLabBL
     partial void InsertExpence(Expence instance);
     partial void UpdateExpence(Expence instance);
     partial void DeleteExpence(Expence instance);
+    partial void InsertPayment(Payment instance);
+    partial void UpdatePayment(Payment instance);
+    partial void DeletePayment(Payment instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -169,6 +172,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<Expence>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Payment> Payments
+		{
+			get
+			{
+				return this.GetTable<Payment>();
 			}
 		}
 	}
@@ -2044,6 +2055,212 @@ namespace AlexLabBL
 					this._ExpencesValue = value;
 					this.SendPropertyChanged("ExpencesValue");
 					this.OnExpencesValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(MAX)")]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment")]
+	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PaymentId;
+		
+		private System.Nullable<int> _PaymentTypeId;
+		
+		private System.Nullable<int> _ClientWorkSpaceId;
+		
+		private System.Nullable<int> _AppointmentId;
+		
+		private System.Nullable<decimal> _PaymentValue;
+		
+		private System.Nullable<System.DateTime> _PaymentDate;
+		
+		private string _Notes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPaymentIdChanging(int value);
+    partial void OnPaymentIdChanged();
+    partial void OnPaymentTypeIdChanging(System.Nullable<int> value);
+    partial void OnPaymentTypeIdChanged();
+    partial void OnClientWorkSpaceIdChanging(System.Nullable<int> value);
+    partial void OnClientWorkSpaceIdChanged();
+    partial void OnAppointmentIdChanging(System.Nullable<int> value);
+    partial void OnAppointmentIdChanged();
+    partial void OnPaymentValueChanging(System.Nullable<decimal> value);
+    partial void OnPaymentValueChanged();
+    partial void OnPaymentDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnPaymentDateChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    #endregion
+		
+		public Payment()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PaymentId
+		{
+			get
+			{
+				return this._PaymentId;
+			}
+			set
+			{
+				if ((this._PaymentId != value))
+				{
+					this.OnPaymentIdChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentId = value;
+					this.SendPropertyChanged("PaymentId");
+					this.OnPaymentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentTypeId", DbType="Int")]
+		public System.Nullable<int> PaymentTypeId
+		{
+			get
+			{
+				return this._PaymentTypeId;
+			}
+			set
+			{
+				if ((this._PaymentTypeId != value))
+				{
+					this.OnPaymentTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentTypeId = value;
+					this.SendPropertyChanged("PaymentTypeId");
+					this.OnPaymentTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientWorkSpaceId", DbType="Int")]
+		public System.Nullable<int> ClientWorkSpaceId
+		{
+			get
+			{
+				return this._ClientWorkSpaceId;
+			}
+			set
+			{
+				if ((this._ClientWorkSpaceId != value))
+				{
+					this.OnClientWorkSpaceIdChanging(value);
+					this.SendPropertyChanging();
+					this._ClientWorkSpaceId = value;
+					this.SendPropertyChanged("ClientWorkSpaceId");
+					this.OnClientWorkSpaceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppointmentId", DbType="Int")]
+		public System.Nullable<int> AppointmentId
+		{
+			get
+			{
+				return this._AppointmentId;
+			}
+			set
+			{
+				if ((this._AppointmentId != value))
+				{
+					this.OnAppointmentIdChanging(value);
+					this.SendPropertyChanging();
+					this._AppointmentId = value;
+					this.SendPropertyChanged("AppointmentId");
+					this.OnAppointmentIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentValue", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> PaymentValue
+		{
+			get
+			{
+				return this._PaymentValue;
+			}
+			set
+			{
+				if ((this._PaymentValue != value))
+				{
+					this.OnPaymentValueChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentValue = value;
+					this.SendPropertyChanged("PaymentValue");
+					this.OnPaymentValueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PaymentDate
+		{
+			get
+			{
+				return this._PaymentDate;
+			}
+			set
+			{
+				if ((this._PaymentDate != value))
+				{
+					this.OnPaymentDateChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentDate = value;
+					this.SendPropertyChanged("PaymentDate");
+					this.OnPaymentDateChanged();
 				}
 			}
 		}
