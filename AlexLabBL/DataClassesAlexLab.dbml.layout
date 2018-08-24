@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.625" name="DataClassesAlexLab">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 15" name="DataClassesAlexLab">
   <DataContextMoniker Name="/DataClassesAlexLabDataContext" />
   <nestedChildShapes>
     <classShape Id="c8c7eeec-ab05-4042-a82f-87987a6dda2f" absoluteBounds="3.75, 0.5, 2, 1.5785953776041666">
@@ -72,6 +72,12 @@
       <DataClassMoniker Name="/DataClassesAlexLabDataContext/PaymentType" />
       <nestedChildShapes>
         <elementListCompartment Id="83187d51-0f69-4568-bcb3-fccdfa23ddb0" absoluteBounds="3.765, 12.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f0c6bd38-fcbb-4cd7-9931-9022385ff611" absoluteBounds="0.5, 13, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClassesAlexLabDataContext/ClientWorkSpace" />
+      <nestedChildShapes>
+        <elementListCompartment Id="992149f1-2834-41ba-880a-42d8b48bf10f" absoluteBounds="0.51500000000000012, 13.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

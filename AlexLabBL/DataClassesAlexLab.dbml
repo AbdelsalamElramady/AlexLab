@@ -121,4 +121,13 @@
       <Column Name="PaymentTypeDesc" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ClientWorkSpace" Member="ClientWorkSpaces">
+    <Type Name="ClientWorkSpace">
+      <Column Name="ClientWorkSpaceId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClientWorkSpaceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ClientWorkSpacePhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ClientWorkSpaceNationalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

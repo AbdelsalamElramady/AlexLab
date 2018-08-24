@@ -66,6 +66,9 @@ namespace AlexLabBL
     partial void InsertPaymentType(PaymentType instance);
     partial void UpdatePaymentType(PaymentType instance);
     partial void DeletePaymentType(PaymentType instance);
+    partial void InsertClientWorkSpace(ClientWorkSpace instance);
+    partial void UpdateClientWorkSpace(ClientWorkSpace instance);
+    partial void DeleteClientWorkSpace(ClientWorkSpace instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -191,6 +194,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<PaymentType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ClientWorkSpace> ClientWorkSpaces
+		{
+			get
+			{
+				return this.GetTable<ClientWorkSpace>();
 			}
 		}
 	}
@@ -2378,6 +2389,164 @@ namespace AlexLabBL
 					this._PaymentTypeDesc = value;
 					this.SendPropertyChanged("PaymentTypeDesc");
 					this.OnPaymentTypeDescChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ClientWorkSpace")]
+	public partial class ClientWorkSpace : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ClientWorkSpaceId;
+		
+		private string _ClientWorkSpaceName;
+		
+		private string _ClientWorkSpacePhone;
+		
+		private string _ClientWorkSpaceNationalId;
+		
+		private string _Notes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnClientWorkSpaceIdChanging(int value);
+    partial void OnClientWorkSpaceIdChanged();
+    partial void OnClientWorkSpaceNameChanging(string value);
+    partial void OnClientWorkSpaceNameChanged();
+    partial void OnClientWorkSpacePhoneChanging(string value);
+    partial void OnClientWorkSpacePhoneChanged();
+    partial void OnClientWorkSpaceNationalIdChanging(string value);
+    partial void OnClientWorkSpaceNationalIdChanged();
+    partial void OnNotesChanging(string value);
+    partial void OnNotesChanged();
+    #endregion
+		
+		public ClientWorkSpace()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientWorkSpaceId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ClientWorkSpaceId
+		{
+			get
+			{
+				return this._ClientWorkSpaceId;
+			}
+			set
+			{
+				if ((this._ClientWorkSpaceId != value))
+				{
+					this.OnClientWorkSpaceIdChanging(value);
+					this.SendPropertyChanging();
+					this._ClientWorkSpaceId = value;
+					this.SendPropertyChanged("ClientWorkSpaceId");
+					this.OnClientWorkSpaceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientWorkSpaceName", DbType="NVarChar(50)")]
+		public string ClientWorkSpaceName
+		{
+			get
+			{
+				return this._ClientWorkSpaceName;
+			}
+			set
+			{
+				if ((this._ClientWorkSpaceName != value))
+				{
+					this.OnClientWorkSpaceNameChanging(value);
+					this.SendPropertyChanging();
+					this._ClientWorkSpaceName = value;
+					this.SendPropertyChanged("ClientWorkSpaceName");
+					this.OnClientWorkSpaceNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientWorkSpacePhone", DbType="NVarChar(50)")]
+		public string ClientWorkSpacePhone
+		{
+			get
+			{
+				return this._ClientWorkSpacePhone;
+			}
+			set
+			{
+				if ((this._ClientWorkSpacePhone != value))
+				{
+					this.OnClientWorkSpacePhoneChanging(value);
+					this.SendPropertyChanging();
+					this._ClientWorkSpacePhone = value;
+					this.SendPropertyChanged("ClientWorkSpacePhone");
+					this.OnClientWorkSpacePhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClientWorkSpaceNationalId", DbType="NVarChar(50)")]
+		public string ClientWorkSpaceNationalId
+		{
+			get
+			{
+				return this._ClientWorkSpaceNationalId;
+			}
+			set
+			{
+				if ((this._ClientWorkSpaceNationalId != value))
+				{
+					this.OnClientWorkSpaceNationalIdChanging(value);
+					this.SendPropertyChanging();
+					this._ClientWorkSpaceNationalId = value;
+					this.SendPropertyChanged("ClientWorkSpaceNationalId");
+					this.OnClientWorkSpaceNationalIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Notes", DbType="NVarChar(MAX)")]
+		public string Notes
+		{
+			get
+			{
+				return this._Notes;
+			}
+			set
+			{
+				if ((this._Notes != value))
+				{
+					this.OnNotesChanging(value);
+					this.SendPropertyChanging();
+					this._Notes = value;
+					this.SendPropertyChanged("Notes");
+					this.OnNotesChanged();
 				}
 			}
 		}
