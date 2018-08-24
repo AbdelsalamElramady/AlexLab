@@ -123,5 +123,10 @@ namespace AlexLab
         {
             new PaymentForm().ShowDialog();
         }
+
+        private void navBarItem4_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new ClientWorkSpaceForm().ShowDialog();
+        }
     }
 }

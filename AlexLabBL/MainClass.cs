@@ -132,5 +132,13 @@ namespace AlexLabBL
             var obj = from ob in DbObj.PaymentTypes select ob;
             return obj;
         }
+
+        public static object getClientsWorkSpace()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.ClientWorkSpaces select ob;
+            return obj;
+        }
     }
 }
