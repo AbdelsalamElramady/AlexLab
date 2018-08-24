@@ -1,6 +1,6 @@
 ﻿namespace AlexLab
 {
-    partial class ExpencesForm
+    partial class PaymentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpencesForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -40,8 +39,8 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.TxtNotes = new DevExpress.XtraEditors.MemoEdit();
-            this.TxtExpencesValue = new DevExpress.XtraEditors.CalcEdit();
-            this.lookUpExpencesType = new DevExpress.XtraEditors.LookUpEdit();
+            this.TxtPaymentValue = new DevExpress.XtraEditors.CalcEdit();
+            this.lookUpPaymentType = new DevExpress.XtraEditors.LookUpEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,8 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNotes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtExpencesValue.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpExpencesType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPaymentValue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpPaymentType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -83,7 +82,7 @@
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(639, 143);
+            this.ribbon.Size = new System.Drawing.Size(680, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -109,7 +108,7 @@
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Expences control";
+            this.ribbonPage1.Text = "Payment control";
             // 
             // ribbonPageGroup1
             // 
@@ -119,79 +118,78 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 678);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 533);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(639, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(680, 31);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.TxtNotes);
-            this.layoutControl1.Controls.Add(this.TxtExpencesValue);
-            this.layoutControl1.Controls.Add(this.lookUpExpencesType);
+            this.layoutControl1.Controls.Add(this.TxtPaymentValue);
+            this.layoutControl1.Controls.Add(this.lookUpPaymentType);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 143);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(639, 535);
+            this.layoutControl1.Size = new System.Drawing.Size(680, 390);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // TxtNotes
             // 
-            this.TxtNotes.Location = new System.Drawing.Point(112, 60);
+            this.TxtNotes.Location = new System.Drawing.Point(113, 60);
             this.TxtNotes.MenuManager = this.ribbon;
             this.TxtNotes.Name = "TxtNotes";
-            this.TxtNotes.Size = new System.Drawing.Size(515, 86);
+            this.TxtNotes.Size = new System.Drawing.Size(555, 68);
             this.TxtNotes.StyleController = this.layoutControl1;
             this.TxtNotes.TabIndex = 7;
             // 
-            // TxtExpencesValue
+            // TxtPaymentValue
             // 
-            this.TxtExpencesValue.Location = new System.Drawing.Point(112, 36);
-            this.TxtExpencesValue.MenuManager = this.ribbon;
-            this.TxtExpencesValue.Name = "TxtExpencesValue";
-            this.TxtExpencesValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.TxtPaymentValue.Location = new System.Drawing.Point(113, 36);
+            this.TxtPaymentValue.MenuManager = this.ribbon;
+            this.TxtPaymentValue.Name = "TxtPaymentValue";
+            this.TxtPaymentValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.TxtExpencesValue.Size = new System.Drawing.Size(515, 20);
-            this.TxtExpencesValue.StyleController = this.layoutControl1;
-            this.TxtExpencesValue.TabIndex = 6;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            this.TxtPaymentValue.Size = new System.Drawing.Size(555, 20);
+            this.TxtPaymentValue.StyleController = this.layoutControl1;
+            this.TxtPaymentValue.TabIndex = 6;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
             conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.TxtExpencesValue, conditionValidationRule1);
+            conditionValidationRule1.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.dxValidationProvider1.SetValidationRule(this.TxtPaymentValue, conditionValidationRule1);
             // 
-            // lookUpExpencesType
+            // lookUpPaymentType
             // 
-            this.lookUpExpencesType.Location = new System.Drawing.Point(112, 12);
-            this.lookUpExpencesType.MenuManager = this.ribbon;
-            this.lookUpExpencesType.Name = "lookUpExpencesType";
-            this.lookUpExpencesType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpPaymentType.Enabled = false;
+            this.lookUpPaymentType.Location = new System.Drawing.Point(113, 12);
+            this.lookUpPaymentType.MenuManager = this.ribbon;
+            this.lookUpPaymentType.Name = "lookUpPaymentType";
+            this.lookUpPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpExpencesType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ExpencesDesc", "Expences type"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ExpencesId", "ExpencesId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
-            this.lookUpExpencesType.Properties.DisplayMember = "ExpencesDesc";
-            this.lookUpExpencesType.Properties.NullText = "";
-            this.lookUpExpencesType.Properties.ValueMember = "ExpencesTypeId";
-            this.lookUpExpencesType.Size = new System.Drawing.Size(515, 20);
-            this.lookUpExpencesType.StyleController = this.layoutControl1;
-            this.lookUpExpencesType.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.lookUpExpencesType, conditionValidationRule2);
+            this.lookUpPaymentType.Properties.DisplayMember = "PaymentTypeDesc";
+            this.lookUpPaymentType.Properties.NullText = "";
+            this.lookUpPaymentType.Properties.ValueMember = "PaymentTypeId";
+            this.lookUpPaymentType.Size = new System.Drawing.Size(555, 20);
+            this.lookUpPaymentType.StyleController = this.layoutControl1;
+            this.lookUpPaymentType.TabIndex = 5;
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 150);
+            this.gridControl1.Location = new System.Drawing.Point(12, 132);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbon;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(615, 373);
+            this.gridControl1.Size = new System.Drawing.Size(656, 246);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
@@ -216,30 +214,30 @@
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "ExpencesId";
-            this.gridColumn1.FieldName = "ExpencesId";
+            this.gridColumn1.Caption = "PaymentId";
+            this.gridColumn1.FieldName = "PaymentId";
             this.gridColumn1.Name = "gridColumn1";
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Expences type";
-            this.gridColumn2.FieldName = "ExpencesDesc";
+            this.gridColumn2.Caption = "Payment type";
+            this.gridColumn2.FieldName = "PaymentTypeDesc";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Date";
-            this.gridColumn3.FieldName = "ExpencesDate";
+            this.gridColumn3.Caption = "Payment value";
+            this.gridColumn3.FieldName = "PaymentValue";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Value";
-            this.gridColumn4.FieldName = "ExpencesValue";
+            this.gridColumn4.Caption = "Date";
+            this.gridColumn4.FieldName = "PaymentDate";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
@@ -256,8 +254,6 @@
             // 
             this.layoutControlGroup1.AppearanceItemCaption.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlGroup1.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlGroup1.AppearanceItemCaption.Options.UseTextOptions = true;
-            this.layoutControlGroup1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -267,67 +263,65 @@
             this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(639, 535);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(680, 390);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 138);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(619, 377);
+            this.layoutControlItem1.Size = new System.Drawing.Size(660, 250);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.lookUpExpencesType;
+            this.layoutControlItem2.Control = this.lookUpPaymentType;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(619, 24);
-            this.layoutControlItem2.Text = "Expences type";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(97, 19);
+            this.layoutControlItem2.Size = new System.Drawing.Size(660, 24);
+            this.layoutControlItem2.Text = "Payment type";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(98, 19);
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseTextOptions = true;
-            this.layoutControlItem3.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.layoutControlItem3.Control = this.TxtExpencesValue;
+            this.layoutControlItem3.Control = this.TxtPaymentValue;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(619, 24);
-            this.layoutControlItem3.Text = "Value";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(97, 19);
+            this.layoutControlItem3.Size = new System.Drawing.Size(660, 24);
+            this.layoutControlItem3.Text = "Payment value";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(98, 19);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.TxtNotes;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(619, 90);
+            this.layoutControlItem4.Size = new System.Drawing.Size(660, 72);
             this.layoutControlItem4.Text = "Notes";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(97, 19);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(98, 19);
             // 
-            // ExpencesForm
+            // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 709);
+            this.ClientSize = new System.Drawing.Size(680, 564);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.Name = "ExpencesForm";
+            this.Name = "PaymentForm";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Expences form";
-            this.Load += new System.EventHandler(this.ExpencesForm_Load);
+            this.Text = "Payment form";
+            this.Load += new System.EventHandler(this.PaymentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TxtNotes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtExpencesValue.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpExpencesType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtPaymentValue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpPaymentType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -351,20 +345,20 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.MemoEdit TxtNotes;
-        private DevExpress.XtraEditors.CalcEdit TxtExpencesValue;
-        private DevExpress.XtraEditors.LookUpEdit lookUpExpencesType;
+        private DevExpress.XtraEditors.CalcEdit TxtPaymentValue;
+        private DevExpress.XtraEditors.LookUpEdit lookUpPaymentType;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
     }
 }

@@ -113,5 +113,24 @@ namespace AlexLabBL
                       select new { eT.ExpencesDesc, ob.ExpencesDate, ob.ExpencesId, ob.ExpencesValue, ob.Notes };
             return obj;
         }
+
+        public static object getPayment()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Payments
+                      join pT in DbObj.PaymentTypes
+                      on ob.PaymentTypeId equals pT.PaymentTypeId
+                      select new { pT.PaymentTypeDesc, ob.AppointmentId, ob.ClientWorkSpaceId, ob.Notes, ob.PaymentDate, ob.PaymentId, ob.PaymentTypeId, ob.PaymentValue };
+            return obj;
+        }
+
+        public static object getPaymentType()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.PaymentTypes select ob;
+            return obj;
+        }
     }
 }

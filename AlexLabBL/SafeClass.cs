@@ -62,7 +62,7 @@ namespace AlexLabBL
             }
         }
 
-        private bool Update()
+        private bool UpdateExpences()
         {
             try
             {
@@ -85,15 +85,38 @@ namespace AlexLabBL
             }
         }
 
+        private bool UpdatePayment()
+        {
+            try
+            {
+                var roo = from sa in MainClass.DbObj.Safes orderby sa.SafeId descending select sa;
+
+                roo.First().CurrentValue += CurrentValue;
+
+                if (roo.First().IsClose == true)
+                {
+                    return false;
+                }
+
+                MainClass.DbObj.SubmitChanges();
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool Save(bool isEdit)
         {
             if (isEdit == true)
             {
-                return Update();
+                return UpdateExpences();
             }
             else
             {
-                return Insert();
+                return UpdatePayment();
             }
         }
 

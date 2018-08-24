@@ -118,5 +118,10 @@ namespace AlexLab
         {
             new ExpencesForm().ShowDialog();
         }
+
+        private void navBarItem3_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new PaymentForm().ShowDialog();
+        }
     }
 }

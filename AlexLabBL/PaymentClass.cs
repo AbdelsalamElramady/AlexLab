@@ -10,8 +10,8 @@ namespace AlexLabBL
     {
         public int PaymentId { get; set; }
         public int PaymentTypeId { get; set; }
-        public int ClientWorkSpaceId { get; set; }
-        public int AppointmentId { get; set; }
+        public int? ClientWorkSpaceId { get; set; }
+        public int? AppointmentId { get; set; }
         public DateTime PaymentDate { get; set; }
         public decimal PaymentValue { get; set; }
         public string Notes { get; set; }

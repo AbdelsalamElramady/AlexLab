@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
             this.mailGroup = new DevExpress.XtraNavBar.NavBarGroup();
@@ -44,6 +44,8 @@
             this.organizerGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.calendarItem = new DevExpress.XtraNavBar.NavBarItem();
             this.tasksItem = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.schedulerSplitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -110,7 +112,6 @@
             this.actionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ActionsRibbonPageGroup();
             this.optionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.OptionsRibbonPageGroup();
             this.fileRibbonPage1 = new DevExpress.XtraScheduler.UI.FileRibbonPage();
-            this.commonRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.CommonRibbonPageGroup();
             this.printRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.PrintRibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraScheduler.UI.HomeRibbonPage();
             this.appointmentRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPageGroup();
@@ -134,7 +135,6 @@
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             this.appointmentsTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.AppointmentsTableAdapter();
             this.resourcesTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.ResourcesTableAdapter();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -192,7 +192,8 @@
             this.calendarItem,
             this.tasksItem,
             this.navBarItem1,
-            this.navBarItem2});
+            this.navBarItem2,
+            this.navBarItem3});
             this.navBarControl.LargeImages = this.navbarImageCollectionLarge;
             this.navBarControl.Location = new System.Drawing.Point(0, 0);
             this.navBarControl.Name = "navBarControl";
@@ -254,7 +255,8 @@
             this.organizerGroup.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.calendarItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.tasksItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.organizerGroup.Name = "organizerGroup";
             // 
             // calendarItem
@@ -268,6 +270,18 @@
             this.tasksItem.Caption = "Expences type";
             this.tasksItem.Name = "tasksItem";
             this.tasksItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.tasksItem_LinkClicked);
+            // 
+            // navBarItem2
+            // 
+            this.navBarItem2.Caption = "Expences";
+            this.navBarItem2.Name = "navBarItem2";
+            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Caption = "Payments";
+            this.navBarItem3.Name = "navBarItem3";
+            this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked);
             // 
             // navbarImageCollectionLarge
             // 
@@ -313,12 +327,12 @@
             this.schedulerControl.Storage = this.schedulerStorage;
             this.schedulerControl.TabIndex = 0;
             this.schedulerControl.Text = "schedulerControl1";
-            this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler4);
+            this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl.Views.FullWeekView.Enabled = true;
-            this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler5);
+            this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl.Views.TimelineView.Enabled = false;
             this.schedulerControl.Views.WeekView.Enabled = false;
-            this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
+            this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.schedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl_EditAppointmentFormShowing);
             // 
             // ribbonControl
@@ -811,15 +825,8 @@
             // fileRibbonPage1
             // 
             this.fileRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.commonRibbonPageGroup1,
             this.printRibbonPageGroup1});
             this.fileRibbonPage1.Name = "fileRibbonPage1";
-            // 
-            // commonRibbonPageGroup1
-            // 
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.openScheduleItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.saveScheduleItem1);
-            this.commonRibbonPageGroup1.Name = "commonRibbonPageGroup1";
             // 
             // printRibbonPageGroup1
             // 
@@ -1049,12 +1056,6 @@
             // 
             this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Caption = "Expences";
-            this.navBarItem2.Name = "navBarItem2";
-            this.navBarItem2.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem2_LinkClicked);
-            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -1189,7 +1190,6 @@
         private DevExpress.XtraScheduler.UI.ActionsRibbonPageGroup actionsRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.OptionsRibbonPageGroup optionsRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.FileRibbonPage fileRibbonPage1;
-        private DevExpress.XtraScheduler.UI.CommonRibbonPageGroup commonRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.PrintRibbonPageGroup printRibbonPageGroup1;
         private DevExpress.XtraScheduler.UI.HomeRibbonPage homeRibbonPage1;
         private DevExpress.XtraScheduler.UI.AppointmentRibbonPageGroup appointmentRibbonPageGroup1;
@@ -1208,5 +1208,6 @@
         private AlexLabDataSetTableAdapters.ResourcesTableAdapter resourcesTableAdapter;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
     }
 }

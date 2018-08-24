@@ -63,6 +63,9 @@ namespace AlexLabBL
     partial void InsertPayment(Payment instance);
     partial void UpdatePayment(Payment instance);
     partial void DeletePayment(Payment instance);
+    partial void InsertPaymentType(PaymentType instance);
+    partial void UpdatePaymentType(PaymentType instance);
+    partial void DeletePaymentType(PaymentType instance);
     #endregion
 		
 		public DataClassesAlexLabDataContext() : 
@@ -180,6 +183,14 @@ namespace AlexLabBL
 			get
 			{
 				return this.GetTable<Payment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PaymentType> PaymentTypes
+		{
+			get
+			{
+				return this.GetTable<PaymentType>();
 			}
 		}
 	}
@@ -2281,6 +2292,92 @@ namespace AlexLabBL
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PaymentType")]
+	public partial class PaymentType : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PaymentTypeId;
+		
+		private string _PaymentTypeDesc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPaymentTypeIdChanging(int value);
+    partial void OnPaymentTypeIdChanged();
+    partial void OnPaymentTypeDescChanging(string value);
+    partial void OnPaymentTypeDescChanged();
+    #endregion
+		
+		public PaymentType()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentTypeId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int PaymentTypeId
+		{
+			get
+			{
+				return this._PaymentTypeId;
+			}
+			set
+			{
+				if ((this._PaymentTypeId != value))
+				{
+					this.OnPaymentTypeIdChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentTypeId = value;
+					this.SendPropertyChanged("PaymentTypeId");
+					this.OnPaymentTypeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentTypeDesc", DbType="NVarChar(MAX)")]
+		public string PaymentTypeDesc
+		{
+			get
+			{
+				return this._PaymentTypeDesc;
+			}
+			set
+			{
+				if ((this._PaymentTypeDesc != value))
+				{
+					this.OnPaymentTypeDescChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentTypeDesc = value;
+					this.SendPropertyChanged("PaymentTypeDesc");
+					this.OnPaymentTypeDescChanged();
 				}
 			}
 		}
