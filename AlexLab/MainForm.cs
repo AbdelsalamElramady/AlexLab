@@ -128,5 +128,10 @@ namespace AlexLab
         {
             new ClientWorkSpaceForm().ShowDialog();
         }
+
+        private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            new WorkSpaceForm().ShowDialog();
+        }
     }
 }

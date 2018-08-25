@@ -166,6 +166,12 @@
     <Compile Include="SafeForm.Designer.cs">
       <DependentUpon>SafeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkSpaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkSpaceForm.Designer.cs">
+      <DependentUpon>WorkSpaceForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SafeForm.resx">
       <DependentUpon>SafeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkSpaceForm.resx">
+      <DependentUpon>WorkSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AlexLabDataSet.xsc">
       <DependentUpon>AlexLabDataSet.xsd</DependentUpon>
