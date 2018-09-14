@@ -354,6 +354,14 @@ namespace AlexLab {
             
             private global::System.Data.DataColumn columnIsClose;
             
+            private global::System.Data.DataColumn columnCourseTypeId;
+            
+            private global::System.Data.DataColumn columnClientId;
+            
+            private global::System.Data.DataColumn columnStudentBookMoney;
+            
+            private global::System.Data.DataColumn columnCoursePrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AppointmentsDataTable() {
@@ -549,6 +557,38 @@ namespace AlexLab {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CourseTypeIdColumn {
+                get {
+                    return this.columnCourseTypeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ClientIdColumn {
+                get {
+                    return this.columnClientId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StudentBookMoneyColumn {
+                get {
+                    return this.columnStudentBookMoney;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CoursePriceColumn {
+                get {
+                    return this.columnCoursePrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -603,7 +643,11 @@ namespace AlexLab {
                         int CourseId, 
                         decimal PaidMoney, 
                         decimal TotalPrice, 
-                        bool IsClose) {
+                        bool IsClose, 
+                        int CourseTypeId, 
+                        int ClientId, 
+                        decimal StudentBookMoney, 
+                        decimal CoursePrice) {
                 AppointmentsRow rowAppointmentsRow = ((AppointmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -625,7 +669,11 @@ namespace AlexLab {
                         CourseId,
                         PaidMoney,
                         TotalPrice,
-                        IsClose};
+                        IsClose,
+                        CourseTypeId,
+                        ClientId,
+                        StudentBookMoney,
+                        CoursePrice};
                 rowAppointmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAppointmentsRow);
                 return rowAppointmentsRow;
@@ -675,6 +723,10 @@ namespace AlexLab {
                 this.columnPaidMoney = base.Columns["PaidMoney"];
                 this.columnTotalPrice = base.Columns["TotalPrice"];
                 this.columnIsClose = base.Columns["IsClose"];
+                this.columnCourseTypeId = base.Columns["CourseTypeId"];
+                this.columnClientId = base.Columns["ClientId"];
+                this.columnStudentBookMoney = base.Columns["StudentBookMoney"];
+                this.columnCoursePrice = base.Columns["CoursePrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -720,6 +772,14 @@ namespace AlexLab {
                 base.Columns.Add(this.columnTotalPrice);
                 this.columnIsClose = new global::System.Data.DataColumn("IsClose", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsClose);
+                this.columnCourseTypeId = new global::System.Data.DataColumn("CourseTypeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourseTypeId);
+                this.columnClientId = new global::System.Data.DataColumn("ClientId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClientId);
+                this.columnStudentBookMoney = new global::System.Data.DataColumn("StudentBookMoney", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudentBookMoney);
+                this.columnCoursePrice = new global::System.Data.DataColumn("CoursePrice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCoursePrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnUniqueID}, true));
                 this.columnUniqueID.AutoIncrement = true;
@@ -1527,6 +1587,70 @@ namespace AlexLab {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int CourseTypeId {
+                get {
+                    try {
+                        return ((int)(this[this.tableAppointments.CourseTypeIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CourseTypeId\' in table \'Appointments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAppointments.CourseTypeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ClientId {
+                get {
+                    try {
+                        return ((int)(this[this.tableAppointments.ClientIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClientId\' in table \'Appointments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAppointments.ClientIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal StudentBookMoney {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableAppointments.StudentBookMoneyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StudentBookMoney\' in table \'Appointments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAppointments.StudentBookMoneyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CoursePrice {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableAppointments.CoursePriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CoursePrice\' in table \'Appointments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAppointments.CoursePriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableAppointments.TypeColumn);
             }
@@ -1751,6 +1875,54 @@ namespace AlexLab {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIsCloseNull() {
                 this[this.tableAppointments.IsCloseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCourseTypeIdNull() {
+                return this.IsNull(this.tableAppointments.CourseTypeIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCourseTypeIdNull() {
+                this[this.tableAppointments.CourseTypeIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsClientIdNull() {
+                return this.IsNull(this.tableAppointments.ClientIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetClientIdNull() {
+                this[this.tableAppointments.ClientIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStudentBookMoneyNull() {
+                return this.IsNull(this.tableAppointments.StudentBookMoneyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStudentBookMoneyNull() {
+                this[this.tableAppointments.StudentBookMoneyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCoursePriceNull() {
+                return this.IsNull(this.tableAppointments.CoursePriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCoursePriceNull() {
+                this[this.tableAppointments.CoursePriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2116,10 +2288,35 @@ namespace AlexLab.AlexLabDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PaidMoney", "PaidMoney");
             tableMapping.ColumnMappings.Add("TotalPrice", "TotalPrice");
             tableMapping.ColumnMappings.Add("IsClose", "IsClose");
+            tableMapping.ColumnMappings.Add("CourseTypeId", "CourseTypeId");
+            tableMapping.ColumnMappings.Add("ClientId", "ClientId");
+            tableMapping.ColumnMappings.Add("StudentBookMoney", "StudentBookMoney");
+            tableMapping.ColumnMappings.Add("CoursePrice", "CoursePrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Appointments] WHERE (([UniqueID] = @Original_UniqueID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_AllDay = 1 AND [AllDay] IS NULL) OR ([AllDay] = @Original_AllDay)) AND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Label = 1 AND [Label] IS NULL) OR ([Label] = @Original_Label)) AND ((@IsNull_ResourceID = 1 AND [ResourceID] IS NULL) OR ([ResourceID] = @Original_ResourceID)) AND ((@IsNull_RoomId = 1 AND [RoomId] IS NULL) OR ([RoomId] = @Original_RoomId)) AND ((@IsNull_CourseId = 1 AND [CourseId] IS NULL) OR ([CourseId] = @Original_CourseId)) AND ((@IsNull_PaidMoney = 1 AND [PaidMoney] IS NULL) OR ([PaidMoney] = @Original_PaidMoney)) AND ((@IsNull_TotalPrice = 1 AND [TotalPrice] IS NULL) OR ([TotalPrice] = @Original_TotalPrice)) AND ((@IsNull_IsClose = 1 AND [IsClose] IS NULL) OR ([IsClose] = @Original_IsClose)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Appointments] WHERE (([UniqueID] = @Original_UniqueID) AND ((@IsNull" +
+                "_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_StartD" +
+                "ate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@" +
+                "IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AN" +
+                "D ((@IsNull_AllDay = 1 AND [AllDay] IS NULL) OR ([AllDay] = @Original_AllDay)) A" +
+                "ND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subjec" +
+                "t)) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Origina" +
+                "l_Location)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Orig" +
+                "inal_Status)) AND ((@IsNull_Label = 1 AND [Label] IS NULL) OR ([Label] = @Origin" +
+                "al_Label)) AND ((@IsNull_ResourceID = 1 AND [ResourceID] IS NULL) OR ([ResourceI" +
+                "D] = @Original_ResourceID)) AND ((@IsNull_RoomId = 1 AND [RoomId] IS NULL) OR ([" +
+                "RoomId] = @Original_RoomId)) AND ((@IsNull_CourseId = 1 AND [CourseId] IS NULL) " +
+                "OR ([CourseId] = @Original_CourseId)) AND ((@IsNull_PaidMoney = 1 AND [PaidMoney" +
+                "] IS NULL) OR ([PaidMoney] = @Original_PaidMoney)) AND ((@IsNull_TotalPrice = 1 " +
+                "AND [TotalPrice] IS NULL) OR ([TotalPrice] = @Original_TotalPrice)) AND ((@IsNul" +
+                "l_IsClose = 1 AND [IsClose] IS NULL) OR ([IsClose] = @Original_IsClose)) AND ((@" +
+                "IsNull_CourseTypeId = 1 AND [CourseTypeId] IS NULL) OR ([CourseTypeId] = @Origin" +
+                "al_CourseTypeId)) AND ((@IsNull_ClientId = 1 AND [ClientId] IS NULL) OR ([Client" +
+                "Id] = @Original_ClientId)) AND ((@IsNull_StudentBookMoney = 1 AND [StudentBookMo" +
+                "ney] IS NULL) OR ([StudentBookMoney] = @Original_StudentBookMoney)) AND ((@IsNul" +
+                "l_CoursePrice = 1 AND [CoursePrice] IS NULL) OR ([CoursePrice] = @Original_Cours" +
+                "ePrice)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UniqueID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2150,10 +2347,18 @@ namespace AlexLab.AlexLabDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IsClose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsClose", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsClose", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsClose", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CourseTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseTypeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CourseTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseTypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StudentBookMoney", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StudentBookMoney", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StudentBookMoney", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "StudentBookMoney", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CoursePrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CoursePrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CoursePrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "CoursePrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Appointments] ([Type], [StartDate], [EndDate], [AllDay], [Subject], [Location], [Description], [Status], [Label], [ResourceID], [ResourceIDs], [ReminderInfo], [RecurrenceInfo], [CustomField1], [RoomId], [CourseId], [PaidMoney], [TotalPrice], [IsClose]) VALUES (@Type, @StartDate, @EndDate, @AllDay, @Subject, @Location, @Description, @Status, @Label, @ResourceID, @ResourceIDs, @ReminderInfo, @RecurrenceInfo, @CustomField1, @RoomId, @CourseId, @PaidMoney, @TotalPrice, @IsClose);
-SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, PaidMoney, TotalPrice, IsClose FROM Appointments WHERE (UniqueID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Appointments] ([Type], [StartDate], [EndDate], [AllDay], [Subject], [Location], [Description], [Status], [Label], [ResourceID], [ResourceIDs], [ReminderInfo], [RecurrenceInfo], [CustomField1], [RoomId], [CourseId], [PaidMoney], [TotalPrice], [IsClose], [CourseTypeId], [ClientId], [StudentBookMoney], [CoursePrice]) VALUES (@Type, @StartDate, @EndDate, @AllDay, @Subject, @Location, @Description, @Status, @Label, @ResourceID, @ResourceIDs, @ReminderInfo, @RecurrenceInfo, @CustomField1, @RoomId, @CourseId, @PaidMoney, @TotalPrice, @IsClose, @CourseTypeId, @ClientId, @StudentBookMoney, @CoursePrice);
+SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, PaidMoney, TotalPrice, IsClose, CourseTypeId, ClientId, StudentBookMoney, CoursePrice FROM Appointments WHERE (UniqueID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2174,34 +2379,45 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaidMoney", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "PaidMoney", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsClose", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsClose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CourseTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseTypeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StudentBookMoney", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "StudentBookMoney", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CoursePrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "CoursePrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Appointments] SET [Type] = @Type, [StartDate] = @StartDate, [EndDat" +
-                "e] = @EndDate, [AllDay] = @AllDay, [Subject] = @Subject, [Location] = @Location," +
-                " [Description] = @Description, [Status] = @Status, [Label] = @Label, [ResourceID" +
-                "] = @ResourceID, [ResourceIDs] = @ResourceIDs, [ReminderInfo] = @ReminderInfo, [" +
-                "RecurrenceInfo] = @RecurrenceInfo, [CustomField1] = @CustomField1, [RoomId] = @R" +
-                "oomId, [CourseId] = @CourseId, [PaidMoney] = @PaidMoney, [TotalPrice] = @TotalPr" +
-                "ice, [IsClose] = @IsClose WHERE (([UniqueID] = @Original_UniqueID) AND ((@IsNull" +
-                "_Type = 1 AND [Type] IS NULL) OR ([Type] = @Original_Type)) AND ((@IsNull_StartD" +
-                "ate = 1 AND [StartDate] IS NULL) OR ([StartDate] = @Original_StartDate)) AND ((@" +
-                "IsNull_EndDate = 1 AND [EndDate] IS NULL) OR ([EndDate] = @Original_EndDate)) AN" +
-                "D ((@IsNull_AllDay = 1 AND [AllDay] IS NULL) OR ([AllDay] = @Original_AllDay)) A" +
-                "ND ((@IsNull_Subject = 1 AND [Subject] IS NULL) OR ([Subject] = @Original_Subjec" +
-                "t)) AND ((@IsNull_Location = 1 AND [Location] IS NULL) OR ([Location] = @Origina" +
-                "l_Location)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Orig" +
-                "inal_Status)) AND ((@IsNull_Label = 1 AND [Label] IS NULL) OR ([Label] = @Origin" +
-                "al_Label)) AND ((@IsNull_ResourceID = 1 AND [ResourceID] IS NULL) OR ([ResourceI" +
-                "D] = @Original_ResourceID)) AND ((@IsNull_RoomId = 1 AND [RoomId] IS NULL) OR ([" +
-                "RoomId] = @Original_RoomId)) AND ((@IsNull_CourseId = 1 AND [CourseId] IS NULL) " +
-                "OR ([CourseId] = @Original_CourseId)) AND ((@IsNull_PaidMoney = 1 AND [PaidMoney" +
-                "] IS NULL) OR ([PaidMoney] = @Original_PaidMoney)) AND ((@IsNull_TotalPrice = 1 " +
-                "AND [TotalPrice] IS NULL) OR ([TotalPrice] = @Original_TotalPrice)) AND ((@IsNul" +
-                "l_IsClose = 1 AND [IsClose] IS NULL) OR ([IsClose] = @Original_IsClose)));\r\nSELE" +
-                "CT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Description, S" +
-                "tatus, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField" +
-                "1, RoomId, CourseId, PaidMoney, TotalPrice, IsClose FROM Appointments WHERE (Uni" +
-                "queID = @UniqueID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Appointments] SET [Type] = @Type, [StartDate] = @StartDate, [EndDate] = @" +
+                "EndDate, [AllDay] = @AllDay, [Subject] = @Subject, [Location] = @Location, [Desc" +
+                "ription] = @Description, [Status] = @Status, [Label] = @Label, [ResourceID] = @R" +
+                "esourceID, [ResourceIDs] = @ResourceIDs, [ReminderInfo] = @ReminderInfo, [Recurr" +
+                "enceInfo] = @RecurrenceInfo, [CustomField1] = @CustomField1, [RoomId] = @RoomId," +
+                " [CourseId] = @CourseId, [PaidMoney] = @PaidMoney, [TotalPrice] = @TotalPrice, [" +
+                "IsClose] = @IsClose, [CourseTypeId] = @CourseTypeId, [ClientId] = @ClientId, [St" +
+                "udentBookMoney] = @StudentBookMoney, [CoursePrice] = @CoursePrice WHERE (([Uniqu" +
+                "eID] = @Original_UniqueID) AND ((@IsNull_Type = 1 AND [Type] IS NULL) OR ([Type]" +
+                " = @Original_Type)) AND ((@IsNull_StartDate = 1 AND [StartDate] IS NULL) OR ([St" +
+                "artDate] = @Original_StartDate)) AND ((@IsNull_EndDate = 1 AND [EndDate] IS NULL" +
+                ") OR ([EndDate] = @Original_EndDate)) AND ((@IsNull_AllDay = 1 AND [AllDay] IS N" +
+                "ULL) OR ([AllDay] = @Original_AllDay)) AND ((@IsNull_Subject = 1 AND [Subject] I" +
+                "S NULL) OR ([Subject] = @Original_Subject)) AND ((@IsNull_Location = 1 AND [Loca" +
+                "tion] IS NULL) OR ([Location] = @Original_Location)) AND ((@IsNull_Status = 1 AN" +
+                "D [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Label = 1 AN" +
+                "D [Label] IS NULL) OR ([Label] = @Original_Label)) AND ((@IsNull_ResourceID = 1 " +
+                "AND [ResourceID] IS NULL) OR ([ResourceID] = @Original_ResourceID)) AND ((@IsNul" +
+                "l_RoomId = 1 AND [RoomId] IS NULL) OR ([RoomId] = @Original_RoomId)) AND ((@IsNu" +
+                "ll_CourseId = 1 AND [CourseId] IS NULL) OR ([CourseId] = @Original_CourseId)) AN" +
+                "D ((@IsNull_PaidMoney = 1 AND [PaidMoney] IS NULL) OR ([PaidMoney] = @Original_P" +
+                "aidMoney)) AND ((@IsNull_TotalPrice = 1 AND [TotalPrice] IS NULL) OR ([TotalPric" +
+                "e] = @Original_TotalPrice)) AND ((@IsNull_IsClose = 1 AND [IsClose] IS NULL) OR " +
+                "([IsClose] = @Original_IsClose)) AND ((@IsNull_CourseTypeId = 1 AND [CourseTypeI" +
+                "d] IS NULL) OR ([CourseTypeId] = @Original_CourseTypeId)) AND ((@IsNull_ClientId" +
+                " = 1 AND [ClientId] IS NULL) OR ([ClientId] = @Original_ClientId)) AND ((@IsNull" +
+                "_StudentBookMoney = 1 AND [StudentBookMoney] IS NULL) OR ([StudentBookMoney] = @" +
+                "Original_StudentBookMoney)) AND ((@IsNull_CoursePrice = 1 AND [CoursePrice] IS N" +
+                "ULL) OR ([CoursePrice] = @Original_CoursePrice)));\r\nSELECT UniqueID, Type, Start" +
+                "Date, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID" +
+                ", ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, Pai" +
+                "dMoney, TotalPrice, IsClose, CourseTypeId, ClientId, StudentBookMoney, CoursePri" +
+                "ce FROM Appointments WHERE (UniqueID = @UniqueID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartDate", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2222,6 +2438,10 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaidMoney", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "PaidMoney", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsClose", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsClose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CourseTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseTypeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StudentBookMoney", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "StudentBookMoney", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CoursePrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "CoursePrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UniqueID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2251,6 +2471,14 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "TotalPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IsClose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsClose", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsClose", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsClose", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CourseTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseTypeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CourseTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CourseTypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ClientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_StudentBookMoney", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StudentBookMoney", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StudentBookMoney", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "StudentBookMoney", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CoursePrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CoursePrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CoursePrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "CoursePrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UniqueID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2267,9 +2495,9 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Description" +
-                ", Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomFi" +
-                "eld1, RoomId, CourseId, PaidMoney, TotalPrice, IsClose FROM dbo.Appointments";
+            this._commandCollection[0].CommandText = @"SELECT        UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, PaidMoney, TotalPrice, 
+                         IsClose, CourseTypeId, ClientId, StudentBookMoney, CoursePrice
+FROM            Appointments";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2330,7 +2558,26 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_UniqueID, global::System.Nullable<int> Original_Type, global::System.Nullable<global::System.DateTime> Original_StartDate, global::System.Nullable<global::System.DateTime> Original_EndDate, global::System.Nullable<bool> Original_AllDay, string Original_Subject, string Original_Location, global::System.Nullable<int> Original_Status, global::System.Nullable<int> Original_Label, global::System.Nullable<int> Original_ResourceID, global::System.Nullable<int> Original_RoomId, global::System.Nullable<int> Original_CourseId, global::System.Nullable<decimal> Original_PaidMoney, global::System.Nullable<decimal> Original_TotalPrice, global::System.Nullable<bool> Original_IsClose) {
+        public virtual int Delete(
+                    int Original_UniqueID, 
+                    global::System.Nullable<int> Original_Type, 
+                    global::System.Nullable<global::System.DateTime> Original_StartDate, 
+                    global::System.Nullable<global::System.DateTime> Original_EndDate, 
+                    global::System.Nullable<bool> Original_AllDay, 
+                    string Original_Subject, 
+                    string Original_Location, 
+                    global::System.Nullable<int> Original_Status, 
+                    global::System.Nullable<int> Original_Label, 
+                    global::System.Nullable<int> Original_ResourceID, 
+                    global::System.Nullable<int> Original_RoomId, 
+                    global::System.Nullable<int> Original_CourseId, 
+                    global::System.Nullable<decimal> Original_PaidMoney, 
+                    global::System.Nullable<decimal> Original_TotalPrice, 
+                    global::System.Nullable<bool> Original_IsClose, 
+                    global::System.Nullable<int> Original_CourseTypeId, 
+                    global::System.Nullable<int> Original_ClientId, 
+                    global::System.Nullable<decimal> Original_StudentBookMoney, 
+                    global::System.Nullable<decimal> Original_CoursePrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_UniqueID));
             if ((Original_Type.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -2444,6 +2691,38 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
+            if ((Original_CourseTypeId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((int)(Original_CourseTypeId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ClientId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((int)(Original_ClientId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StudentBookMoney.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((decimal)(Original_StudentBookMoney.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CoursePrice.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((decimal)(Original_CoursePrice.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2483,7 +2762,11 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
                     global::System.Nullable<int> CourseId, 
                     global::System.Nullable<decimal> PaidMoney, 
                     global::System.Nullable<decimal> TotalPrice, 
-                    global::System.Nullable<bool> IsClose) {
+                    global::System.Nullable<bool> IsClose, 
+                    global::System.Nullable<int> CourseTypeId, 
+                    global::System.Nullable<int> ClientId, 
+                    global::System.Nullable<decimal> StudentBookMoney, 
+                    global::System.Nullable<decimal> CoursePrice) {
             if ((Type.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Type.Value));
             }
@@ -2598,6 +2881,30 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
+            if ((CourseTypeId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((int)(CourseTypeId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((ClientId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((int)(ClientId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((StudentBookMoney.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((decimal)(StudentBookMoney.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((CoursePrice.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((decimal)(CoursePrice.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2638,6 +2945,10 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
                     global::System.Nullable<decimal> PaidMoney, 
                     global::System.Nullable<decimal> TotalPrice, 
                     global::System.Nullable<bool> IsClose, 
+                    global::System.Nullable<int> CourseTypeId, 
+                    global::System.Nullable<int> ClientId, 
+                    global::System.Nullable<decimal> StudentBookMoney, 
+                    global::System.Nullable<decimal> CoursePrice, 
                     int Original_UniqueID, 
                     global::System.Nullable<int> Original_Type, 
                     global::System.Nullable<global::System.DateTime> Original_StartDate, 
@@ -2653,6 +2964,10 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
                     global::System.Nullable<decimal> Original_PaidMoney, 
                     global::System.Nullable<decimal> Original_TotalPrice, 
                     global::System.Nullable<bool> Original_IsClose, 
+                    global::System.Nullable<int> Original_CourseTypeId, 
+                    global::System.Nullable<int> Original_ClientId, 
+                    global::System.Nullable<decimal> Original_StudentBookMoney, 
+                    global::System.Nullable<decimal> Original_CoursePrice, 
                     int UniqueID) {
             if ((Type.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Type.Value));
@@ -2768,120 +3083,176 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_UniqueID));
-            if ((Original_Type.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Type.Value));
+            if ((CourseTypeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(CourseTypeId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((ClientId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ClientId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((StudentBookMoney.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(StudentBookMoney.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_StartDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_StartDate.Value));
+            if ((CoursePrice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(CoursePrice.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_EndDate.HasValue == true)) {
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_UniqueID));
+            if ((Original_Type.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_EndDate.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_Type.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((Original_AllDay.HasValue == true)) {
+            if ((Original_StartDate.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((bool)(Original_AllDay.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_StartDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
-            if ((Original_Subject == null)) {
+            if ((Original_EndDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_EndDate.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Subject));
+            if ((Original_AllDay.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_AllDay.Value));
             }
-            if ((Original_Location == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Location));
-            }
-            if ((Original_Status.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_Status.Value));
-            }
-            else {
+            if ((Original_Subject == null)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((Original_Label.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_Label.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_Subject));
+            }
+            if ((Original_Location == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((Original_ResourceID.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_Location));
+            }
+            if ((Original_Status.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_ResourceID.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_Status.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((Original_RoomId.HasValue == true)) {
+            if ((Original_Label.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_RoomId.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_Label.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            if ((Original_CourseId.HasValue == true)) {
+            if ((Original_ResourceID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_CourseId.Value));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_ResourceID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((Original_PaidMoney.HasValue == true)) {
+            if ((Original_RoomId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((decimal)(Original_PaidMoney.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(Original_RoomId.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            if ((Original_TotalPrice.HasValue == true)) {
+            if ((Original_CourseId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((decimal)(Original_TotalPrice.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(Original_CourseId.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
-            if ((Original_IsClose.HasValue == true)) {
+            if ((Original_PaidMoney.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((bool)(Original_IsClose.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((decimal)(Original_PaidMoney.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(UniqueID));
+            if ((Original_TotalPrice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((decimal)(Original_TotalPrice.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IsClose.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((bool)(Original_IsClose.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CourseTypeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((int)(Original_CourseTypeId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ClientId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(Original_ClientId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+            }
+            if ((Original_StudentBookMoney.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((decimal)(Original_StudentBookMoney.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CoursePrice.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((decimal)(Original_CoursePrice.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[60].Value = ((int)(UniqueID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2922,6 +3293,10 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
                     global::System.Nullable<decimal> PaidMoney, 
                     global::System.Nullable<decimal> TotalPrice, 
                     global::System.Nullable<bool> IsClose, 
+                    global::System.Nullable<int> CourseTypeId, 
+                    global::System.Nullable<int> ClientId, 
+                    global::System.Nullable<decimal> StudentBookMoney, 
+                    global::System.Nullable<decimal> CoursePrice, 
                     int Original_UniqueID, 
                     global::System.Nullable<int> Original_Type, 
                     global::System.Nullable<global::System.DateTime> Original_StartDate, 
@@ -2936,8 +3311,12 @@ SELECT UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Descriptio
                     global::System.Nullable<int> Original_CourseId, 
                     global::System.Nullable<decimal> Original_PaidMoney, 
                     global::System.Nullable<decimal> Original_TotalPrice, 
-                    global::System.Nullable<bool> Original_IsClose) {
-            return this.Update(Type, StartDate, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, PaidMoney, TotalPrice, IsClose, Original_UniqueID, Original_Type, Original_StartDate, Original_EndDate, Original_AllDay, Original_Subject, Original_Location, Original_Status, Original_Label, Original_ResourceID, Original_RoomId, Original_CourseId, Original_PaidMoney, Original_TotalPrice, Original_IsClose, Original_UniqueID);
+                    global::System.Nullable<bool> Original_IsClose, 
+                    global::System.Nullable<int> Original_CourseTypeId, 
+                    global::System.Nullable<int> Original_ClientId, 
+                    global::System.Nullable<decimal> Original_StudentBookMoney, 
+                    global::System.Nullable<decimal> Original_CoursePrice) {
+            return this.Update(Type, StartDate, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, PaidMoney, TotalPrice, IsClose, CourseTypeId, ClientId, StudentBookMoney, CoursePrice, Original_UniqueID, Original_Type, Original_StartDate, Original_EndDate, Original_AllDay, Original_Subject, Original_Location, Original_Status, Original_Label, Original_ResourceID, Original_RoomId, Original_CourseId, Original_PaidMoney, Original_TotalPrice, Original_IsClose, Original_CourseTypeId, Original_ClientId, Original_StudentBookMoney, Original_CoursePrice, Original_UniqueID);
         }
     }
     

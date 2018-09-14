@@ -30,12 +30,18 @@ namespace AlexLab
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lookUpRoom = new DevExpress.XtraEditors.LookUpEdit();
-            this.lookUpCourse = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpClient = new DevExpress.XtraEditors.LookUpEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtTotalPrice = new DevExpress.XtraEditors.CalcEdit();
             this.TxtPaidMoney = new DevExpress.XtraEditors.CalcEdit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lookUpCourseType = new DevExpress.XtraEditors.LookUpEdit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtStudentBookMoney = new DevExpress.XtraEditors.CalcEdit();
+            this.TxtCoursePrice = new DevExpress.XtraEditors.CalcEdit();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).BeginInit();
@@ -59,22 +65,30 @@ namespace AlexLab
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRoom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpClient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPaidMoney.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourseType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtStudentBookMoney.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCoursePrice.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSubject
             // 
-            this.lblSubject.Location = new System.Drawing.Point(16, 107);
+            this.lblSubject.Location = new System.Drawing.Point(16, 138);
+            this.lblSubject.Size = new System.Drawing.Size(67, 13);
+            this.lblSubject.Text = "&Course name:";
             // 
             // lblLocation
             // 
-            this.lblLocation.Location = new System.Drawing.Point(16, 133);
+            this.lblLocation.Location = new System.Drawing.Point(16, 341);
+            this.lblLocation.Visible = false;
             // 
             // lblLabel
             // 
             this.lblLabel.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblLabel.Location = new System.Drawing.Point(2, 10);
+            this.lblLabel.Visible = false;
             // 
             // lblStartTime
             // 
@@ -86,7 +100,8 @@ namespace AlexLab
             // 
             // lblShowTimeAs
             // 
-            this.lblShowTimeAs.Location = new System.Drawing.Point(16, 232);
+            this.lblShowTimeAs.Location = new System.Drawing.Point(320, 341);
+            this.lblShowTimeAs.Visible = false;
             // 
             // chkAllDay
             // 
@@ -135,14 +150,18 @@ namespace AlexLab
             // 
             // edtLabel
             // 
+            this.edtLabel.Location = new System.Drawing.Point(75, 7);
+            this.edtLabel.Visible = false;
             // 
             // edtShowTimeAs
             // 
-            this.edtShowTimeAs.Location = new System.Drawing.Point(96, 229);
+            this.edtShowTimeAs.Location = new System.Drawing.Point(400, 338);
+            this.edtShowTimeAs.Size = new System.Drawing.Size(112, 20);
+            this.edtShowTimeAs.Visible = false;
             // 
             // tbSubject
             // 
-            this.tbSubject.Location = new System.Drawing.Point(96, 105);
+            this.tbSubject.Location = new System.Drawing.Point(96, 136);
             // 
             // edtResource
             // 
@@ -161,6 +180,7 @@ namespace AlexLab
             // 
             // chkReminder
             // 
+            this.chkReminder.Visible = false;
             // 
             // tbDescription
             // 
@@ -169,23 +189,29 @@ namespace AlexLab
             // 
             // cbReminder
             // 
+            this.cbReminder.Visible = false;
             // 
             // tbLocation
             // 
-            this.tbLocation.Location = new System.Drawing.Point(96, 130);
+            this.tbLocation.Location = new System.Drawing.Point(96, 338);
+            this.tbLocation.Size = new System.Drawing.Size(83, 20);
+            this.tbLocation.Visible = false;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(325, 130);
+            this.panel1.Location = new System.Drawing.Point(325, 128);
+            this.panel1.Visible = false;
             // 
             // progressPanel
             // 
-            this.progressPanel.Location = new System.Drawing.Point(16, 255);
+            this.progressPanel.Location = new System.Drawing.Point(192, 330);
+            this.progressPanel.Size = new System.Drawing.Size(107, 34);
             // 
             // tbProgress
             // 
             this.tbProgress.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.tbProgress.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tbProgress.Size = new System.Drawing.Size(0, 31);
             // 
             // lblPercentComplete
             // 
@@ -194,6 +220,7 @@ namespace AlexLab
             // lblPercentCompleteValue
             // 
             this.lblPercentCompleteValue.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblPercentCompleteValue.Location = new System.Drawing.Point(89, 10);
             // 
             // label1
             // 
@@ -222,33 +249,31 @@ namespace AlexLab
             this.lookUpRoom.TabIndex = 30;
             this.lookUpRoom.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
-            // lookUpCourse
+            // lookUpClient
             // 
-            this.lookUpCourse.Location = new System.Drawing.Point(96, 54);
-            this.lookUpCourse.Name = "lookUpCourse";
-            this.lookUpCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpClient.Location = new System.Drawing.Point(96, 43);
+            this.lookUpClient.Name = "lookUpClient";
+            this.lookUpClient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpCourse.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseName", "Course name"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseTypeDesc", "Course type "),
+            this.lookUpClient.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClientName", "Client name"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseId", "CourseId", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("StudentBookMoney", "Student book money"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClientPhone", "Client phone"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ClientNationalId", "Client national ID"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Notes", "Notes")});
-            this.lookUpCourse.Properties.DisplayMember = "CourseName";
-            this.lookUpCourse.Properties.NullText = "";
-            this.lookUpCourse.Properties.ValueMember = "CourseId";
-            this.lookUpCourse.Size = new System.Drawing.Size(416, 20);
-            this.lookUpCourse.TabIndex = 32;
+            this.lookUpClient.Properties.DisplayMember = "ClientName";
+            this.lookUpClient.Properties.NullText = "";
+            this.lookUpClient.Properties.ValueMember = "ClientId";
+            this.lookUpClient.Size = new System.Drawing.Size(416, 20);
+            this.lookUpClient.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 54);
+            this.label2.Location = new System.Drawing.Point(16, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Course name:";
+            this.label2.Text = "Client name:";
             // 
             // label3
             // 
@@ -286,18 +311,84 @@ namespace AlexLab
             this.TxtPaidMoney.Size = new System.Drawing.Size(167, 20);
             this.TxtPaidMoney.TabIndex = 36;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Course type:";
+            // 
+            // lookUpCourseType
+            // 
+            this.lookUpCourseType.Location = new System.Drawing.Point(96, 70);
+            this.lookUpCourseType.Name = "lookUpCourseType";
+            this.lookUpCourseType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpCourseType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CourseTypeDesc", "Course type")});
+            this.lookUpCourseType.Properties.DisplayMember = "CourseTypeDesc";
+            this.lookUpCourseType.Properties.NullText = "";
+            this.lookUpCourseType.Properties.ValueMember = "CourseTypeId";
+            this.lookUpCourseType.Size = new System.Drawing.Size(416, 20);
+            this.lookUpCourseType.TabIndex = 38;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 230);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Student book money:";
+            // 
+            // TxtStudentBookMoney
+            // 
+            this.TxtStudentBookMoney.Location = new System.Drawing.Point(128, 227);
+            this.TxtStudentBookMoney.Name = "TxtStudentBookMoney";
+            this.TxtStudentBookMoney.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TxtStudentBookMoney.Size = new System.Drawing.Size(184, 20);
+            this.TxtStudentBookMoney.TabIndex = 40;
+            // 
+            // TxtCoursePrice
+            // 
+            this.TxtCoursePrice.Location = new System.Drawing.Point(128, 253);
+            this.TxtCoursePrice.Name = "TxtCoursePrice";
+            this.TxtCoursePrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TxtCoursePrice.Size = new System.Drawing.Size(184, 20);
+            this.TxtCoursePrice.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 256);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Course price:";
+            // 
             // CustomAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(528, 517);
+            this.Controls.Add(this.TxtCoursePrice);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.TxtStudentBookMoney);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lookUpCourseType);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtPaidMoney);
             this.Controls.Add(this.TxtTotalPrice);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lookUpCourse);
+            this.Controls.Add(this.lookUpClient);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lookUpRoom);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(518, 307);
             this.Name = "CustomAppointmentForm";
             this.Load += new System.EventHandler(this.CustomAppointmentForm_Load);
             this.Controls.SetChildIndex(this.edtShowTimeAs, 0);
@@ -322,11 +413,17 @@ namespace AlexLab
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.lookUpRoom, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.lookUpCourse, 0);
+            this.Controls.SetChildIndex(this.lookUpClient, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.TxtTotalPrice, 0);
             this.Controls.SetChildIndex(this.TxtPaidMoney, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.lookUpCourseType, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
+            this.Controls.SetChildIndex(this.TxtStudentBookMoney, 0);
+            this.Controls.SetChildIndex(this.label7, 0);
+            this.Controls.SetChildIndex(this.TxtCoursePrice, 0);
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).EndInit();
@@ -352,9 +449,12 @@ namespace AlexLab
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRoom.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpClient.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtTotalPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPaidMoney.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourseType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtStudentBookMoney.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCoursePrice.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,11 +464,17 @@ namespace AlexLab
 
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LookUpEdit lookUpRoom;
-        private DevExpress.XtraEditors.LookUpEdit lookUpCourse;
+        private DevExpress.XtraEditors.LookUpEdit lookUpClient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.CalcEdit TxtTotalPrice;
         private DevExpress.XtraEditors.CalcEdit TxtPaidMoney;
+        private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.LookUpEdit lookUpCourseType;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.CalcEdit TxtStudentBookMoney;
+        private DevExpress.XtraEditors.CalcEdit TxtCoursePrice;
+        private System.Windows.Forms.Label label7;
     }
 }

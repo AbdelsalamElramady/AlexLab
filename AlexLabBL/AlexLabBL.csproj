@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="ClientClass.cs" />
     <Compile Include="ClientWorkSpaceClass.cs" />
-    <Compile Include="CourseClass.cs" />
     <Compile Include="CourseStudentClass.cs" />
     <Compile Include="CourseTypeClass.cs" />
     <Compile Include="DataClassesAlexLab.designer.cs">

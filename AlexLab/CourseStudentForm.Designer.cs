@@ -65,6 +65,9 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -174,9 +177,9 @@
             this.LookUpCourse.Name = "LookUpCourse";
             this.LookUpCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LookUpCourse.Properties.DisplayMember = "CourseName";
+            this.LookUpCourse.Properties.DisplayMember = "Subject";
             this.LookUpCourse.Properties.NullText = "";
-            this.LookUpCourse.Properties.ValueMember = "CourseId";
+            this.LookUpCourse.Properties.ValueMember = "UniqueID";
             this.LookUpCourse.Properties.View = this.searchLookUpEdit1View;
             this.LookUpCourse.Size = new System.Drawing.Size(765, 20);
             this.LookUpCourse.StyleController = this.layoutControl1;
@@ -187,6 +190,10 @@
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -322,7 +329,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Course name";
-            this.gridColumn7.FieldName = "CourseName";
+            this.gridColumn7.FieldName = "Subject";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
@@ -409,6 +416,30 @@
             this.layoutControlItem7.Text = "Notes";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(74, 15);
             // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Course name";
+            this.gridColumn8.FieldName = "Subject";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Room";
+            this.gridColumn9.FieldName = "RoomDesc";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 1;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Client name";
+            this.gridColumn10.FieldName = "ClientName";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            // 
             // CourseStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,5 +514,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

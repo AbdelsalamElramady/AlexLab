@@ -27,6 +27,19 @@ namespace AlexLabBL
             return obj;
         }
 
+        public static object getCourses()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Appointments
+                      join c in DbObj.Clients
+                      on ob.ClientId equals c.ClientId
+                      join r in DbObj.Rooms
+                      on ob.RoomId equals r.RoomId
+                      select new { ob.UniqueID, ob.Subject, r.RoomDesc, c.ClientName };
+            return obj;
+        }
+
         public static object getCourseTypes()
         {
             DbObj = new DataClassesAlexLabDataContext(ConectionString);
@@ -35,27 +48,14 @@ namespace AlexLabBL
             return obj;
         }
 
-        public static object getCourses()
-        {
-            DbObj = new DataClassesAlexLabDataContext(ConectionString);
-
-            var obj = from ob in DbObj.Courses
-                      join cli in DbObj.Clients
-                      on ob.ClientId equals cli.ClientId
-                      join courseType in DbObj.CourseTypes
-                      on ob.CourseTypeId equals courseType.CourseTypeId
-                      select new { ob.CourseId, cli.ClientName, courseType.CourseTypeDesc, ob.CourseName, ob.StudentBookMoney, ob.Notes };
-            return obj;
-        }
-
         public static object getCourseStudents()
         {
             DbObj = new DataClassesAlexLabDataContext(ConectionString);
 
             var obj = from ob in DbObj.CourseStudents
-                      join course in DbObj.Courses
-                      on ob.CourseId equals course.CourseId
-                      select new { ob.CourseStudentId, ob.CourseId, course.CourseName, ob.CourseStudentName, ob.CourseStudentNationalId, ob.Notes, ob.PaidMoney, ob.TotalPrice };
+                      join course in DbObj.Appointments
+                      on ob.UniqueID equals course.UniqueID
+                      select new { ob.CourseStudentId, ob.UniqueID, course.Subject, ob.CourseStudentName, ob.CourseStudentNationalId, ob.Notes, ob.PaidMoney, ob.TotalPrice };
             return obj;
         }
 

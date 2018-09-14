@@ -89,11 +89,6 @@ namespace AlexLab
             new CourseTypeForm().ShowDialog();
         }
 
-        private void trashItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            new CourseForm().ShowDialog();
-        }
-
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             new CourseStudentForm().ShowDialog();

@@ -28,7 +28,10 @@ namespace AlexLab
     public partial class CustomAppointmentForm : DevExpress.XtraScheduler.UI.AppointmentForm
     {
         int RoomId;
-        int CourseId;
+        int ClientId;
+        int CourseTypeId;
+        decimal StudentBookMoney;
+        decimal CoursePrice;
         decimal PaidMoney;
         decimal TotalPrice;
         bool IsClose;
@@ -58,10 +61,16 @@ namespace AlexLab
                 lookUpRoom.EditValue = RoomId;
             }
 
-            if (appointment.CustomFields["CourseId"] != null)
+            if (appointment.CustomFields["ClientId"] != null)
             {
-                CourseId = Convert.ToInt32(appointment.CustomFields["CourseId"]);
-                lookUpCourse.EditValue = CourseId;
+                ClientId = Convert.ToInt32(appointment.CustomFields["ClientId"]);
+                lookUpClient.EditValue = ClientId;
+            }
+
+            if (appointment.CustomFields["CourseTypeId"] != null)
+            {
+                CourseTypeId = Convert.ToInt32(appointment.CustomFields["CourseTypeId"]);
+                lookUpCourseType.EditValue = CourseTypeId;
             }
 
             if (appointment.CustomFields["PaidMoney"] != null)
@@ -76,6 +85,18 @@ namespace AlexLab
                 TxtTotalPrice.Value = TotalPrice;
             }
 
+            if (appointment.CustomFields["StudentBookMoney"] != null)
+            {
+                StudentBookMoney = Convert.ToDecimal(appointment.CustomFields["StudentBookMoney"]);
+                TxtStudentBookMoney.Value = StudentBookMoney;
+            }
+
+            if (appointment.CustomFields["CoursePrice"] != null)
+            {
+                CoursePrice = Convert.ToDecimal(appointment.CustomFields["CoursePrice"]);
+                TxtCoursePrice.Value = CoursePrice;
+            }
+
             base.LoadFormData(appointment);
         }
         /// <summary>
@@ -84,9 +105,15 @@ namespace AlexLab
         public override bool SaveFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
             appointment.CustomFields["RoomId"] = lookUpRoom.EditValue;
-            appointment.CustomFields["CourseId"] = lookUpCourse.EditValue;
+            appointment.CustomFields["ClientId"] = lookUpClient.EditValue;
+            appointment.CustomFields["CourseTypeId"] = lookUpCourseType.EditValue;
             appointment.CustomFields["PaidMoney"] = TxtPaidMoney.Value;
             appointment.CustomFields["TotalPrice"] = TxtTotalPrice.Value;
+            appointment.CustomFields["StudentBookMoney"] = TxtStudentBookMoney.Value;
+            appointment.CustomFields["CoursePrice"] = TxtCoursePrice.Value;
+
+            appointment.Location = lookUpRoom.Text;
+            appointment.LabelId = Convert.ToInt32(lookUpRoom.EditValue);
 
             return base.SaveFormData(appointment);
         }
@@ -96,8 +123,11 @@ namespace AlexLab
         public override bool IsAppointmentChanged(DevExpress.XtraScheduler.Appointment appointment)
         {
             if (RoomId == Convert.ToInt32(appointment.CustomFields["RoomId"]) &&
-                CourseId == Convert.ToInt32(appointment.CustomFields["CourseId"]) &&
+                ClientId == Convert.ToInt32(appointment.CustomFields["ClientId"]) &&
+                CourseTypeId == Convert.ToInt32(appointment.CustomFields["CourseTypeId"]) &&
                 PaidMoney == Convert.ToDecimal(appointment.CustomFields["PaidMoey"]) &&
+                StudentBookMoney == Convert.ToDecimal(appointment.CustomFields["StudentBookMoney"]) &&
+                CoursePrice == Convert.ToDecimal(appointment.CustomFields["CoursePrice"]) &&
                 TotalPrice == Convert.ToInt32(appointment.CustomFields["TotalMoney"]))
             {
                 return false;
@@ -111,7 +141,8 @@ namespace AlexLab
         private void CustomAppointmentForm_Load(object sender, EventArgs e)
         {
             lookUpRoom.Properties.DataSource = AlexLabBL.MainClass.getRooms();
-            lookUpCourse.Properties.DataSource = AlexLabBL.MainClass.getCourses();
+            lookUpClient.Properties.DataSource = AlexLabBL.MainClass.getClients();
+            lookUpCourseType.Properties.DataSource = AlexLabBL.MainClass.getCourseTypes();
         }
 
         private void edtStartDate_EditValueChanged(object sender, EventArgs e)

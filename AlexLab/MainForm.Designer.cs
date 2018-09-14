@@ -39,16 +39,15 @@
             this.inboxItem = new DevExpress.XtraNavBar.NavBarItem();
             this.outboxItem = new DevExpress.XtraNavBar.NavBarItem();
             this.draftsItem = new DevExpress.XtraNavBar.NavBarItem();
-            this.trashItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.organizerGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.calendarItem = new DevExpress.XtraNavBar.NavBarItem();
             this.tasksItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.schedulerSplitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -192,7 +191,6 @@
             this.inboxItem,
             this.outboxItem,
             this.draftsItem,
-            this.trashItem,
             this.calendarItem,
             this.tasksItem,
             this.navBarItem1,
@@ -220,7 +218,6 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.inboxItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.outboxItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.draftsItem),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.trashItem),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.mailGroup.Name = "mailGroup";
             // 
@@ -242,17 +239,32 @@
             this.draftsItem.Name = "draftsItem";
             this.draftsItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.draftsItem_LinkClicked);
             // 
-            // trashItem
-            // 
-            this.trashItem.Caption = "Course";
-            this.trashItem.Name = "trashItem";
-            this.trashItem.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.trashItem_LinkClicked);
-            // 
             // navBarItem1
             // 
             this.navBarItem1.Caption = "Course students";
             this.navBarItem1.Name = "navBarItem1";
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
+            // 
+            // navBarGroup1
+            // 
+            this.navBarGroup1.Caption = "Work space";
+            this.navBarGroup1.Expanded = true;
+            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
+            this.navBarGroup1.Name = "navBarGroup1";
+            // 
+            // navBarItem4
+            // 
+            this.navBarItem4.Caption = "Work space clients";
+            this.navBarItem4.Name = "navBarItem4";
+            this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked);
+            // 
+            // navBarItem5
+            // 
+            this.navBarItem5.Caption = "Work space";
+            this.navBarItem5.Name = "navBarItem5";
+            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // organizerGroup
             // 
@@ -288,27 +300,6 @@
             this.navBarItem3.Caption = "Payments";
             this.navBarItem3.Name = "navBarItem3";
             this.navBarItem3.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem3_LinkClicked);
-            // 
-            // navBarGroup1
-            // 
-            this.navBarGroup1.Caption = "Work space";
-            this.navBarGroup1.Expanded = true;
-            this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
-            this.navBarGroup1.Name = "navBarGroup1";
-            // 
-            // navBarItem4
-            // 
-            this.navBarItem4.Caption = "Work space clients";
-            this.navBarItem4.Name = "navBarItem4";
-            this.navBarItem4.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem4_LinkClicked);
-            // 
-            // navBarItem5
-            // 
-            this.navBarItem5.Caption = "Work space";
-            this.navBarItem5.Name = "navBarItem5";
-            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // navbarImageCollectionLarge
             // 
@@ -424,9 +415,9 @@
             this.calendarToolsRibbonPageCategory1});
             this.ribbonControl.PageHeaderItemLinks.Add(this.iAbout);
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.fileRibbonPage1,
             this.homeRibbonPage1,
             this.viewRibbonPage1,
+            this.fileRibbonPage1,
             this.ribbonPageSkins,
             this.helpRibbonPage});
             this.ribbonControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -982,6 +973,10 @@
             this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("IsClose", "IsClose"));
             this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("PaidMoney", "PaidMoney"));
             this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("TotalPrice", "TotalPrice"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ClientId", "ClientId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CoursePrice", "CoursePrice"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CourseTypeId", "CourseTypeId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("StudentBookMoney", "StudentBookMoney"));
             this.schedulerStorage.Appointments.DataSource = this.appointmentsBindingSource;
             this.schedulerStorage.Appointments.Mappings.AllDay = "AllDay";
             this.schedulerStorage.Appointments.Mappings.Description = "Description";
@@ -1161,7 +1156,6 @@
         private DevExpress.XtraNavBar.NavBarItem inboxItem;
         private DevExpress.XtraNavBar.NavBarItem outboxItem;
         private DevExpress.XtraNavBar.NavBarItem draftsItem;
-        private DevExpress.XtraNavBar.NavBarItem trashItem;
         private DevExpress.XtraNavBar.NavBarItem calendarItem;
         private DevExpress.XtraNavBar.NavBarItem tasksItem;
         private DevExpress.Utils.ImageCollection navbarImageCollection;

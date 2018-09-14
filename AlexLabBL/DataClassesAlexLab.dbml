@@ -33,51 +33,6 @@
       <Column Name="CourseTypeDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Course" Member="Courses">
-    <Type Name="Course">
-      <Column Name="CourseId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CourseTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ClientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CourseName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="StudentBookMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Appointments" Member="Appointments">
-    <Type Name="Appointment">
-      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="AllDay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Subject" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Location" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Label" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ResourceIDs" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="ReminderInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="RecurrenceInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CustomField1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="RoomId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PaidMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="IsClose" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CourseStudent" Member="CourseStudents">
-    <Type Name="CourseStudent">
-      <Column Name="CourseStudentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CourseStudentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CourseStudentNationalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="PaidMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Safe" Member="Safes">
     <Type Name="Safe">
       <Column Name="SafeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -127,6 +82,45 @@
       <Column Name="ClientWorkSpaceName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ClientWorkSpacePhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ClientWorkSpaceNationalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Appointments" Member="Appointments">
+    <Type Name="Appointment">
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="AllDay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Label" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResourceIDs" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReminderInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RecurrenceInfo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomField1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RoomId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaidMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsClose" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CourseTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ClientId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StudentBookMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CoursePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CourseStudent" Member="CourseStudents">
+    <Type Name="CourseStudent">
+      <Column Name="CourseStudentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CourseStudentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CourseStudentNationalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UniqueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PaidMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>

@@ -35,7 +35,7 @@ namespace AlexLab
         {
             courseStudentObj = new AlexLabBL.CourseStudentClass(Convert.ToInt32(gridView1.GetFocusedRowCellValue("CourseStudentId")));
 
-            LookUpCourse.EditValue = courseStudentObj.CourseId;
+            LookUpCourse.EditValue = courseStudentObj.UniqueID;
             TxtNationalId.Text = courseStudentObj.CourseStudentNationalId;
             TxtNotes.Text = courseStudentObj.Notes;
             TxtPaidMoney.Value = courseStudentObj.PaidMoney;
@@ -61,7 +61,7 @@ namespace AlexLab
         {
             if (dxValidationProvider1.Validate())
             {
-                courseStudentObj.CourseId = Convert.ToInt32(LookUpCourse.EditValue);
+                courseStudentObj.UniqueID = Convert.ToInt32(LookUpCourse.EditValue);
                 courseStudentObj.CourseStudentName = TxtStudentName.Text;
                 courseStudentObj.CourseStudentNationalId = TxtNationalId.Text;
                 courseStudentObj.TotalPrice = TxtTotalPrice.Value;

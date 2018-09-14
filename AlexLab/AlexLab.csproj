@@ -104,12 +104,6 @@
     <Compile Include="ClientWorkSpaceForm.Designer.cs">
       <DependentUpon>ClientWorkSpaceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CourseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CourseForm.Designer.cs">
-      <DependentUpon>CourseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CourseStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,9 +171,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientWorkSpaceForm.resx">
       <DependentUpon>ClientWorkSpaceForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CourseForm.resx">
-      <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseStudentForm.resx">
       <DependentUpon>CourseStudentForm.cs</DependentUpon>
