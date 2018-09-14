@@ -135,7 +135,7 @@ namespace AlexLabBL
                       join c in DbObj.ClientWorkSpaces
                       on ob.ClientWorkSpaceId equals c.ClientWorkSpaceId
                       where ob.ClientWorkSpaceId != null
-                      select new { pT.PaymentTypeDesc, c.ClientWorkSpaceName, ob.AppointmentId, ob.ClientWorkSpaceId, ob.Notes, ob.PaymentDate, ob.PaymentId, ob.PaymentTypeId, ob.PaymentValue };
+                      select new { pT.PaymentTypeDesc, c.ClientWorkSpaceName, c.ClientWorkSpacePhone, ob.AppointmentId, ob.ClientWorkSpaceId, ob.Notes, ob.PaymentDate, ob.PaymentId, ob.PaymentTypeId, ob.PaymentValue };
             return obj;
         }
 
