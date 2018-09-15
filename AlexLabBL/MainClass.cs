@@ -40,6 +40,16 @@ namespace AlexLabBL
             return obj;
         }
 
+        public static object getCoursesByClient(int clientId)
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Appointments
+                      where ob.ClientId == clientId
+                      select ob;
+            return obj;
+        }
+
         public static object getCourseTypes()
         {
             DbObj = new DataClassesAlexLabDataContext(ConectionString);

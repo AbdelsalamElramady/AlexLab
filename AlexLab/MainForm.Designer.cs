@@ -137,6 +137,9 @@
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             this.appointmentsTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.AppointmentsTableAdapter();
             this.resourcesTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.ResourcesTableAdapter();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -406,10 +409,13 @@
             this.saveScheduleItem1,
             this.printPreviewItem1,
             this.printItem1,
-            this.printPageSetupItem1});
+            this.printPageSetupItem1,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 102;
+            this.ribbonControl.MaxItemId = 105;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.calendarToolsRibbonPageCategory1});
@@ -670,6 +676,7 @@
             // 
             this.switchToGanttViewItem1.Id = 79;
             this.switchToGanttViewItem1.Name = "switchToGanttViewItem1";
+            this.switchToGanttViewItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // switchTimeScalesItem1
             // 
@@ -770,11 +777,13 @@
             // 
             this.groupByDateItem1.Id = 95;
             this.groupByDateItem1.Name = "groupByDateItem1";
+            this.groupByDateItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // groupByResourceItem1
             // 
             this.groupByResourceItem1.Id = 96;
             this.groupByResourceItem1.Name = "groupByResourceItem1";
+            this.groupByResourceItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // openScheduleItem1
             // 
@@ -893,6 +902,7 @@
             this.groupByRibbonPageGroup1.ItemLinks.Add(this.groupByNoneItem1);
             this.groupByRibbonPageGroup1.ItemLinks.Add(this.groupByDateItem1);
             this.groupByRibbonPageGroup1.ItemLinks.Add(this.groupByResourceItem1);
+            this.groupByRibbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
             this.groupByRibbonPageGroup1.Name = "groupByRibbonPageGroup1";
             // 
             // viewRibbonPage1
@@ -1078,6 +1088,25 @@
             // 
             this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 102;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 103;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Group by room";
+            this.barButtonItem3.Id = 104;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -1233,5 +1262,8 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }

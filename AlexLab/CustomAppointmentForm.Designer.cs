@@ -28,6 +28,12 @@ namespace AlexLab
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.label1 = new System.Windows.Forms.Label();
             this.lookUpRoom = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpClient = new DevExpress.XtraEditors.LookUpEdit();
@@ -42,6 +48,7 @@ namespace AlexLab
             this.TxtStudentBookMoney = new DevExpress.XtraEditors.CalcEdit();
             this.TxtCoursePrice = new DevExpress.XtraEditors.CalcEdit();
             this.label7 = new System.Windows.Forms.Label();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).BeginInit();
@@ -71,6 +78,7 @@ namespace AlexLab
             ((System.ComponentModel.ISupportInitialize)(this.lookUpCourseType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudentBookMoney.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCoursePrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSubject
@@ -162,6 +170,9 @@ namespace AlexLab
             // tbSubject
             // 
             this.tbSubject.Location = new System.Drawing.Point(96, 136);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.tbSubject, conditionValidationRule1);
             // 
             // edtResource
             // 
@@ -247,6 +258,9 @@ namespace AlexLab
             this.lookUpRoom.Properties.ValueMember = "RoomId";
             this.lookUpRoom.Size = new System.Drawing.Size(416, 20);
             this.lookUpRoom.TabIndex = 30;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpRoom, conditionValidationRule2);
             this.lookUpRoom.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
             // lookUpClient
@@ -265,6 +279,9 @@ namespace AlexLab
             this.lookUpClient.Properties.ValueMember = "ClientId";
             this.lookUpClient.Size = new System.Drawing.Size(416, 20);
             this.lookUpClient.TabIndex = 32;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpClient, conditionValidationRule3);
             // 
             // label2
             // 
@@ -301,6 +318,14 @@ namespace AlexLab
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.TxtTotalPrice.Size = new System.Drawing.Size(162, 20);
             this.TxtTotalPrice.TabIndex = 35;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.Value1 = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.dxValidationProvider1.SetValidationRule(this.TxtTotalPrice, conditionValidationRule4);
             // 
             // TxtPaidMoney
             // 
@@ -333,6 +358,9 @@ namespace AlexLab
             this.lookUpCourseType.Properties.ValueMember = "CourseTypeId";
             this.lookUpCourseType.Size = new System.Drawing.Size(416, 20);
             this.lookUpCourseType.TabIndex = 38;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpCourseType, conditionValidationRule5);
             // 
             // label6
             // 
@@ -455,6 +483,7 @@ namespace AlexLab
             ((System.ComponentModel.ISupportInitialize)(this.lookUpCourseType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudentBookMoney.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCoursePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +505,6 @@ namespace AlexLab
         private DevExpress.XtraEditors.CalcEdit TxtStudentBookMoney;
         private DevExpress.XtraEditors.CalcEdit TxtCoursePrice;
         private System.Windows.Forms.Label label7;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
     }
 }

@@ -128,5 +128,10 @@ namespace AlexLab
         {
             new WorkSpaceForm().ShowDialog();
         }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
     }
 }

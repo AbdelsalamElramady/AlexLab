@@ -104,25 +104,32 @@ namespace AlexLab
         /// </summary>
         public override bool SaveFormData(DevExpress.XtraScheduler.Appointment appointment)
         {
-            appointment.CustomFields["RoomId"] = lookUpRoom.EditValue;
-            appointment.CustomFields["ClientId"] = lookUpClient.EditValue;
-            appointment.CustomFields["CourseTypeId"] = lookUpCourseType.EditValue;
-            appointment.CustomFields["PaidMoney"] = TxtPaidMoney.Value;
-            appointment.CustomFields["TotalPrice"] = TxtTotalPrice.Value;
-            appointment.CustomFields["StudentBookMoney"] = TxtStudentBookMoney.Value;
-            appointment.CustomFields["CoursePrice"] = TxtCoursePrice.Value;
+            if (dxValidationProvider1.Validate())
+            {
+                appointment.CustomFields["RoomId"] = lookUpRoom.EditValue;
+                appointment.CustomFields["ClientId"] = lookUpClient.EditValue;
+                appointment.CustomFields["CourseTypeId"] = lookUpCourseType.EditValue;
+                appointment.CustomFields["PaidMoney"] = TxtPaidMoney.Value;
+                appointment.CustomFields["TotalPrice"] = TxtTotalPrice.Value;
+                appointment.CustomFields["StudentBookMoney"] = TxtStudentBookMoney.Value;
+                appointment.CustomFields["CoursePrice"] = TxtCoursePrice.Value;
 
-            appointment.Location = lookUpRoom.Text;
-            appointment.LabelId = Convert.ToInt32(lookUpRoom.EditValue);
+                appointment.Location = lookUpRoom.Text;
+                appointment.LabelId = Convert.ToInt32(lookUpRoom.EditValue);
 
-            return base.SaveFormData(appointment);
+                return base.SaveFormData(appointment);
+            }
+            else
+            {
+                return false;
+            }
         }
         /// <summary>
         /// Add your code to notify that any custom field is changed. Return true if a custom field is changed, otherwise false.
         /// </summary>
         public override bool IsAppointmentChanged(DevExpress.XtraScheduler.Appointment appointment)
         {
-            if (RoomId == Convert.ToInt32(appointment.CustomFields["RoomId"]) &&
+            if (dxValidationProvider1.Validate() && RoomId == Convert.ToInt32(appointment.CustomFields["RoomId"]) &&
                 ClientId == Convert.ToInt32(appointment.CustomFields["ClientId"]) &&
                 CourseTypeId == Convert.ToInt32(appointment.CustomFields["CourseTypeId"]) &&
                 PaidMoney == Convert.ToDecimal(appointment.CustomFields["PaidMoey"]) &&
