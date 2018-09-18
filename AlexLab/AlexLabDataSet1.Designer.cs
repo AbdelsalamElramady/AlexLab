@@ -2504,11 +2504,9 @@ FROM            Appointments";
             this._commandCollection[1].CommandText = @"SELECT        UniqueID, Type, StartDate, EndDate, AllDay, Subject, Location, Description, Status, Label, ResourceID, ResourceIDs, ReminderInfo, RecurrenceInfo, CustomField1, RoomId, CourseId, PaidMoney, TotalPrice, 
                          IsClose, CourseTypeId, ClientId, StudentBookMoney, CoursePrice
 FROM            Appointments
-WHERE        (RoomId = ISNULL(@roomId, RoomId)) AND (ClientId = ISNULL(@clientId, ClientId)) AND (UniqueID = ISNULL(@uniqueID, UniqueID))";
+WHERE        (RoomId = IIF(@roomId IS NULL, RoomId, @roomId))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clientId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uniqueID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UniqueID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2539,27 +2537,13 @@ WHERE        (RoomId = ISNULL(@roomId, RoomId)) AND (ClientId = ISNULL(@clientId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(AlexLabDataSet.AppointmentsDataTable dataTable, global::System.Nullable<int> roomId, global::System.Nullable<int> clientId, global::System.Nullable<int> uniqueID) {
+        public virtual int FillBy(AlexLabDataSet.AppointmentsDataTable dataTable, global::System.Nullable<int> roomId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((roomId.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(roomId.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((clientId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clientId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if (uniqueID.HasValue == true)
-            {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(uniqueID));
-            }
-            else
-            {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2572,7 +2556,7 @@ WHERE        (RoomId = ISNULL(@roomId, RoomId)) AND (ClientId = ISNULL(@clientId
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AlexLabDataSet.AppointmentsDataTable GetDataBy(global::System.Nullable<int> roomId, global::System.Nullable<int> clientId, int uniqueID) {
+        public virtual AlexLabDataSet.AppointmentsDataTable GetDataBy(global::System.Nullable<int> roomId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((roomId.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(roomId.Value));
@@ -2580,13 +2564,6 @@ WHERE        (RoomId = ISNULL(@roomId, RoomId)) AND (ClientId = ISNULL(@clientId
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((clientId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(clientId.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.SelectCommand.Parameters[2].Value = ((int)(uniqueID));
             AlexLabDataSet.AppointmentsDataTable dataTable = new AlexLabDataSet.AppointmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

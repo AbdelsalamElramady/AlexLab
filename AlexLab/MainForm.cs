@@ -39,6 +39,9 @@ namespace AlexLab
             // TODO: This line of code loads data into the 'alexLabDataSet.Appointments' table. You can move, or remove it, as needed.
             this.appointmentsTableAdapter.Fill(this.alexLabDataSet.Appointments);
 
+            lookUpRoom.Properties.DataSource = AlexLabBL.MainClass.getRooms();
+            lookUpClient.Properties.DataSource = AlexLabBL.MainClass.getClients();
+            lookUpCourse.Properties.DataSource = AlexLabBL.MainClass.getCourses();
         }
 
         public static void MessageSecuseed()
@@ -129,9 +132,72 @@ namespace AlexLab
             new WorkSpaceForm().ShowDialog();
         }
 
-        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        private void simpleButton1_Click(object sender, EventArgs e)
         {
-            
+            lookUpRoom.EditValue = null;
+            lookUpCourse.EditValue = null;
+            lookUpClient.EditValue = null;
+            appointmentsTableAdapter.Fill(alexLabDataSet.Appointments);
+        }
+
+        private void lookUpRoom_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lookUpClient.EditValue == null && lookUpCourse.EditValue == null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), null, null);
+            }
+            else if(lookUpCourse.EditValue != null && lookUpClient.EditValue == null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), null, Convert.ToInt32(lookUpCourse.EditValue));
+            }
+            else if (lookUpCourse.EditValue == null && lookUpClient.EditValue != null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), Convert.ToInt32(lookUpClient.EditValue), null);
+            }
+            else
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), Convert.ToInt32(lookUpClient.EditValue), Convert.ToInt32(lookUpCourse.EditValue));
+            }
+        }
+
+        private void lookUpClient_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lookUpCourse.EditValue == null && lookUpRoom.EditValue == null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, null, Convert.ToInt32(lookUpClient.EditValue), null);
+            }
+            else if (lookUpCourse.EditValue == null && lookUpRoom.EditValue != null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), Convert.ToInt32(lookUpClient.EditValue), null);
+            }
+            else if (lookUpCourse.EditValue != null && lookUpRoom.EditValue == null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, null, Convert.ToInt32(lookUpClient.EditValue), Convert.ToInt32(lookUpCourse.EditValue));
+            }
+            else
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), Convert.ToInt32(lookUpClient.EditValue), Convert.ToInt32(lookUpCourse.EditValue));
+            }
+        }
+
+        private void lookUpCourse_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lookUpClient.EditValue == null && lookUpRoom.EditValue == null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, null, null, Convert.ToInt32(lookUpCourse.EditValue));
+            }
+            else if (lookUpClient.EditValue == null && lookUpRoom.EditValue != null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), null, Convert.ToInt32(lookUpCourse.EditValue));
+            }
+            else if (lookUpClient.EditValue == null && lookUpRoom.EditValue != null)
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, null, Convert.ToInt32(lookUpClient.EditValue), Convert.ToInt32(lookUpCourse.EditValue));
+            }
+            else
+            {
+                appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), Convert.ToInt32(lookUpClient.EditValue), Convert.ToInt32(lookUpCourse.EditValue));
+            }
         }
     }
 }
