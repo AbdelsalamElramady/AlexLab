@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
@@ -47,19 +48,19 @@
             this.tasksItem = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection();
-            this.navbarImageCollection = new DevExpress.Utils.ImageCollection();
+            this.navbarImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.navbarImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.schedulerSplitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
-            this.schedulerControl = new DevExpress.XtraScheduler.SchedulerControl();
+            this.lookUpClient = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer();
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.popupControlContainer2 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.buttonEdit = new DevExpress.XtraEditors.ButtonEdit();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
-            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
             this.someLabelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.someLabelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.iHelp = new DevExpress.XtraBars.BarButtonItem();
             this.iAbout = new DevExpress.XtraBars.BarButtonItem();
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
@@ -110,8 +111,13 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.calendarToolsRibbonPageCategory1 = new DevExpress.XtraScheduler.UI.CalendarToolsRibbonPageCategory();
+            this.schedulerControl = new DevExpress.XtraScheduler.SchedulerControl();
+            this.schedulerStorage = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.alexLabDataSet = new AlexLab.AlexLabDataSet();
+            this.resourcesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentRibbonPage1 = new DevExpress.XtraScheduler.UI.AppointmentRibbonPage();
             this.actionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.ActionsRibbonPageGroup();
             this.optionsRibbonPageGroup1 = new DevExpress.XtraScheduler.UI.OptionsRibbonPageGroup();
@@ -131,21 +137,26 @@
             this.helpRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.helpRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.schedulerStorage = new DevExpress.XtraScheduler.SchedulerStorage();
-            this.appointmentsBindingSource = new System.Windows.Forms.BindingSource();
-            this.alexLabDataSet = new AlexLab.AlexLabDataSet();
-            this.resourcesBindingSource = new System.Windows.Forms.BindingSource();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lookUpRoom = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lookUpCourse = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dateNavigator = new DevExpress.XtraScheduler.DateNavigator();
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             this.appointmentsTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.AppointmentsTableAdapter();
             this.resourcesTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.ResourcesTableAdapter();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.lookUpCourse = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lookUpRoom = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.lookUpClient = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -153,7 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerSplitContainerControl)).BeginInit();
             this.schedulerSplitContainerControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpClient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).BeginInit();
@@ -165,18 +176,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alexLabDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRoom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpClient.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl
@@ -189,7 +200,7 @@
             this.splitContainerControl.Panel1.Text = "Panel1";
             this.splitContainerControl.Panel2.Controls.Add(this.schedulerSplitContainerControl);
             this.splitContainerControl.Panel2.Text = "Panel2";
-            this.splitContainerControl.Size = new System.Drawing.Size(1368, 605);
+            this.splitContainerControl.Size = new System.Drawing.Size(1368, 601);
             this.splitContainerControl.SplitterPosition = 165;
             this.splitContainerControl.TabIndex = 0;
             this.splitContainerControl.Text = "splitContainerControl1";
@@ -218,7 +229,7 @@
             this.navBarControl.Name = "navBarControl";
             this.navBarControl.OptionsNavPane.ExpandedWidth = 165;
             this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
-            this.navBarControl.Size = new System.Drawing.Size(165, 593);
+            this.navBarControl.Size = new System.Drawing.Size(165, 589);
             this.navBarControl.SmallImages = this.navbarImageCollection;
             this.navBarControl.StoreDefaultPaintStyleName = true;
             this.navBarControl.TabIndex = 0;
@@ -348,28 +359,29 @@
             this.schedulerSplitContainerControl.Panel1.Text = "Panel1";
             this.schedulerSplitContainerControl.Panel2.Controls.Add(this.dateNavigator);
             this.schedulerSplitContainerControl.Panel2.Text = "Panel2";
-            this.schedulerSplitContainerControl.Size = new System.Drawing.Size(1186, 593);
+            this.schedulerSplitContainerControl.Size = new System.Drawing.Size(1186, 589);
             this.schedulerSplitContainerControl.SplitterPosition = 190;
             this.schedulerSplitContainerControl.TabIndex = 2;
             this.schedulerSplitContainerControl.Text = "splitContainerControl1";
             // 
-            // schedulerControl
+            // lookUpClient
             // 
-            this.schedulerControl.Location = new System.Drawing.Point(0, 30);
-            this.schedulerControl.MenuManager = this.ribbonControl;
-            this.schedulerControl.Name = "schedulerControl";
-            this.schedulerControl.Size = new System.Drawing.Size(990, 560);
-            this.schedulerControl.Start = new System.DateTime(2018, 7, 22, 0, 0, 0, 0);
-            this.schedulerControl.Storage = this.schedulerStorage;
-            this.schedulerControl.TabIndex = 0;
-            this.schedulerControl.Text = "schedulerControl1";
-            this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler1);
-            this.schedulerControl.Views.FullWeekView.Enabled = true;
-            this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
-            this.schedulerControl.Views.TimelineView.Enabled = false;
-            this.schedulerControl.Views.WeekView.Enabled = false;
-            this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
-            this.schedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl_EditAppointmentFormShowing);
+            this.lookUpClient.Location = new System.Drawing.Point(433, 0);
+            this.lookUpClient.MenuManager = this.ribbonControl;
+            this.lookUpClient.Name = "lookUpClient";
+            this.lookUpClient.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpClient.Properties.Appearance.Options.UseFont = true;
+            this.lookUpClient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpClient.Properties.DisplayMember = "ClientName";
+            this.lookUpClient.Properties.NullText = "Client";
+            this.lookUpClient.Properties.NullValuePrompt = "Client";
+            this.lookUpClient.Properties.NullValuePromptShowForEmptyValue = true;
+            this.lookUpClient.Properties.ValueMember = "ClientId";
+            this.lookUpClient.Properties.View = this.gridView2;
+            this.lookUpClient.Size = new System.Drawing.Size(312, 26);
+            this.lookUpClient.TabIndex = 4;
+            this.lookUpClient.EditValueChanged += new System.EventHandler(this.lookUpClient_EditValueChanged);
             // 
             // ribbonControl
             // 
@@ -859,6 +871,73 @@
             this.appointmentRibbonPage1});
             this.calendarToolsRibbonPageCategory1.Visible = false;
             // 
+            // schedulerControl
+            // 
+            this.schedulerControl.Location = new System.Drawing.Point(0, 30);
+            this.schedulerControl.MenuManager = this.ribbonControl;
+            this.schedulerControl.Name = "schedulerControl";
+            this.schedulerControl.Size = new System.Drawing.Size(990, 560);
+            this.schedulerControl.Start = new System.DateTime(2018, 7, 22, 0, 0, 0, 0);
+            this.schedulerControl.Storage = this.schedulerStorage;
+            this.schedulerControl.TabIndex = 0;
+            this.schedulerControl.Text = "schedulerControl1";
+            this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler1);
+            this.schedulerControl.Views.FullWeekView.Enabled = true;
+            this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
+            this.schedulerControl.Views.TimelineView.Enabled = false;
+            this.schedulerControl.Views.WeekView.Enabled = false;
+            this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.schedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl_EditAppointmentFormShowing);
+            // 
+            // schedulerStorage
+            // 
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("RoomId", "RoomId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CourseId", "CourseId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("IsClose", "IsClose"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("PaidMoney", "PaidMoney"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("TotalPrice", "TotalPrice"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ClientId", "ClientId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CoursePrice", "CoursePrice"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CourseTypeId", "CourseTypeId"));
+            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("StudentBookMoney", "StudentBookMoney"));
+            this.schedulerStorage.Appointments.DataSource = this.appointmentsBindingSource;
+            this.schedulerStorage.Appointments.Mappings.AllDay = "AllDay";
+            this.schedulerStorage.Appointments.Mappings.Description = "Description";
+            this.schedulerStorage.Appointments.Mappings.End = "EndDate";
+            this.schedulerStorage.Appointments.Mappings.Label = "Label";
+            this.schedulerStorage.Appointments.Mappings.Location = "Location";
+            this.schedulerStorage.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
+            this.schedulerStorage.Appointments.Mappings.ReminderInfo = "ReminderInfo";
+            this.schedulerStorage.Appointments.Mappings.ResourceId = "ResourceID";
+            this.schedulerStorage.Appointments.Mappings.Start = "StartDate";
+            this.schedulerStorage.Appointments.Mappings.Status = "Status";
+            this.schedulerStorage.Appointments.Mappings.Subject = "Subject";
+            this.schedulerStorage.Appointments.Mappings.TimeZoneId = "ResourceIDs";
+            this.schedulerStorage.Appointments.Mappings.Type = "Type";
+            this.schedulerStorage.Resources.DataSource = this.resourcesBindingSource;
+            this.schedulerStorage.Resources.Mappings.Caption = "ResourceName";
+            this.schedulerStorage.Resources.Mappings.Color = "Color";
+            this.schedulerStorage.Resources.Mappings.Id = "ResourceID";
+            this.schedulerStorage.Resources.Mappings.Image = "Image";
+            this.schedulerStorage.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            this.schedulerStorage.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            this.schedulerStorage.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            // 
+            // appointmentsBindingSource
+            // 
+            this.appointmentsBindingSource.DataMember = "Appointments";
+            this.appointmentsBindingSource.DataSource = this.alexLabDataSet;
+            // 
+            // alexLabDataSet
+            // 
+            this.alexLabDataSet.DataSetName = "AlexLabDataSet";
+            this.alexLabDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // resourcesBindingSource
+            // 
+            this.resourcesBindingSource.DataMember = "Resources";
+            this.resourcesBindingSource.DataSource = this.alexLabDataSet;
+            // 
             // appointmentRibbonPage1
             // 
             this.appointmentRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -914,7 +993,6 @@
             this.arrangeRibbonPageGroup1.ItemLinks.Add(this.switchToFullWeekViewItem1);
             this.arrangeRibbonPageGroup1.ItemLinks.Add(this.switchToMonthViewItem1);
             this.arrangeRibbonPageGroup1.ItemLinks.Add(this.switchToTimelineViewItem1);
-            this.arrangeRibbonPageGroup1.ItemLinks.Add(this.switchToGanttViewItem1);
             this.arrangeRibbonPageGroup1.Name = "arrangeRibbonPageGroup1";
             // 
             // groupByRibbonPageGroup1
@@ -923,6 +1001,7 @@
             this.groupByRibbonPageGroup1.ItemLinks.Add(this.groupByDateItem1);
             this.groupByRibbonPageGroup1.ItemLinks.Add(this.groupByResourceItem1);
             this.groupByRibbonPageGroup1.Name = "groupByRibbonPageGroup1";
+            this.groupByRibbonPageGroup1.Visible = false;
             // 
             // viewRibbonPage1
             // 
@@ -940,7 +1019,6 @@
             this.activeViewRibbonPageGroup1.ItemLinks.Add(this.switchToFullWeekViewItem1);
             this.activeViewRibbonPageGroup1.ItemLinks.Add(this.switchToMonthViewItem1);
             this.activeViewRibbonPageGroup1.ItemLinks.Add(this.switchToTimelineViewItem1);
-            this.activeViewRibbonPageGroup1.ItemLinks.Add(this.switchToGanttViewItem1);
             this.activeViewRibbonPageGroup1.Name = "activeViewRibbonPageGroup1";
             // 
             // timeScaleRibbonPageGroup1
@@ -1003,59 +1081,171 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.siStatus);
             this.ribbonStatusBar.ItemLinks.Add(this.siInfo);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 748);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 744);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControl;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1368, 31);
             // 
-            // schedulerStorage
+            // gridView2
             // 
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("RoomId", "RoomId"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CourseId", "CourseId"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("IsClose", "IsClose"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("PaidMoney", "PaidMoney"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("TotalPrice", "TotalPrice"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("ClientId", "ClientId"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CoursePrice", "CoursePrice"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("CourseTypeId", "CourseTypeId"));
-            this.schedulerStorage.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("StudentBookMoney", "StudentBookMoney"));
-            this.schedulerStorage.Appointments.DataSource = this.appointmentsBindingSource;
-            this.schedulerStorage.Appointments.Mappings.AllDay = "AllDay";
-            this.schedulerStorage.Appointments.Mappings.Description = "Description";
-            this.schedulerStorage.Appointments.Mappings.End = "EndDate";
-            this.schedulerStorage.Appointments.Mappings.Label = "Label";
-            this.schedulerStorage.Appointments.Mappings.Location = "Location";
-            this.schedulerStorage.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
-            this.schedulerStorage.Appointments.Mappings.ReminderInfo = "ReminderInfo";
-            this.schedulerStorage.Appointments.Mappings.ResourceId = "ResourceID";
-            this.schedulerStorage.Appointments.Mappings.Start = "StartDate";
-            this.schedulerStorage.Appointments.Mappings.Status = "Status";
-            this.schedulerStorage.Appointments.Mappings.Subject = "Subject";
-            this.schedulerStorage.Appointments.Mappings.TimeZoneId = "ResourceIDs";
-            this.schedulerStorage.Appointments.Mappings.Type = "Type";
-            this.schedulerStorage.Resources.DataSource = this.resourcesBindingSource;
-            this.schedulerStorage.Resources.Mappings.Caption = "ResourceName";
-            this.schedulerStorage.Resources.Mappings.Color = "Color";
-            this.schedulerStorage.Resources.Mappings.Id = "ResourceID";
-            this.schedulerStorage.Resources.Mappings.Image = "Image";
-            this.schedulerStorage.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
-            this.schedulerStorage.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
-            this.schedulerStorage.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn7,
+            this.gridColumn6});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // appointmentsBindingSource
+            // gridColumn4
             // 
-            this.appointmentsBindingSource.DataMember = "Appointments";
-            this.appointmentsBindingSource.DataSource = this.alexLabDataSet;
+            this.gridColumn4.Caption = "Name";
+            this.gridColumn4.FieldName = "ClientName";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
             // 
-            // alexLabDataSet
+            // gridColumn5
             // 
-            this.alexLabDataSet.DataSetName = "AlexLabDataSet";
-            this.alexLabDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.gridColumn5.Caption = "Phone";
+            this.gridColumn5.FieldName = "ClientPhone";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 1;
             // 
-            // resourcesBindingSource
+            // gridColumn7
             // 
-            this.resourcesBindingSource.DataMember = "Resources";
-            this.resourcesBindingSource.DataSource = this.alexLabDataSet;
+            this.gridColumn7.Caption = "National ID";
+            this.gridColumn7.FieldName = "ClientNationalId";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 2;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Notes";
+            this.gridColumn6.FieldName = "Notes";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
+            // 
+            // lookUpRoom
+            // 
+            this.lookUpRoom.Location = new System.Drawing.Point(751, 0);
+            this.lookUpRoom.MenuManager = this.ribbonControl;
+            this.lookUpRoom.Name = "lookUpRoom";
+            this.lookUpRoom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpRoom.Properties.Appearance.Options.UseFont = true;
+            this.lookUpRoom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpRoom.Properties.DisplayMember = "RoomDesc";
+            this.lookUpRoom.Properties.NullText = "Room";
+            this.lookUpRoom.Properties.NullValuePrompt = "Room";
+            this.lookUpRoom.Properties.NullValuePromptShowForEmptyValue = true;
+            this.lookUpRoom.Properties.ValueMember = "RoomId";
+            this.lookUpRoom.Properties.View = this.gridView1;
+            this.lookUpRoom.Size = new System.Drawing.Size(239, 26);
+            this.lookUpRoom.TabIndex = 3;
+            this.lookUpRoom.EditValueChanged += new System.EventHandler(this.lookUpRoom_EditValueChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Room";
+            this.gridColumn1.FieldName = "RoomDesc";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Hour price";
+            this.gridColumn2.FieldName = "HourPrice";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Notes";
+            this.gridColumn3.FieldName = "Notes";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // lookUpCourse
+            // 
+            this.lookUpCourse.Location = new System.Drawing.Point(119, 0);
+            this.lookUpCourse.MenuManager = this.ribbonControl;
+            this.lookUpCourse.Name = "lookUpCourse";
+            this.lookUpCourse.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpCourse.Properties.Appearance.Options.UseFont = true;
+            this.lookUpCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpCourse.Properties.DisplayMember = "Subject";
+            this.lookUpCourse.Properties.NullText = "Course";
+            this.lookUpCourse.Properties.NullValuePrompt = "Course";
+            this.lookUpCourse.Properties.NullValuePromptShowForEmptyValue = true;
+            this.lookUpCourse.Properties.ValueMember = "UniqueID";
+            this.lookUpCourse.Properties.View = this.searchLookUpEdit1View;
+            this.lookUpCourse.Size = new System.Drawing.Size(308, 26);
+            this.lookUpCourse.TabIndex = 2;
+            this.lookUpCourse.EditValueChanged += new System.EventHandler(this.lookUpCourse_EditValueChanged);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "CourseName";
+            this.gridColumn8.FieldName = "Subject";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Client";
+            this.gridColumn9.FieldName = "ClientName";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 1;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Room";
+            this.gridColumn10.FieldName = "RoomDesc";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(0, 1);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(113, 23);
+            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.Text = "All";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // dateNavigator
             // 
@@ -1065,7 +1255,7 @@
             this.dateNavigator.Location = new System.Drawing.Point(0, 0);
             this.dateNavigator.Name = "dateNavigator";
             this.dateNavigator.SchedulerControl = this.schedulerControl;
-            this.dateNavigator.Size = new System.Drawing.Size(190, 593);
+            this.dateNavigator.Size = new System.Drawing.Size(190, 589);
             this.dateNavigator.TabIndex = 1;
             // 
             // schedulerBarController1
@@ -1120,99 +1310,12 @@
             // 
             this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(0, 1);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(113, 23);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "All";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // lookUpCourse
-            // 
-            this.lookUpCourse.Location = new System.Drawing.Point(119, 0);
-            this.lookUpCourse.MenuManager = this.ribbonControl;
-            this.lookUpCourse.Name = "lookUpCourse";
-            this.lookUpCourse.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lookUpCourse.Properties.Appearance.Options.UseFont = true;
-            this.lookUpCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpCourse.Properties.DisplayMember = "Subject";
-            this.lookUpCourse.Properties.NullText = "Course";
-            this.lookUpCourse.Properties.NullValuePrompt = "Course";
-            this.lookUpCourse.Properties.NullValuePromptShowForEmptyValue = true;
-            this.lookUpCourse.Properties.ValueMember = "UniqueID";
-            this.lookUpCourse.Properties.View = this.searchLookUpEdit1View;
-            this.lookUpCourse.Size = new System.Drawing.Size(308, 26);
-            this.lookUpCourse.TabIndex = 2;
-            this.lookUpCourse.EditValueChanged += new System.EventHandler(this.lookUpCourse_EditValueChanged);
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // lookUpRoom
-            // 
-            this.lookUpRoom.Location = new System.Drawing.Point(751, 0);
-            this.lookUpRoom.MenuManager = this.ribbonControl;
-            this.lookUpRoom.Name = "lookUpRoom";
-            this.lookUpRoom.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lookUpRoom.Properties.Appearance.Options.UseFont = true;
-            this.lookUpRoom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpRoom.Properties.DisplayMember = "RoomDesc";
-            this.lookUpRoom.Properties.NullText = "Room";
-            this.lookUpRoom.Properties.NullValuePrompt = "Room";
-            this.lookUpRoom.Properties.NullValuePromptShowForEmptyValue = true;
-            this.lookUpRoom.Properties.ValueMember = "RoomId";
-            this.lookUpRoom.Properties.View = this.gridView1;
-            this.lookUpRoom.Size = new System.Drawing.Size(239, 26);
-            this.lookUpRoom.TabIndex = 3;
-            this.lookUpRoom.EditValueChanged += new System.EventHandler(this.lookUpRoom_EditValueChanged);
-            // 
-            // gridView1
-            // 
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // lookUpClient
-            // 
-            this.lookUpClient.Location = new System.Drawing.Point(433, 0);
-            this.lookUpClient.MenuManager = this.ribbonControl;
-            this.lookUpClient.Name = "lookUpClient";
-            this.lookUpClient.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lookUpClient.Properties.Appearance.Options.UseFont = true;
-            this.lookUpClient.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpClient.Properties.DisplayMember = "ClientName";
-            this.lookUpClient.Properties.NullText = "Client";
-            this.lookUpClient.Properties.NullValuePrompt = "Client";
-            this.lookUpClient.Properties.NullValuePromptShowForEmptyValue = true;
-            this.lookUpClient.Properties.ValueMember = "ClientId";
-            this.lookUpClient.Properties.View = this.gridView2;
-            this.lookUpClient.Size = new System.Drawing.Size(312, 26);
-            this.lookUpClient.TabIndex = 4;
-            this.lookUpClient.EditValueChanged += new System.EventHandler(this.lookUpClient_EditValueChanged);
-            // 
-            // gridView2
-            // 
-            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1368, 779);
+            this.ClientSize = new System.Drawing.Size(1368, 775);
             this.Controls.Add(this.splitContainerControl);
             this.Controls.Add(this.popupControlContainer1);
             this.Controls.Add(this.popupControlContainer2);
@@ -1232,7 +1335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navbarImageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerSplitContainerControl)).EndInit();
             this.schedulerSplitContainerControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpClient.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer2)).EndInit();
@@ -1245,18 +1348,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDuration1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alexLabDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpRoom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpClient.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpCourse.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateNavigator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1378,5 +1481,15 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SearchLookUpEdit lookUpCourse;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }
