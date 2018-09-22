@@ -36,8 +36,28 @@ namespace AlexLabBL
                       on ob.ClientId equals c.ClientId
                       join r in DbObj.Rooms
                       on ob.RoomId equals r.RoomId
-                      select new { ob.UniqueID, ob.Subject, r.RoomDesc, c.ClientName };
+                      select new { ob.UniqueID, ob.Subject, r.RoomDesc, c.ClientName, ob.StudentBookMoney, ob.CoursePrice };
             return obj;
+        }
+
+        public static decimal getBookMoney(int ID)
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Appointments
+                      where ob.UniqueID == ID
+                      select ob;
+            return obj.First().StudentBookMoney.Value;
+        }
+
+        public static decimal getCoursePrice(int ID)
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Appointments
+                      where ob.UniqueID == ID
+                      select ob;
+            return obj.First().CoursePrice.Value;
         }
 
         public static object getCoursesByClient(int clientId)
@@ -65,7 +85,7 @@ namespace AlexLabBL
             var obj = from ob in DbObj.CourseStudents
                       join course in DbObj.Appointments
                       on ob.UniqueID equals course.UniqueID
-                      select new { ob.CourseStudentId, ob.UniqueID, course.Subject, ob.CourseStudentName, ob.CourseStudentNationalId, ob.Notes, ob.PaidMoney, ob.TotalPrice };
+                      select new { ob.CourseStudentId, ob.UniqueID, course.Subject, ob.CourseStudentName, ob.CourseStudentNationalId, ob.Notes, ob.PaidMoney, ob.BookMoney, ob.CoursePrice };
             return obj;
         }
 
@@ -160,6 +180,34 @@ namespace AlexLabBL
                       on ob.ClientWorkSpaceId equals c.ClientWorkSpaceId
                       where ob.ClientWorkSpaceId == clientWorkSpaceId
                       select new { pT.PaymentTypeDesc, c.ClientWorkSpaceName, ob.AppointmentId, ob.ClientWorkSpaceId, ob.Notes, ob.PaymentDate, ob.PaymentId, ob.PaymentTypeId, ob.PaymentValue };
+            return obj;
+        }
+
+        public static object getPaymentByCourse()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Payments
+                      join pT in DbObj.PaymentTypes
+                      on ob.PaymentTypeId equals pT.PaymentTypeId
+                      join c in DbObj.Appointments
+                      on ob.AppointmentId equals c.UniqueID
+                      where ob.AppointmentId != null
+                      select new { pT.PaymentTypeDesc, c.Subject, c.Location, ob.AppointmentId, ob.Notes, ob.PaymentDate, ob.PaymentId, ob.PaymentTypeId, ob.PaymentValue };
+            return obj;
+        }
+
+        public static object getPaymentByCourse(int appointmentId)
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.Payments
+                      join pT in DbObj.PaymentTypes
+                      on ob.PaymentTypeId equals pT.PaymentTypeId
+                      join c in DbObj.Appointments
+                      on ob.AppointmentId equals c.UniqueID
+                      where ob.AppointmentId == appointmentId
+                      select new { pT.PaymentTypeDesc, c.Subject, c.Location, ob.AppointmentId, ob.Notes, ob.PaymentDate, ob.PaymentId, ob.PaymentTypeId, ob.PaymentValue };
             return obj;
         }
 

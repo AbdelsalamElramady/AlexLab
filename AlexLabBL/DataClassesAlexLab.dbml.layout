@@ -68,10 +68,10 @@
         <elementListCompartment Id="3d4fbf89-38a5-4bd4-936d-52a3d47cda2f" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b470073f-82bd-4593-bdfc-1a4c972c69a3" absoluteBounds="0.5, 6.125, 2, 2.1554996744791666">
+    <classShape Id="8955cf92-dc00-4389-a406-b5430e3789de" absoluteBounds="0.5, 6, 2, 2.3478011067708335">
       <DataClassMoniker Name="/DataClassesAlexLabDataContext/CourseStudent" />
       <nestedChildShapes>
-        <elementListCompartment Id="9fedfa9b-fa76-40c1-9e04-cc492ca1ecb4" absoluteBounds="0.51500000000000012, 6.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5fa532c8-50be-40e1-a49b-59ddd0797b82" absoluteBounds="0.51500000000000012, 6.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

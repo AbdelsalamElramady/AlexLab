@@ -30,6 +30,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -104,6 +106,12 @@
     <Compile Include="ClientWorkSpaceForm.Designer.cs">
       <DependentUpon>ClientWorkSpaceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CoursePaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoursePaymentForm.Designer.cs">
+      <DependentUpon>CoursePaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +180,9 @@
     <EmbeddedResource Include="ClientWorkSpaceForm.resx">
       <DependentUpon>ClientWorkSpaceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CoursePaymentForm.resx">
+      <DependentUpon>CoursePaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseStudentForm.resx">
       <DependentUpon>CourseStudentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +236,7 @@
       <DependentUpon>AlexLabDataSet.xsd</DependentUpon>
     </None>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -254,6 +266,13 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets" Condition="Exists('..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EmptyLicensesLicx.1.1.0\build\EmptyLicensesLicx.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

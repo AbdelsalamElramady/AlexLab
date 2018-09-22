@@ -49,6 +49,7 @@ namespace AlexLab
             this.TxtCoursePrice = new DevExpress.XtraEditors.CalcEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).BeginInit();
@@ -121,6 +122,7 @@ namespace AlexLab
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(104, 483);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -329,12 +331,14 @@ namespace AlexLab
             // 
             // TxtPaidMoney
             // 
+            this.TxtPaidMoney.Enabled = false;
             this.TxtPaidMoney.Location = new System.Drawing.Point(345, 307);
             this.TxtPaidMoney.Name = "TxtPaidMoney";
             this.TxtPaidMoney.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.TxtPaidMoney.Size = new System.Drawing.Size(167, 20);
             this.TxtPaidMoney.TabIndex = 36;
+            this.TxtPaidMoney.ValueChanged += new System.EventHandler(this.TxtPaidMoney_ValueChanged);
             // 
             // label5
             // 
@@ -394,14 +398,24 @@ namespace AlexLab
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(16, 256);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.Size = new System.Drawing.Size(110, 13);
             this.label7.TabIndex = 41;
-            this.label7.Text = "Course price:";
+            this.label7.Text = "Student course price:";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(345, 278);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(167, 23);
+            this.simpleButton1.TabIndex = 43;
+            this.simpleButton1.Text = "Pay";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // CustomAppointmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(528, 517);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.TxtCoursePrice);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TxtStudentBookMoney);
@@ -452,6 +466,7 @@ namespace AlexLab
             this.Controls.SetChildIndex(this.TxtStudentBookMoney, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.TxtCoursePrice, 0);
+            this.Controls.SetChildIndex(this.simpleButton1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.chkAllDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtStartDate.Properties)).EndInit();
@@ -498,7 +513,6 @@ namespace AlexLab
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.CalcEdit TxtTotalPrice;
-        private DevExpress.XtraEditors.CalcEdit TxtPaidMoney;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.LookUpEdit lookUpCourseType;
         private System.Windows.Forms.Label label6;
@@ -506,5 +520,7 @@ namespace AlexLab
         private DevExpress.XtraEditors.CalcEdit TxtCoursePrice;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.CalcEdit TxtPaidMoney;
     }
 }

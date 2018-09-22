@@ -12,7 +12,8 @@ namespace AlexLabBL
         public string CourseStudentName { get; set; }
         public string CourseStudentNationalId { get; set; }
         public int UniqueID { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal BookMoney { get; set; }
+        public decimal CoursePrice { get; set; }
         public decimal PaidMoney { get; set; }
         public string Notes { get; set; }
 
@@ -31,7 +32,8 @@ namespace AlexLabBL
             CourseStudentName = courseStudent.CourseStudentName;
             CourseStudentNationalId = courseStudent.CourseStudentNationalId;
             UniqueID = courseStudent.UniqueID.Value;
-            TotalPrice = courseStudent.TotalPrice.Value;
+            BookMoney = courseStudent.BookMoney.Value;
+            CoursePrice = courseStudent.CoursePrice.Value;
             PaidMoney = courseStudent.PaidMoney.Value;
             Notes = courseStudent.Notes;
         }
@@ -45,7 +47,8 @@ namespace AlexLabBL
                 courseStudent.CourseStudentName = CourseStudentName;
                 courseStudent.CourseStudentNationalId = CourseStudentNationalId;
                 courseStudent.UniqueID = UniqueID;
-                courseStudent.TotalPrice = TotalPrice;
+                courseStudent.BookMoney = BookMoney;
+                courseStudent.CoursePrice = CoursePrice;
                 courseStudent.PaidMoney = PaidMoney;
                 courseStudent.Notes = Notes;
 
@@ -71,7 +74,8 @@ namespace AlexLabBL
                 courseStudent.CourseStudentName = CourseStudentName;
                 courseStudent.CourseStudentNationalId = CourseStudentNationalId;
                 courseStudent.UniqueID = UniqueID;
-                courseStudent.TotalPrice = TotalPrice;
+                courseStudent.BookMoney = BookMoney;
+                courseStudent.CoursePrice = CoursePrice;
                 courseStudent.PaidMoney = PaidMoney;
                 courseStudent.Notes = Notes;
 

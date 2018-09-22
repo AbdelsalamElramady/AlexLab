@@ -40,7 +40,8 @@ namespace AlexLab
             TxtNotes.Text = courseStudentObj.Notes;
             TxtPaidMoney.Value = courseStudentObj.PaidMoney;
             TxtStudentName.Text = courseStudentObj.CourseStudentName;
-            TxtTotalPrice.Value = courseStudentObj.TotalPrice;
+            TxtBookMoney.Value = courseStudentObj.BookMoney;
+            TxtCoursePrice.Value = courseStudentObj.CoursePrice;
 
             isEdit = true;
         }
@@ -52,7 +53,8 @@ namespace AlexLab
             TxtNotes.Text = string.Empty;
             TxtPaidMoney.Value = decimal.Zero;
             TxtStudentName.Text = string.Empty;
-            TxtTotalPrice.Value = decimal.Zero;
+            TxtBookMoney.Value = decimal.Zero;
+            TxtCoursePrice.Value = decimal.Zero;
 
             isEdit = false;
         }
@@ -64,7 +66,8 @@ namespace AlexLab
                 courseStudentObj.UniqueID = Convert.ToInt32(LookUpCourse.EditValue);
                 courseStudentObj.CourseStudentName = TxtStudentName.Text;
                 courseStudentObj.CourseStudentNationalId = TxtNationalId.Text;
-                courseStudentObj.TotalPrice = TxtTotalPrice.Value;
+                courseStudentObj.BookMoney = TxtBookMoney.Value;
+                courseStudentObj.CoursePrice = TxtCoursePrice.Value;
                 courseStudentObj.PaidMoney = TxtPaidMoney.Value;
                 courseStudentObj.Notes = TxtNotes.Text;
 
@@ -79,6 +82,12 @@ namespace AlexLab
 
                 gridControl1.DataSource = AlexLabBL.MainClass.getCourseStudents();
             }
+        }
+
+        private void LookUpCourse_EditValueChanged(object sender, EventArgs e)
+        {
+            TxtBookMoney.Value = AlexLabBL.MainClass.getBookMoney(Convert.ToInt32(LookUpCourse.EditValue));
+            TxtCoursePrice.Value = AlexLabBL.MainClass.getCoursePrice(Convert.ToInt32(LookUpCourse.EditValue));
         }
     }
 }

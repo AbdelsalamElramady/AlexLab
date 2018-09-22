@@ -2283,7 +2283,9 @@ namespace AlexLabBL
 		
 		private System.Nullable<int> _UniqueID;
 		
-		private System.Nullable<decimal> _TotalPrice;
+		private System.Nullable<decimal> _BookMoney;
+		
+		private System.Nullable<decimal> _CoursePrice;
 		
 		private System.Nullable<decimal> _PaidMoney;
 		
@@ -2301,8 +2303,10 @@ namespace AlexLabBL
     partial void OnCourseStudentNationalIdChanged();
     partial void OnUniqueIDChanging(System.Nullable<int> value);
     partial void OnUniqueIDChanged();
-    partial void OnTotalPriceChanging(System.Nullable<decimal> value);
-    partial void OnTotalPriceChanged();
+    partial void OnBookMoneyChanging(System.Nullable<decimal> value);
+    partial void OnBookMoneyChanged();
+    partial void OnCoursePriceChanging(System.Nullable<decimal> value);
+    partial void OnCoursePriceChanged();
     partial void OnPaidMoneyChanging(System.Nullable<decimal> value);
     partial void OnPaidMoneyChanged();
     partial void OnNotesChanging(string value);
@@ -2394,22 +2398,42 @@ namespace AlexLabBL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalPrice", DbType="Decimal(18,2)")]
-		public System.Nullable<decimal> TotalPrice
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookMoney", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> BookMoney
 		{
 			get
 			{
-				return this._TotalPrice;
+				return this._BookMoney;
 			}
 			set
 			{
-				if ((this._TotalPrice != value))
+				if ((this._BookMoney != value))
 				{
-					this.OnTotalPriceChanging(value);
+					this.OnBookMoneyChanging(value);
 					this.SendPropertyChanging();
-					this._TotalPrice = value;
-					this.SendPropertyChanged("TotalPrice");
-					this.OnTotalPriceChanged();
+					this._BookMoney = value;
+					this.SendPropertyChanged("BookMoney");
+					this.OnBookMoneyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CoursePrice", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> CoursePrice
+		{
+			get
+			{
+				return this._CoursePrice;
+			}
+			set
+			{
+				if ((this._CoursePrice != value))
+				{
+					this.OnCoursePriceChanging(value);
+					this.SendPropertyChanging();
+					this._CoursePrice = value;
+					this.SendPropertyChanged("CoursePrice");
+					this.OnCoursePriceChanged();
 				}
 			}
 		}

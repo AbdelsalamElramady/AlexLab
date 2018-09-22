@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
+using System;
 
 namespace AlexLab
 {
@@ -51,37 +43,37 @@ namespace AlexLab
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (dxValidationProvider1.Validate())
-            {
-                courseObj.PaymentTypeId = Convert.ToInt32(lookUpPaymentType.EditValue);
-                courseObj.PaymentDate = DateTime.Now;
-                courseObj.AppointmentId = null;
-                courseObj.ClientWorkSpaceId = Convert.ToInt32(LookUpClient.EditValue);
-                courseObj.PaymentValue = TxtPaymentValue.Value;
-                courseObj.Notes = TxtNotes.Text;
-
-                safeObj.CurrentValue = TxtPaymentValue.Value;
-
-                if (!AlexLabBL.MainClass.CheckSafeIsClose())
+                if (dxValidationProvider1.Validate())
                 {
+                    courseObj.PaymentTypeId = Convert.ToInt32(lookUpPaymentType.EditValue);
+                    courseObj.PaymentDate = DateTime.Now;
+                    courseObj.AppointmentId = null;
+                    courseObj.ClientWorkSpaceId = Convert.ToInt32(LookUpClient.EditValue);
+                    courseObj.PaymentValue = TxtPaymentValue.Value;
+                    courseObj.Notes = TxtNotes.Text;
 
-                    if (courseObj.Save(isEdit))
+                    safeObj.CurrentValue = TxtPaymentValue.Value;
+
+                    if (!AlexLabBL.MainClass.CheckSafeIsClose())
                     {
-                        safeObj.Save(false);
-                        MainForm.MessageSecuseed();
+
+                        if (courseObj.Save(isEdit))
+                        {
+                            safeObj.Save(false);
+                            MainForm.MessageSecuseed();
+                        }
+                        else
+                        {
+                            MainForm.MessageError();
+                        }
                     }
                     else
                     {
-                        MainForm.MessageError();
+                        MainForm.MessageErrorSafe();
                     }
-                }
-                else
-                {
-                    MainForm.MessageErrorSafe();
-                }
 
-                gridControl1.DataSource = AlexLabBL.MainClass.getPaymentByClient();
-            }
+                    gridControl1.DataSource = AlexLabBL.MainClass.getPaymentByClient();
+                }
             }
     }
 }

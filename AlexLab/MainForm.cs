@@ -66,6 +66,7 @@ namespace AlexLab
         private void inboxItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             new RoomsForm().ShowDialog();
+            lookUpRoom.Properties.DataSource = AlexLabBL.MainClass.getRooms();
         }
 
         private void schedulerControl_EditAppointmentFormShowing(object sender, DevExpress.XtraScheduler.AppointmentFormEventArgs e)
@@ -80,11 +81,13 @@ namespace AlexLab
             {
                 form.Dispose();
             }
+            lookUpCourse.Properties.DataSource = AlexLabBL.MainClass.getCourses();
         }
 
         private void outboxItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             new ClientForm().ShowDialog();
+            lookUpClient.Properties.DataSource = AlexLabBL.MainClass.getClients();
         }
 
         private void draftsItem_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -198,6 +201,11 @@ namespace AlexLab
             {
                 appointmentsTableAdapter.FillBy(alexLabDataSet.Appointments, Convert.ToInt32(lookUpRoom.EditValue), Convert.ToInt32(lookUpClient.EditValue), Convert.ToInt32(lookUpCourse.EditValue));
             }
+        }
+
+        private void schedulerControl_StorageChanged(object sender, EventArgs e)
+        {
+            lookUpCourse.Properties.DataSource = AlexLabBL.MainClass.getCourses();
         }
     }
 }

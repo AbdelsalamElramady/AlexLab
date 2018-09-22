@@ -27,12 +27,14 @@ namespace AlexLab
 {
     public partial class CustomAppointmentForm : DevExpress.XtraScheduler.UI.AppointmentForm
     {
+        int appointmentId;
+
         int RoomId;
         int ClientId;
         int CourseTypeId;
         decimal StudentBookMoney;
         decimal CoursePrice;
-        decimal PaidMoney;
+        public static decimal PaidMoney = 0;
         decimal TotalPrice;
         bool IsClose;
 
@@ -95,6 +97,11 @@ namespace AlexLab
             {
                 CoursePrice = Convert.ToDecimal(appointment.CustomFields["CoursePrice"]);
                 TxtCoursePrice.Value = CoursePrice;
+            }
+
+            if (appointment.CustomFields["UniqueID"] != null)
+            {
+                appointmentId = Convert.ToInt32(appointment.CustomFields["UniqueID"]);
             }
 
             base.LoadFormData(appointment);
@@ -162,6 +169,22 @@ namespace AlexLab
 
             //    TxtTotalPrice.Value = ((edtEndTime.Time - edtStartTime.Time).Hours + (days * 24)) * RoomObj.HourPrice;
             //}
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            new CoursePaymentForm(appointmentId).ShowDialog();
+            TxtPaidMoney.Value += PaidMoney;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtPaidMoney_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

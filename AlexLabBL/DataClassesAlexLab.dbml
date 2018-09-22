@@ -119,7 +119,8 @@
       <Column Name="CourseStudentName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CourseStudentNationalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="UniqueID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="BookMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CoursePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="PaidMoney" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>

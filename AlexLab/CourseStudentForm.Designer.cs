@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CourseStudentForm));
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -45,8 +47,9 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TxtPaidMoney = new DevExpress.XtraEditors.CalcEdit();
-            this.TxtTotalPrice = new DevExpress.XtraEditors.CalcEdit();
+            this.TxtBookMoney = new DevExpress.XtraEditors.CalcEdit();
             this.TxtNationalId = new DevExpress.XtraEditors.TextEdit();
             this.TxtStudentName = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -66,7 +69,11 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TxtCoursePrice = new DevExpress.XtraEditors.CalcEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -74,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpCourse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPaidMoney.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBookMoney.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNationalId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudentName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -88,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCoursePrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -145,10 +154,11 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.TxtCoursePrice);
             this.layoutControl1.Controls.Add(this.TxtNotes);
             this.layoutControl1.Controls.Add(this.LookUpCourse);
             this.layoutControl1.Controls.Add(this.TxtPaidMoney);
-            this.layoutControl1.Controls.Add(this.TxtTotalPrice);
+            this.layoutControl1.Controls.Add(this.TxtBookMoney);
             this.layoutControl1.Controls.Add(this.TxtNationalId);
             this.layoutControl1.Controls.Add(this.TxtStudentName);
             this.layoutControl1.Controls.Add(this.gridControl1);
@@ -165,7 +175,7 @@
             this.TxtNotes.Location = new System.Drawing.Point(89, 84);
             this.TxtNotes.MenuManager = this.ribbon;
             this.TxtNotes.Name = "TxtNotes";
-            this.TxtNotes.Size = new System.Drawing.Size(765, 55);
+            this.TxtNotes.Size = new System.Drawing.Size(765, 40);
             this.TxtNotes.StyleController = this.layoutControl1;
             this.TxtNotes.TabIndex = 10;
             // 
@@ -180,19 +190,22 @@
             this.LookUpCourse.Properties.NullText = "";
             this.LookUpCourse.Properties.ValueMember = "UniqueID";
             this.LookUpCourse.Properties.View = this.searchLookUpEdit1View;
-            this.LookUpCourse.Size = new System.Drawing.Size(765, 20);
+            this.LookUpCourse.Size = new System.Drawing.Size(342, 20);
             this.LookUpCourse.StyleController = this.layoutControl1;
             this.LookUpCourse.TabIndex = 9;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "This value is not valid";
             this.dxValidationProvider1.SetValidationRule(this.LookUpCourse, conditionValidationRule1);
+            this.LookUpCourse.EditValueChanged += new System.EventHandler(this.LookUpCourse_EditValueChanged);
             // 
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn8,
             this.gridColumn9,
-            this.gridColumn10});
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -222,6 +235,14 @@
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 2;
             // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Book money";
+            this.gridColumn11.FieldName = "StudentBookMoney";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 3;
+            // 
             // TxtPaidMoney
             // 
             this.TxtPaidMoney.Location = new System.Drawing.Point(512, 60);
@@ -233,19 +254,19 @@
             this.TxtPaidMoney.StyleController = this.layoutControl1;
             this.TxtPaidMoney.TabIndex = 8;
             // 
-            // TxtTotalPrice
+            // TxtBookMoney
             // 
-            this.TxtTotalPrice.Location = new System.Drawing.Point(89, 60);
-            this.TxtTotalPrice.MenuManager = this.ribbon;
-            this.TxtTotalPrice.Name = "TxtTotalPrice";
-            this.TxtTotalPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.TxtBookMoney.Location = new System.Drawing.Point(89, 60);
+            this.TxtBookMoney.MenuManager = this.ribbon;
+            this.TxtBookMoney.Name = "TxtBookMoney";
+            this.TxtBookMoney.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.TxtTotalPrice.Size = new System.Drawing.Size(342, 20);
-            this.TxtTotalPrice.StyleController = this.layoutControl1;
-            this.TxtTotalPrice.TabIndex = 7;
+            this.TxtBookMoney.Size = new System.Drawing.Size(342, 20);
+            this.TxtBookMoney.StyleController = this.layoutControl1;
+            this.TxtBookMoney.TabIndex = 7;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.TxtTotalPrice, conditionValidationRule2);
+            this.dxValidationProvider1.SetValidationRule(this.TxtBookMoney, conditionValidationRule2);
             // 
             // TxtNationalId
             // 
@@ -258,7 +279,7 @@
             // 
             // TxtStudentName
             // 
-            this.TxtStudentName.Location = new System.Drawing.Point(89, 36);
+            this.TxtStudentName.Location = new System.Drawing.Point(512, 12);
             this.TxtStudentName.MenuManager = this.ribbon;
             this.TxtStudentName.Name = "TxtStudentName";
             this.TxtStudentName.Size = new System.Drawing.Size(342, 20);
@@ -270,11 +291,11 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 143);
+            this.gridControl1.Location = new System.Drawing.Point(12, 128);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbon;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(842, 315);
+            this.gridControl1.Size = new System.Drawing.Size(842, 330);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -295,6 +316,7 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
+            this.gridColumn13,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7});
@@ -302,6 +324,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowFooter = true;
             // 
             // gridColumn1
             // 
@@ -327,11 +350,11 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Total price";
-            this.gridColumn4.FieldName = "TotalPrice";
+            this.gridColumn4.Caption = "Book money";
+            this.gridColumn4.FieldName = "BookMoney";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -365,12 +388,13 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(866, 470);
@@ -379,16 +403,16 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 131);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 116);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(846, 319);
+            this.layoutControlItem1.Size = new System.Drawing.Size(846, 334);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.TxtStudentName;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Location = new System.Drawing.Point(423, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(423, 24);
             this.layoutControlItem2.Text = "Student name";
@@ -405,11 +429,11 @@
             // 
             // layoutControlItem4
             // 
-            this.layoutControlItem4.Control = this.TxtTotalPrice;
+            this.layoutControlItem4.Control = this.TxtBookMoney;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(423, 24);
-            this.layoutControlItem4.Text = "Total price";
+            this.layoutControlItem4.Text = "Book money";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(74, 15);
             // 
             // layoutControlItem5
@@ -426,7 +450,7 @@
             this.layoutControlItem6.Control = this.LookUpCourse;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(846, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(423, 24);
             this.layoutControlItem6.Text = "Course name";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(74, 15);
             // 
@@ -435,9 +459,48 @@
             this.layoutControlItem7.Control = this.TxtNotes;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(846, 59);
+            this.layoutControlItem7.Size = new System.Drawing.Size(846, 44);
             this.layoutControlItem7.Text = "Notes";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(74, 15);
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "Course price";
+            this.gridColumn12.FieldName = "CoursePrice";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 4;
+            // 
+            // TxtCoursePrice
+            // 
+            this.TxtCoursePrice.Location = new System.Drawing.Point(89, 36);
+            this.TxtCoursePrice.MenuManager = this.ribbon;
+            this.TxtCoursePrice.Name = "TxtCoursePrice";
+            this.TxtCoursePrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TxtCoursePrice.Size = new System.Drawing.Size(342, 20);
+            this.TxtCoursePrice.StyleController = this.layoutControl1;
+            this.TxtCoursePrice.TabIndex = 11;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.TxtCoursePrice, conditionValidationRule5);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.TxtCoursePrice;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(423, 24);
+            this.layoutControlItem8.Text = "Course price";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(74, 15);
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Course price";
+            this.gridColumn13.FieldName = "CoursePrice";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 3;
             // 
             // CourseStudentForm
             // 
@@ -460,7 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpCourse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPaidMoney.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtTotalPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtBookMoney.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtNationalId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudentName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -474,6 +537,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCoursePrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +557,7 @@
         private DevExpress.XtraEditors.SearchLookUpEdit LookUpCourse;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.CalcEdit TxtPaidMoney;
-        private DevExpress.XtraEditors.CalcEdit TxtTotalPrice;
+        private DevExpress.XtraEditors.CalcEdit TxtBookMoney;
         private DevExpress.XtraEditors.TextEdit TxtNationalId;
         private DevExpress.XtraEditors.TextEdit TxtStudentName;
         private DevExpress.XtraGrid.GridControl gridControl1;
@@ -516,5 +581,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraEditors.CalcEdit TxtCoursePrice;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
     }
 }
