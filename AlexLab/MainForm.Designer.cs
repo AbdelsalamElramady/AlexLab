@@ -157,6 +157,7 @@
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             this.appointmentsTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.AppointmentsTableAdapter();
             this.resourcesTableAdapter = new AlexLab.AlexLabDataSetTableAdapters.ResourcesTableAdapter();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl)).BeginInit();
@@ -439,10 +440,11 @@
             this.printPageSetupItem1,
             this.barButtonItem1,
             this.barButtonItem2,
-            this.barButtonItem3});
+            this.barButtonItem3,
+            this.barButtonItem4});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 105;
+            this.ribbonControl.MaxItemId = 106;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.calendarToolsRibbonPageCategory1});
@@ -884,11 +886,14 @@
             this.schedulerControl.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl.Views.FullWeekView.Enabled = true;
             this.schedulerControl.Views.FullWeekView.TimeRulers.Add(timeRuler2);
-            this.schedulerControl.Views.TimelineView.Enabled = false;
-            this.schedulerControl.Views.WeekView.Enabled = false;
+            this.schedulerControl.Views.GanttView.Enabled = false;
             this.schedulerControl.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
             this.schedulerControl.StorageChanged += new System.EventHandler(this.schedulerControl_StorageChanged);
+            this.schedulerControl.AllowAppointmentDelete += new DevExpress.XtraScheduler.AppointmentOperationEventHandler(this.schedulerControl_AllowAppointmentDelete);
+            this.schedulerControl.AppointmentDrop += new DevExpress.XtraScheduler.AppointmentDragEventHandler(this.schedulerControl_AppointmentDrop);
             this.schedulerControl.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl_EditAppointmentFormShowing);
+            this.schedulerControl.DeleteRecurrentAppointmentFormShowing += new DevExpress.XtraScheduler.DeleteRecurrentAppointmentFormEventHandler(this.schedulerControl_DeleteRecurrentAppointmentFormShowing);
+            this.schedulerControl.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.schedulerControl_ControlRemoved);
             // 
             // schedulerStorage
             // 
@@ -923,6 +928,7 @@
             this.schedulerStorage.Resources.Mappings.Image = "Image";
             this.schedulerStorage.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
             this.schedulerStorage.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
+            this.schedulerStorage.AppointmentDeleting += new DevExpress.XtraScheduler.PersistentObjectCancelEventHandler(this.schedulerStorage_AppointmentDeleting_1);
             this.schedulerStorage.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.schedulerStorage_AppointmentsChanged);
             // 
             // appointmentsBindingSource
@@ -1049,6 +1055,7 @@
             this.printRibbonPageGroup1.ItemLinks.Add(this.printPreviewItem1);
             this.printRibbonPageGroup1.ItemLinks.Add(this.printItem1);
             this.printRibbonPageGroup1.ItemLinks.Add(this.printPageSetupItem1);
+            this.printRibbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
             this.printRibbonPageGroup1.Name = "printRibbonPageGroup1";
             // 
             // ribbonPageSkins
@@ -1312,6 +1319,15 @@
             // 
             this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Backup";
+            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
+            this.barButtonItem4.Id = 105;
+            this.barButtonItem4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.LargeGlyph")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -1493,5 +1509,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }

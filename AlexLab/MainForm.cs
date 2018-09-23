@@ -13,6 +13,7 @@ using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DevExpress.UserSkins;
 using DevExpress.XtraScheduler;
+using System.Data.SqlClient;
 
 namespace AlexLab
 {
@@ -206,6 +207,66 @@ namespace AlexLab
         private void schedulerControl_StorageChanged(object sender, EventArgs e)
         {
             lookUpCourse.Properties.DataSource = AlexLabBL.MainClass.getCourses();
+        }
+
+        private void schedulerControl_AllowAppointmentDelete(object sender, AppointmentOperationEventArgs e)
+        {
+            
+        }
+
+        private void schedulerControl_AppointmentDrop(object sender, AppointmentDragEventArgs e)
+        {
+            
+        }
+
+        private void schedulerControl_DeleteRecurrentAppointmentFormShowing(object sender, DeleteRecurrentAppointmentFormEventArgs e)
+        {
+            
+        }
+        
+        SqlConnection con;
+        SqlCommand cmd;
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            con = new SqlConnection(AlexLabBL.MainClass.ConectionString);
+            try
+            {
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                               string query = "BACKUP DATABASE AlexLab TO DISK = '" 
+                               + folderBrowserDialog1.SelectedPath + "\\AlexLabDatabase" 
+                               + "(" + DateTime.Now.ToShortDateString().Replace('/', '-') + ")"
+                               + "(" + DateTime.Now.ToShortTimeString().Replace(':', '-') + ")" + ".bak'";
+
+                    cmd = new SqlCommand(query, con);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                
+                    MessageBox.Show("تم الحفظ");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("المسار الذى ادخلته خطأ او ان الملف موجود مسبقا");
+            }
+        }
+
+        private void schedulerControl_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            
+        }
+
+        private void schedulerStorage_AppointmentDeleting_1(object sender, PersistentObjectCancelEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("هل انت متاكد من الغاء الكورس", "الغاء الكورس", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

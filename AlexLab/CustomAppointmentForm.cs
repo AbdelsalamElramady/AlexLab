@@ -1,4 +1,4 @@
-#region Note
+﻿#region Note
 /*
 {**************************************************************************************************************}
 {  This file is automatically created when you open the Scheduler Control smart tag                            }
@@ -183,6 +183,11 @@ namespace AlexLab
         }
 
         private void TxtPaidMoney_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             
         }

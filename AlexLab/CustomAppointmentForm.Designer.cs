@@ -29,11 +29,11 @@ namespace AlexLab
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.label1 = new System.Windows.Forms.Label();
             this.lookUpRoom = new DevExpress.XtraEditors.LookUpEdit();
             this.lookUpClient = new DevExpress.XtraEditors.LookUpEdit();
@@ -127,6 +127,7 @@ namespace AlexLab
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(192, 483);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRecurrence
             // 
@@ -172,9 +173,9 @@ namespace AlexLab
             // tbSubject
             // 
             this.tbSubject.Location = new System.Drawing.Point(96, 136);
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.tbSubject, conditionValidationRule1);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.tbSubject, conditionValidationRule6);
             // 
             // edtResource
             // 
@@ -260,9 +261,9 @@ namespace AlexLab
             this.lookUpRoom.Properties.ValueMember = "RoomId";
             this.lookUpRoom.Size = new System.Drawing.Size(416, 20);
             this.lookUpRoom.TabIndex = 30;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.lookUpRoom, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpRoom, conditionValidationRule1);
             this.lookUpRoom.EditValueChanged += new System.EventHandler(this.edtStartDate_EditValueChanged);
             // 
             // lookUpClient
@@ -281,9 +282,9 @@ namespace AlexLab
             this.lookUpClient.Properties.ValueMember = "ClientId";
             this.lookUpClient.Size = new System.Drawing.Size(416, 20);
             this.lookUpClient.TabIndex = 32;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.lookUpClient, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpClient, conditionValidationRule2);
             // 
             // label2
             // 
@@ -320,14 +321,14 @@ namespace AlexLab
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.TxtTotalPrice.Size = new System.Drawing.Size(162, 20);
             this.TxtTotalPrice.TabIndex = 35;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.Value1 = new decimal(new int[] {
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.Value1 = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.dxValidationProvider1.SetValidationRule(this.TxtTotalPrice, conditionValidationRule4);
+            this.dxValidationProvider1.SetValidationRule(this.TxtTotalPrice, conditionValidationRule3);
             // 
             // TxtPaidMoney
             // 
@@ -362,9 +363,9 @@ namespace AlexLab
             this.lookUpCourseType.Properties.ValueMember = "CourseTypeId";
             this.lookUpCourseType.Size = new System.Drawing.Size(416, 20);
             this.lookUpCourseType.TabIndex = 38;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.lookUpCourseType, conditionValidationRule5);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpCourseType, conditionValidationRule4);
             // 
             // label6
             // 
