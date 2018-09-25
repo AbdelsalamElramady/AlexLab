@@ -118,6 +118,7 @@ namespace AlexLab
             // btnOk
             // 
             this.btnOk.Location = new System.Drawing.Point(16, 483);
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -433,6 +434,7 @@ namespace AlexLab
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(518, 307);
             this.Name = "CustomAppointmentForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomAppointmentForm_FormClosing);
             this.Load += new System.EventHandler(this.CustomAppointmentForm_Load);
             this.Controls.SetChildIndex(this.edtShowTimeAs, 0);
             this.Controls.SetChildIndex(this.edtEndTime, 0);

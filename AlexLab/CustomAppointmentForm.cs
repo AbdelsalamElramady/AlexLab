@@ -38,6 +38,8 @@ namespace AlexLab
         decimal TotalPrice;
         bool IsClose;
 
+        static decimal startPaidMoney;
+
         public CustomAppointmentForm()
         {
             InitializeComponent();
@@ -79,6 +81,7 @@ namespace AlexLab
             {
                 PaidMoney = Convert.ToDecimal(appointment.CustomFields["PaidMoney"]);
                 TxtPaidMoney.Value = PaidMoney;
+                startPaidMoney = PaidMoney;
             }
 
             if (appointment.CustomFields["TotalPrice"] != null)
@@ -190,6 +193,20 @@ namespace AlexLab
         private void btnDelete_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void CustomAppointmentForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (startPaidMoney != PaidMoney)
+            {
+                MessageBox.Show("لقد تم دفع مبلغ و لم يحفظ");
+                e.Cancel = true;
+            }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            startPaidMoney = PaidMoney;
         }
     }
 }
