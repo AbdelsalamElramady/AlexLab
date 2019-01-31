@@ -10,6 +10,41 @@ namespace AlexLabBL
     {
         public static String ConectionString { get; set; }
         public static DataClassesAlexLabDataContext DbObj { get; set; }
+        public static bool putPaymentTypes()
+        {
+            DbObj = new DataClassesAlexLabDataContext(ConectionString);
+
+            var obj = from ob in DbObj.PaymentTypes select ob;
+            try
+            {
+                if (obj.Count() == 0)
+                {
+                    PaymentType roo = new PaymentType()
+                    { PaymentTypeDesc = "Rooms"};
+
+                    MainClass.DbObj.PaymentTypes.InsertOnSubmit(roo);
+                    MainClass.DbObj.SubmitChanges();
+
+                    PaymentType roo2 = new PaymentType()
+                    { PaymentTypeDesc = "Workspace" };
+
+                    MainClass.DbObj.PaymentTypes.InsertOnSubmit(roo2);
+                    MainClass.DbObj.SubmitChanges();
+
+                    PaymentType roo3 = new PaymentType()
+                    { PaymentTypeDesc = "Others" };
+
+                    MainClass.DbObj.PaymentTypes.InsertOnSubmit(roo3);
+                    MainClass.DbObj.SubmitChanges();
+                }
+
+                return true;
+            }
+            catch 
+            {
+                return false;
+            }
+        }
 
         public static object getRooms()
         {

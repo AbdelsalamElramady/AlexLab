@@ -27,6 +27,11 @@ namespace AlexLab
 
             AlexLabBL.MainClass.ConectionString = System.Configuration.ConfigurationManager.ConnectionStrings["AlexLab.Properties.Settings.AlexLabConnectionString"].ConnectionString;
 
+            if (!AlexLabBL.MainClass.putPaymentTypes())
+            {
+                MessageBox.Show("لم يتم اضافة انواع المدفوعات");
+            }
+
         }
         void InitSkinGallery()
         {
