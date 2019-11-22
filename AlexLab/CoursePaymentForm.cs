@@ -72,9 +72,9 @@ namespace AlexLab
         {
             if (dxValidationProvider1.Validate())
             {
+                courseObj.AppointmentId = appointmentID;
                 courseObj.PaymentTypeId = Convert.ToInt32(lookUpPaymentType.EditValue);
                 courseObj.PaymentDate = DateTime.Now;
-                courseObj.AppointmentId = Convert.ToInt32(lookUpCourse.EditValue);
                 courseObj.ClientWorkSpaceId = null;
                 courseObj.PaymentValue = TxtValue.Value;
                 courseObj.Notes = TxtNotes.Text;

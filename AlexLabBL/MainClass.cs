@@ -152,9 +152,9 @@ namespace AlexLabBL
 
             var obj = from ob in DbObj.Safes orderby ob.SafeId descending select ob;
 
-            if (!obj.Any())
+            if (obj.Count() == 0)
             {
-                return false;
+                return true;
             }
 
             return Convert.ToBoolean(obj.First().IsClose);
